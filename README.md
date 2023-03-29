@@ -1,4 +1,4 @@
-# ecc_pipe: A pipeline for detecting eccDNA from NGS/TGS  
+# eccDNA_pipe: A pipeline for detecting eccDNA from NGS/TGS  
 A pipeline for detecting Extrachromosomal Circular DNA from NGS/TGS in Circle-Map, AmpliconArchitect, CReSIL
 
 ## Installation instructions

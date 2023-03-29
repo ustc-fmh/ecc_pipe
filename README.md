@@ -49,7 +49,7 @@ perl configureHomer.pl -install hg38
 ```
 
 ## 01.QC
-First set all papams in ***QC_config.yaml*** and run python in shell for QC by fastqc and trim_galore
+First set all params in ***QC_config.yaml*** and run python in shell for QC by fastqc and trim_galore
 ```
 python3 ecc_pipe_master.py --QC -n 4
 ## --QC: set the function; no input
@@ -63,7 +63,7 @@ all params in the ***QC_config.yaml*** file show:
 -   **paired** - single or paired sequence; eg: True or False
 
 ## 02.Detect
-First set all papams in ***circlemap_config.yaml, AA_config.yaml, cresil_config.yaml***
+First set all params in ***circlemap_config.yaml, AA_config.yaml, cresil_config.yaml***
 ```
 python3 ecc_pipe_master.py --Detect --tool circlemap -n 24
 python3 ecc_pipe_master.py --Detect --tool AA -n 24

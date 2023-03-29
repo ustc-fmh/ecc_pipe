@@ -1,0 +1,524 @@
+Unlocking working directory.
+Building DAG of jobs...
+Relative file path './example/result/cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Nothing to be done (all requested files are present and up to date).
+Complete log: .snakemake/log/2022-12-20T195235.658308.snakemake.log
+Unlocking working directory.
+Building DAG of jobs...
+Relative file path './example/result/cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+AA           1             12             12
+all          1              1              1
+total        2              1             12
+
+Select jobs to execute...
+
+[Tue Dec 20 19:53:57 2022]
+rule AA:
+    input: ./example/cresil/exp_reads.fastq
+    output: ./example/result/cresil/exp_reads
+    log: ./example/result/cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/cli/identify.py", line 341, in assemToGFA
+    seq = get_a_sequence(fa_path)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/cli/identify.py", line 334, in get_a_sequence
+    for record in SeqIO.parse(fa_path, "fasta"):
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/Bio/SeqIO/FastaIO.py", line 178, in FastaIterator
+    with as_handle(handle, "rU") as handle:
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/Bio/File.py", line 120, in as_handle
+    with open(handleish, mode, **kwargs) as fp:
+FileNotFoundError: [Errno 2] No such file or directory: 'example/result/cresil/exp_reads/cresil_run/assemGraph/ec2/ec2_consensus.fa'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cresil", line 8, in <module>
+    sys.exit(main())
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/__init__.py", line 32, in main
+    args.func(args)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/cli/identify.py", line 988, in main
+    exit_codes = pool.map(assemToGFA, list_tup_value)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/multiprocessing/pool.py", line 364, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/multiprocessing/pool.py", line 771, in get
+    raise self._value
+FileNotFoundError: [Errno 2] No such file or directory: 'example/result/cresil/exp_reads/cresil_run/assemGraph/ec2/ec2_consensus.fa'
+[Tue Dec 20 19:56:32 2022]
+Error in rule AA:
+    jobid: 1
+    output: ./example/result/cresil/exp_reads
+    log: ./example/result/cresil/logs/exp_reads.01.log (check log file(s) for error message)
+    shell:
+        cresil trim -t 12 -fq ./example/cresil/exp_reads.fastq -r /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.mmi -o ./example/result/cresil/exp_reads;cresil identify -t 12             -fa /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.fa -fai /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.fa.fai -fq ./example/cresil/exp_reads.fastq -trim ./example/result/cresil/exp_reads/trim.txt; cresil annotate -t 12             -rp /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.rmsk.bed -cg /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.cpg.bed -gb /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.gene.bed -identify ./example/result/cresil/exp_reads/eccDNA_final.txt
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job AA since they might be corrupted:
+./example/result/cresil/exp_reads
+Skipped removing non-empty directory ./example/result/cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-12-20T195357.015424.snakemake.log
+Unlocking working directory.
+Building DAG of jobs...
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Select jobs to execute...
+
+[Wed Feb  1 09:18:08 2023]
+rule cresil:
+    input: ./example/cresil/exp_reads.fastq
+    output: ./example/result/02.cresil/exp_reads
+    log: ./example/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+Building DAG of jobs...
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+[ERROR] failed to open file 'None': No such file or directory
+samtools sort: failed to read header from "-"
+[E::hts_open_format] Failed to open file "example/result/02.cresil/exp_reads/cresil_run/tmp/ref_aln.bam" : No such file or directory
+samtools index: failed to open "example/result/02.cresil/exp_reads/cresil_run/tmp/ref_aln.bam": No such file or directory
+[E::hts_open_format] Failed to open file "ref_aln.bam" : No such file or directory
+[hts-nim] could not open 'ref_aln.bam'. No such file or directory
+SIGSEGV: Illegal storage access. (Attempt to read from nil?)
+Traceback (most recent call last):
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cresil", line 8, in <module>
+    sys.exit(main())
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/__init__.py", line 32, in main
+    args.func(args)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/cli/identify_wgls.py", line 496, in main
+    df_mosdepth_summary = pd.read_csv(mosdepth_summary_path, sep='\t')
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 678, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 575, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 932, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1216, in _make_engine
+    self.handles = get_handle(  # type: ignore[call-overload]
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/pandas/io/common.py", line 786, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'example/result/02.cresil/exp_reads/cresil_run/tmp/ref_aln.mosdepth.summary.txt'
+[Wed Feb  1 09:19:50 2023]
+Error in rule cresil:
+    jobid: 0
+    output: ./example/result/02.cresil/exp_reads
+    log: ./example/result/02.cresil/logs/exp_reads.01.log (check log file(s) for error message)
+
+RuleException:
+CalledProcessError in line 55 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Command 'set -euo pipefail;  cresil trim -t 12 -fq ./example/cresil/exp_reads.fastq -r /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.mmi -o ./example/result/02.cresil/exp_reads;cresil identify_wgls -t 12             -fa /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.fa -fai /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.fa.fai -fq ./example/cresil/exp_reads.fastq -trim ./example/result/02.cresil/exp_reads/trim.txt; cresil annotate -t 12             -rp /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.rmsk.bed -cg /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.cpg.bed -gb /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.gene.bed -identify ./example/result/02.cresil/exp_reads/eccDNA_final.txt' returned non-zero exit status 1.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py", line 55, in __rule_cresil
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Removing output files of failed job cresil since they might be corrupted:
+./example/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Removing output files of failed job cresil since they might be corrupted:
+./example/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-02-01T091808.181981.snakemake.log
+Unlocking working directory.
+Building DAG of jobs...
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Select jobs to execute...
+
+[Wed Feb  1 09:43:58 2023]
+rule cresil:
+    input: ./example/cresil/exp_reads.fastq
+    output: ./example/result/02.cresil/exp_reads
+    log: ./example/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+Building DAG of jobs...
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/cli/identify.py", line 341, in assemToGFA
+    seq = get_a_sequence(fa_path)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/cli/identify.py", line 334, in get_a_sequence
+    for record in SeqIO.parse(fa_path, "fasta"):
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/Bio/SeqIO/FastaIO.py", line 178, in FastaIterator
+    with as_handle(handle, "rU") as handle:
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/Bio/File.py", line 120, in as_handle
+    with open(handleish, mode, **kwargs) as fp:
+FileNotFoundError: [Errno 2] No such file or directory: 'example/result/02.cresil/exp_reads/cresil_run/assemGraph/ec1/ec1_consensus.fa'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cresil", line 8, in <module>
+    sys.exit(main())
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/__init__.py", line 32, in main
+    args.func(args)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/cli/identify.py", line 988, in main
+    exit_codes = pool.map(assemToGFA, list_tup_value)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/multiprocessing/pool.py", line 364, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/multiprocessing/pool.py", line 771, in get
+    raise self._value
+FileNotFoundError: [Errno 2] No such file or directory: 'example/result/02.cresil/exp_reads/cresil_run/assemGraph/ec1/ec1_consensus.fa'
+[Wed Feb  1 09:47:03 2023]
+Error in rule cresil:
+    jobid: 0
+    output: ./example/result/02.cresil/exp_reads
+    log: ./example/result/02.cresil/logs/exp_reads.01.log (check log file(s) for error message)
+
+RuleException:
+CalledProcessError in line 59 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Command 'set -euo pipefail;  cresil trim -t 12 -fq ./example/cresil/exp_reads.fastq -r /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.mmi -o ./example/result/02.cresil/exp_reads;cresil identify -t 12             -fa /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.fa -fai /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.fa.fai -fq ./example/cresil/exp_reads.fastq -trim ./example/result/02.cresil/exp_reads/trim.txt; cresil annotate -t 12             -rp /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.rmsk.bed -cg /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.cpg.bed -gb /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.gene.bed -identify ./example/result/02.cresil/exp_reads/eccDNA_final.txt' returned non-zero exit status 1.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py", line 59, in __rule_cresil
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Removing output files of failed job cresil since they might be corrupted:
+./example/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Removing output files of failed job cresil since they might be corrupted:
+./example/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-02-01T094358.513027.snakemake.log
+Unlocking working directory.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Select jobs to execute...
+
+[Wed Feb  1 10:05:20 2023]
+rule cresil:
+    input: ../help/data/WGS_test.merge.fastq.gz
+    output: ../help/result/02.cresil/exp_reads
+    log: ../help/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ../help/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+please input type (fasta/fastq)
+[Wed Feb  1 10:05:46 2023]
+Error in rule cresil:
+    jobid: 0
+    output: ../help/result/02.cresil/exp_reads
+    log: ../help/result/02.cresil/logs/exp_reads.01.log (check log file(s) for error message)
+
+RuleException:
+CalledProcessError in line 55 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Command 'set -euo pipefail;  cresil trim -t 12 -fq ../help/data/WGS_test.merge.fastq.gz -r /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.mmi -o ../help/result/02.cresil/exp_reads;cresil identify_wgls -t 12             -fa /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.fa -fai /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.fa.fai -fq ../help/data/WGS_test.merge.fastq.gz -trim ../help/result/02.cresil/exp_reads/trim.txt; cresil annotate -t 12             -rp /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.rmsk.bed -cg /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.cpg.bed -gb /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.gene.bed -identify ../help/result/02.cresil/exp_reads/eccDNA_final.txt' returned non-zero exit status 1.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py", line 55, in __rule_cresil
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-02-01T100519.654504.snakemake.log
+Unlocking working directory.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Select jobs to execute...
+
+[Wed Feb  1 10:18:45 2023]
+rule cresil:
+    input: ../help/data/WGS_test.merge.fastq.gz
+    output: ../help/result/02.cresil/exp_reads
+    log: ../help/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ../help/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+please input type (fasta/fastq)
+[Wed Feb  1 10:19:13 2023]
+Error in rule cresil:
+    jobid: 0
+    output: ../help/result/02.cresil/exp_reads
+    log: ../help/result/02.cresil/logs/exp_reads.01.log (check log file(s) for error message)
+
+RuleException:
+CalledProcessError in line 55 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Command 'set -euo pipefail;  cresil trim -t 12 -fq ../help/data/WGS_test.merge.fastq.gz -r /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.mmi -o ../help/result/02.cresil/exp_reads;cresil identify_wgls -t 12             -r /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.mmi -fa /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.fa -fai /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.fa.fai -fq ../help/data/WGS_test.merge.fastq.gz -trim ../help/result/02.cresil/exp_reads/trim.txt; cresil annotate -t 12             -rp /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.rmsk.bed -cg /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.cpg.bed -gb /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.gene.bed -identify ../help/result/02.cresil/exp_reads/eccDNA_final.txt' returned non-zero exit status 1.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py", line 55, in __rule_cresil
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-02-01T101844.706292.snakemake.log
+Unlocking working directory.
+Building DAG of jobs...
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Select jobs to execute...
+
+[Wed Feb  1 10:23:40 2023]
+rule cresil:
+    input: ./example/cresil/exp_reads.fastq
+    output: ./example/result/02.cresil/exp_reads
+    log: ./example/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+Building DAG of jobs...
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+[M::main::24.436*0.52] loaded/built the index for 25 target sequence(s)
+[M::mm_mapopt_update::26.211*0.55] mid_occ = 602
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 25
+[M::mm_idx_stat::27.025*0.57] distinct minimizers: 99986727 (38.86% are singletons); average occurrences: 5.393; average spacing: 5.741; total length: 3095693983
+[M::worker_pipeline::27.457*0.66] mapped 362 sequences
+[M::main] Version: 2.24-r1122
+[M::main] CMD: minimap2 -t 12 --no-long-join -a /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/reference.mmi ./example/cresil/exp_reads.fastq
+[M::main] Real time: 27.613 sec; CPU: 18.205 sec; Peak RSS: 7.601 GB
+ImproperOutputException in rule cresil  in line 34 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule cresil:
+    output: ./example/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    affected files:
+        ./example/result/02.cresil/exp_reads
+Removing output files of failed job cresil since they might be corrupted:
+./example/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Removing output files of failed job cresil since they might be corrupted:
+./example/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-02-01T102340.485407.snakemake.log
+Unlocking working directory.
+Building DAG of jobs...
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Select jobs to execute...
+
+[Fri Feb 24 10:40:57 2023]
+rule cresil:
+    input: ./example/cresil/exp_reads.fastq
+    output: ./example/result/02.cresil/exp_reads
+    log: ./example/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+Building DAG of jobs...
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/cli/identify.py", line 341, in assemToGFA
+    seq = get_a_sequence(fa_path)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/cli/identify.py", line 334, in get_a_sequence
+    for record in SeqIO.parse(fa_path, "fasta"):
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/Bio/SeqIO/FastaIO.py", line 178, in FastaIterator
+    with as_handle(handle, "rU") as handle:
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/Bio/File.py", line 120, in as_handle
+    with open(handleish, mode, **kwargs) as fp:
+FileNotFoundError: [Errno 2] No such file or directory: 'example/result/02.cresil/exp_reads/cresil_run/assemGraph/ec2/ec2_consensus.fa'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cresil", line 8, in <module>
+    sys.exit(main())
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/__init__.py", line 32, in main
+    args.func(args)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/cresil/cli/identify.py", line 988, in main
+    exit_codes = pool.map(assemToGFA, list_tup_value)
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/multiprocessing/pool.py", line 364, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/multiprocessing/pool.py", line 771, in get
+    raise self._value
+FileNotFoundError: [Errno 2] No such file or directory: 'example/result/02.cresil/exp_reads/cresil_run/assemGraph/ec2/ec2_consensus.fa'
+[Fri Feb 24 10:43:51 2023]
+Error in rule cresil:
+    jobid: 0
+    output: ./example/result/02.cresil/exp_reads
+    log: ./example/result/02.cresil/logs/exp_reads.01.log (check log file(s) for error message)
+
+RuleException:
+CalledProcessError in line 58 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Command 'set -euo pipefail;  cresil trim -t 12 -fq ./example/cresil/exp_reads.fastq -r /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/hg38.mmi -o ./example/result/02.cresil/exp_reads;cresil identify -t 12             -fa /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/hg38.fa -fai /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/cresil-master/reference/hg38/hg38.fa.fai -fq ./example/cresil/exp_reads.fastq -trim ./example/result/02.cresil/exp_reads/trim.txt' returned non-zero exit status 1.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py", line 58, in __rule_cresil
+  File "/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Removing output files of failed job cresil since they might be corrupted:
+./example/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Removing output files of failed job cresil since they might be corrupted:
+./example/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-02-24T104056.737284.snakemake.log

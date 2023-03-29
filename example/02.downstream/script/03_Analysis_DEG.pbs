@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+#PBS -N DEG
+#PBS -o logs/DEG.log
+#PBS -e logs/DEG.err
+#PBS -q batch
+#PBS -l nodes=1:ppn=2
+#PBS -l walltime=48:00:00
+
+
+source /home/qukun/minghaofang/miniconda3/etc/profile.d/conda.sh
+conda activate ecc_pipe
+
+###
+#写shell循环 载入 OC
+#for i in {OC1.1,OC1.2,OC2.1,OC2.2,OC3.1,OC3.2,OC4.1,OC4.2}
+#do
+#  python3 ecc_pipe_master.py --Analysis --mode Distribution --tool cresil \
+#		--file_path example/02.downstream/deg_test/$i/eccDNA_final.txt \
+#		--geno hg38 --trim 0.5
+#done
+
+cd /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+python3 ecc_pipe_master.py --Analysis --mode DEG \
+		--path_share example/02.downstream/deg_test/ \
+		--group_file example/02.downstream/deg_test/group.txt \
+		--count_type gene --geno hg38 --trim 1
+
+

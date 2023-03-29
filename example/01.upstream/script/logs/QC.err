@@ -1,0 +1,1619 @@
+Unlocking working directory.
+Building DAG of jobs...
+Relative file path './example/result/01.QC/test_data' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/test_data_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/circlemap/test_data_1.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/circlemap/test_data_2.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/test_data' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/test_data.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/circlemap/test_data_copy_1.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/circlemap/test_data_copy_2.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/test_data_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/test_data_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_copy_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_copy_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/test_data.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/test_data_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+fastqc_trim        4              4              4
+total              5              1              4
+
+Select jobs to execute...
+
+[Fri Dec 23 10:10:05 2022]
+rule fastqc_trim:
+    input: ./example/circlemap/test_data_1.fastq.gz, ./example/circlemap/test_data_2.fastq.gz
+    output: ./example/result/01.QC/test_data
+    log: ./example/result/01.QC/logs/test_data.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/01.QC/test_data
+    wildcards: sample=test_data
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Fri Dec 23 10:10:06 2022]
+rule fastqc_trim:
+    input: ./example/circlemap/test_data_copy_1.fastq.gz, ./example/circlemap/test_data_copy_2.fastq.gz
+    output: ./example/result/01.QC/test_data_copy
+    log: ./example/result/01.QC/logs/test_data_copy.01.log
+    jobid: 2
+    reason: Missing output files: ./example/result/01.QC/test_data_copy
+    wildcards: sample=test_data_copy
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Fri Dec 23 10:10:06 2022]
+rule fastqc_trim:
+    input: ./example/AA/GBM20_1.fq.gz, ./example/AA/GBM20_2.fq.gz
+    output: ./example/result/01.QC/GBM20
+    log: ./example/result/01.QC/logs/GBM20.01.log
+    jobid: 3
+    reason: Missing output files: ./example/result/01.QC/GBM20
+    wildcards: sample=GBM20
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Fri Dec 23 10:10:06 2022]
+rule fastqc_trim:
+    input: ./example/AA/GBM20_copy_1.fq.gz, ./example/AA/GBM20_copy_2.fq.gz
+    output: ./example/result/01.QC/GBM20_copy
+    log: ./example/result/01.QC/logs/GBM20_copy.01.log
+    jobid: 4
+    reason: Missing output files: ./example/result/01.QC/GBM20_copy
+    wildcards: sample=GBM20_copy
+    threads: 4
+    resources: tmpdir=/tmp
+
+Building DAG of jobs...
+Relative file path './example/circlemap/test_data_copy_1.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/circlemap/test_data_copy_2.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/test_data_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/test_data_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/test_data_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+Building DAG of jobs...
+Relative file path './example/AA/GBM20_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+Building DAG of jobs...
+Relative file path './example/circlemap/test_data_1.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/circlemap/test_data_2.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/test_data' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/test_data.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Building DAG of jobs...
+Relative file path './example/result/01.QC/logs/test_data.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_copy_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_copy_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+Relative file path './example/result/01.QC/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+Started analysis of test_data_1.fastq.gz
+Started analysis of GBM20_copy_1.fq.gz
+Started analysis of test_data_copy_1.fastq.gz
+Started analysis of test_data_2.fastq.gz
+Started analysis of GBM20_1.fq.gz
+Started analysis of GBM20_copy_2.fq.gz
+Started analysis of test_data_copy_2.fastq.gz
+Started analysis of GBM20_2.fq.gz
+Multicore support not enabled. Proceeding with single-core trimming.
+Path to Cutadapt set as: 'cutadapt' (default)
+Multicore support not enabled. Proceeding with single-core trimming.
+Path to Cutadapt set as: 'cutadapt' (default)
+Cutadapt seems to be working fine (tested command 'cutadapt --version')
+Cutadapt seems to be working fine (tested command 'cutadapt --version')
+Cutadapt version: 4.2
+single-core operation.
+Output directory ./example/result/01.QC/trim/ doesn't exist, creating it for you...
+
+Cutadapt version: 4.2
+single-core operation.
+Output will be written into the directory: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/example/result/01.QC/trim/
+
+
+AUTO-DETECTING ADAPTER TYPE
+===========================
+Attempting to auto-detect adapter type from the first 1 million sequences of the first file (>> ./example/circlemap/test_data_1.fastq.gz <<)
+
+Found perfect matches for the following adapter sequences:
+Adapter type	Count	Sequence	Sequences analysed	Percentage
+Illumina	0	AGATCGGAAGAGC	967	0.00
+Nextera	0	CTGTCTCTTATA	967	0.00
+smallRNA	0	TGGAATTCTCGG	967	0.00
+Unable to auto-detect most prominent adapter from the first specified file (count Illumina: 0, count Nextera: 0, count smallRNA: 0)
+Defaulting to Illumina universal adapter ( AGATCGGAAGAGC ). Specify -a SEQUENCE to avoid this behavior).
+
+Writing report to '/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/example/result/01.QC/trim/test_data_1.fastq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: ./example/circlemap/test_data_1.fastq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.7
+Cutadapt version: 4.2
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 6
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; default (inconclusive auto-detection))
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+Running FastQC on the data once trimming has completed
+Output file(s) will be GZIP compressed
+
+Cutadapt seems to be fairly up-to-date (version 4.2). Setting -j 1
+Writing final adapter and quality trimmed output to test_data_1_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 6') and adapter trimming in a single pass for the adapter sequence: 'AGATCGGAAGAGC' from file ./example/circlemap/test_data_1.fastq.gz <<< 
+This is cutadapt 4.2 with Python 3.8.13
+Command line parameters: -j 1 -e 0.1 -q 6 -O 3 -a AGATCGGAAGAGC ./example/circlemap/test_data_1.fastq.gz
+Processing single-end reads on 1 core ...
+Finished in 0.068 s (70.393 µs/read; 0.85 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                     967
+Reads with adapters:                        23 (2.4%)
+Reads written (passing filters):           967 (100.0%)
+
+Total basepairs processed:        96,700 bp
+Quality-trimmed:                       0 bp (0.0%)
+Total written (filtered):         96,626 bp (99.9%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 23 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 34.8%
+  C: 21.7%
+  G: 30.4%
+  T: 13.0%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	18	15.1	0	18
+4	5	3.8	0	5
+
+RUN STATISTICS FOR INPUT FILE: ./example/circlemap/test_data_1.fastq.gz
+=============================================
+967 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Writing report to '/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/example/result/01.QC/trim/test_data_2.fastq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: ./example/circlemap/test_data_2.fastq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.7
+Cutadapt version: 4.2
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 6
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; default (inconclusive auto-detection))
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+Running FastQC on the data once trimming has completed
+Output file(s) will be GZIP compressed
+
+Cutadapt seems to be fairly up-to-date (version 4.2). Setting -j -j 1
+Writing final adapter and quality trimmed output to test_data_2_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 6') and adapter trimming in a single pass for the adapter sequence: 'AGATCGGAAGAGC' from file ./example/circlemap/test_data_2.fastq.gz <<< 
+This is cutadapt 4.2 with Python 3.8.13
+Command line parameters: -j 1 -e 0.1 -q 6 -O 3 -a AGATCGGAAGAGC ./example/circlemap/test_data_2.fastq.gz
+Processing single-end reads on 1 core ...
+Finished in 0.013 s (12.960 µs/read; 4.63 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                     967
+Reads with adapters:                        26 (2.7%)
+Reads written (passing filters):           967 (100.0%)
+
+Total basepairs processed:        96,700 bp
+Quality-trimmed:                       0 bp (0.0%)
+Total written (filtered):         96,614 bp (99.9%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 26 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 42.3%
+  C: 26.9%
+  G: 23.1%
+  T: 7.7%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	20	15.1	0	20
+4	4	3.8	0	4
+5	2	0.9	0	2
+
+RUN STATISTICS FOR INPUT FILE: ./example/circlemap/test_data_2.fastq.gz
+=============================================
+967 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Validate paired-end files test_data_1_trimmed.fq.gz and test_data_2_trimmed.fq.gz
+file_1: test_data_1_trimmed.fq.gz, file_2: test_data_2_trimmed.fq.gz
+
+
+>>>>> Now validing the length of the 2 paired-end infiles: test_data_1_trimmed.fq.gz and test_data_2_trimmed.fq.gz <<<<<
+Writing validated paired-end Read 1 reads to test_data_1_val_1.fq.gz
+Writing validated paired-end Read 2 reads to test_data_2_val_2.fq.gz
+
+Total number of sequences analysed: 967
+
+Number of sequence pairs removed because at least one read was shorter than the length cutoff (20 bp): 0 (0.00%)
+
+
+  >>> Now running FastQC on the validated data test_data_1_val_1.fq.gz<<<
+
+Output will be written into the directory: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/example/result/01.QC/trim/
+
+
+AUTO-DETECTING ADAPTER TYPE
+===========================
+Attempting to auto-detect adapter type from the first 1 million sequences of the first file (>> ./example/circlemap/test_data_copy_1.fastq.gz <<)
+
+Found perfect matches for the following adapter sequences:
+Adapter type	Count	Sequence	Sequences analysed	Percentage
+Illumina	0	AGATCGGAAGAGC	967	0.00
+Nextera	0	CTGTCTCTTATA	967	0.00
+smallRNA	0	TGGAATTCTCGG	967	0.00
+Unable to auto-detect most prominent adapter from the first specified file (count Illumina: 0, count Nextera: 0, count smallRNA: 0)
+Defaulting to Illumina universal adapter ( AGATCGGAAGAGC ). Specify -a SEQUENCE to avoid this behavior).
+
+Writing report to '/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/example/result/01.QC/trim/test_data_copy_1.fastq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: ./example/circlemap/test_data_copy_1.fastq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.7
+Cutadapt version: 4.2
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 6
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; default (inconclusive auto-detection))
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+Running FastQC on the data once trimming has completed
+Output file(s) will be GZIP compressed
+
+Cutadapt seems to be fairly up-to-date (version 4.2). Setting -j 1
+Writing final adapter and quality trimmed output to test_data_copy_1_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 6') and adapter trimming in a single pass for the adapter sequence: 'AGATCGGAAGAGC' from file ./example/circlemap/test_data_copy_1.fastq.gz <<< 
+This is cutadapt 4.2 with Python 3.8.13
+Command line parameters: -j 1 -e 0.1 -q 6 -O 3 -a AGATCGGAAGAGC ./example/circlemap/test_data_copy_1.fastq.gz
+Processing single-end reads on 1 core ...
+Finished in 0.018 s (18.626 µs/read; 3.22 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                     967
+Reads with adapters:                        23 (2.4%)
+Reads written (passing filters):           967 (100.0%)
+
+Total basepairs processed:        96,700 bp
+Quality-trimmed:                       0 bp (0.0%)
+Total written (filtered):         96,626 bp (99.9%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 23 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 34.8%
+  C: 21.7%
+  G: 30.4%
+  T: 13.0%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	18	15.1	0	18
+4	5	3.8	0	5
+
+RUN STATISTICS FOR INPUT FILE: ./example/circlemap/test_data_copy_1.fastq.gz
+=============================================
+967 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Writing report to '/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/example/result/01.QC/trim/test_data_copy_2.fastq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: ./example/circlemap/test_data_copy_2.fastq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.7
+Cutadapt version: 4.2
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 6
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; default (inconclusive auto-detection))
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+Running FastQC on the data once trimming has completed
+Output file(s) will be GZIP compressed
+
+Cutadapt seems to be fairly up-to-date (version 4.2). Setting -j -j 1
+Writing final adapter and quality trimmed output to test_data_copy_2_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 6') and adapter trimming in a single pass for the adapter sequence: 'AGATCGGAAGAGC' from file ./example/circlemap/test_data_copy_2.fastq.gz <<< 
+This is cutadapt 4.2 with Python 3.8.13
+Command line parameters: -j 1 -e 0.1 -q 6 -O 3 -a AGATCGGAAGAGC ./example/circlemap/test_data_copy_2.fastq.gz
+Processing single-end reads on 1 core ...
+Finished in 0.014 s (14.229 µs/read; 4.22 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                     967
+Reads with adapters:                        26 (2.7%)
+Reads written (passing filters):           967 (100.0%)
+
+Total basepairs processed:        96,700 bp
+Quality-trimmed:                       0 bp (0.0%)
+Total written (filtered):         96,614 bp (99.9%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 26 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 42.3%
+  C: 26.9%
+  G: 23.1%
+  T: 7.7%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	20	15.1	0	20
+4	4	3.8	0	4
+5	2	0.9	0	2
+
+RUN STATISTICS FOR INPUT FILE: ./example/circlemap/test_data_copy_2.fastq.gz
+=============================================
+967 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Validate paired-end files test_data_copy_1_trimmed.fq.gz and test_data_copy_2_trimmed.fq.gz
+file_1: test_data_copy_1_trimmed.fq.gz, file_2: test_data_copy_2_trimmed.fq.gz
+
+
+>>>>> Now validing the length of the 2 paired-end infiles: test_data_copy_1_trimmed.fq.gz and test_data_copy_2_trimmed.fq.gz <<<<<
+Writing validated paired-end Read 1 reads to test_data_copy_1_val_1.fq.gz
+Writing validated paired-end Read 2 reads to test_data_copy_2_val_2.fq.gz
+
+Total number of sequences analysed: 967
+
+Number of sequence pairs removed because at least one read was shorter than the length cutoff (20 bp): 0 (0.00%)
+
+
+  >>> Now running FastQC on the validated data test_data_copy_1_val_1.fq.gz<<<
+
+Started analysis of test_data_1_val_1.fq.gz
+Started analysis of test_data_copy_1_val_1.fq.gz
+
+  >>> Now running FastQC on the validated data test_data_2_val_2.fq.gz<<<
+
+
+  >>> Now running FastQC on the validated data test_data_copy_2_val_2.fq.gz<<<
+
+Started analysis of test_data_2_val_2.fq.gz
+Started analysis of test_data_copy_2_val_2.fq.gz
+Deleting both intermediate output files test_data_copy_1_trimmed.fq.gz and test_data_copy_2_trimmed.fq.gz
+
+====================================================================================================
+
+Waiting at most 5 seconds for missing files.
+Deleting both intermediate output files test_data_1_trimmed.fq.gz and test_data_2_trimmed.fq.gz
+
+====================================================================================================
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule fastqc_trim  in line 26 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/QC.py:
+Job Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+./example/result/01.QC/test_data_copy completed successfully, but some output files are missing. 0
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+MissingOutputException in rule fastqc_trim  in line 26 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/QC.py:
+Job Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+./example/result/01.QC/test_data completed successfully, but some output files are missing. 0
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Approx 5% complete for GBM20_copy_1.fq.gz
+Approx 5% complete for GBM20_1.fq.gz
+Approx 5% complete for GBM20_copy_2.fq.gz
+Approx 5% complete for GBM20_2.fq.gz
+Approx 10% complete for GBM20_copy_1.fq.gz
+Approx 10% complete for GBM20_1.fq.gz
+Approx 10% complete for GBM20_copy_2.fq.gz
+Approx 10% complete for GBM20_2.fq.gz
+Approx 15% complete for GBM20_copy_1.fq.gz
+Approx 15% complete for GBM20_1.fq.gz
+Approx 15% complete for GBM20_copy_2.fq.gz
+Approx 15% complete for GBM20_2.fq.gz
+Approx 20% complete for GBM20_1.fq.gz
+Approx 20% complete for GBM20_copy_1.fq.gz
+Approx 20% complete for GBM20_copy_2.fq.gz
+Approx 20% complete for GBM20_2.fq.gz
+Approx 25% complete for GBM20_copy_1.fq.gz
+Approx 25% complete for GBM20_1.fq.gz
+Approx 25% complete for GBM20_copy_2.fq.gz
+Approx 25% complete for GBM20_2.fq.gz
+Approx 30% complete for GBM20_copy_1.fq.gz
+Approx 30% complete for GBM20_1.fq.gz
+Approx 30% complete for GBM20_copy_2.fq.gz
+Approx 30% complete for GBM20_2.fq.gz
+Approx 35% complete for GBM20_copy_1.fq.gz
+Approx 35% complete for GBM20_1.fq.gz
+Approx 35% complete for GBM20_copy_2.fq.gz
+Approx 35% complete for GBM20_2.fq.gz
+Approx 40% complete for GBM20_copy_1.fq.gz
+Approx 40% complete for GBM20_1.fq.gz
+Approx 40% complete for GBM20_copy_2.fq.gz
+Approx 40% complete for GBM20_2.fq.gz
+Approx 45% complete for GBM20_copy_1.fq.gz
+Approx 45% complete for GBM20_1.fq.gz
+Approx 45% complete for GBM20_copy_2.fq.gz
+Approx 45% complete for GBM20_2.fq.gz
+Approx 50% complete for GBM20_copy_1.fq.gz
+Approx 50% complete for GBM20_1.fq.gz
+Approx 50% complete for GBM20_copy_2.fq.gz
+Approx 50% complete for GBM20_2.fq.gz
+Approx 55% complete for GBM20_copy_1.fq.gz
+Approx 55% complete for GBM20_1.fq.gz
+Approx 55% complete for GBM20_copy_2.fq.gz
+Approx 55% complete for GBM20_2.fq.gz
+Approx 60% complete for GBM20_copy_1.fq.gz
+Approx 60% complete for GBM20_1.fq.gz
+Approx 60% complete for GBM20_copy_2.fq.gz
+Approx 60% complete for GBM20_2.fq.gz
+Approx 65% complete for GBM20_copy_1.fq.gz
+Approx 65% complete for GBM20_1.fq.gz
+Approx 65% complete for GBM20_copy_2.fq.gz
+Approx 65% complete for GBM20_2.fq.gz
+Approx 70% complete for GBM20_copy_1.fq.gz
+Approx 70% complete for GBM20_1.fq.gz
+Approx 70% complete for GBM20_copy_2.fq.gz
+Approx 70% complete for GBM20_2.fq.gz
+Approx 75% complete for GBM20_copy_1.fq.gz
+Approx 75% complete for GBM20_1.fq.gz
+Approx 75% complete for GBM20_copy_2.fq.gz
+Approx 75% complete for GBM20_2.fq.gz
+Approx 80% complete for GBM20_copy_1.fq.gz
+Approx 80% complete for GBM20_1.fq.gz
+Approx 80% complete for GBM20_copy_2.fq.gz
+Approx 80% complete for GBM20_2.fq.gz
+Approx 85% complete for GBM20_copy_1.fq.gz
+Approx 85% complete for GBM20_1.fq.gz
+Approx 85% complete for GBM20_copy_2.fq.gz
+Approx 85% complete for GBM20_2.fq.gz
+Approx 90% complete for GBM20_copy_1.fq.gz
+Approx 90% complete for GBM20_1.fq.gz
+Approx 90% complete for GBM20_copy_2.fq.gz
+Approx 95% complete for GBM20_copy_1.fq.gz
+Approx 90% complete for GBM20_2.fq.gz
+Approx 95% complete for GBM20_1.fq.gz
+Approx 95% complete for GBM20_copy_2.fq.gz
+Approx 95% complete for GBM20_2.fq.gz
+Multicore support not enabled. Proceeding with single-core trimming.
+Path to Cutadapt set as: 'cutadapt' (default)
+Cutadapt seems to be working fine (tested command 'cutadapt --version')
+Cutadapt version: 4.2
+single-core operation.
+Output will be written into the directory: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/example/result/01.QC/trim/
+
+
+AUTO-DETECTING ADAPTER TYPE
+===========================
+Attempting to auto-detect adapter type from the first 1 million sequences of the first file (>> ./example/AA/GBM20_copy_1.fq.gz <<)
+
+Found perfect matches for the following adapter sequences:
+Adapter type	Count	Sequence	Sequences analysed	Percentage
+Illumina	3289	AGATCGGAAGAGC	1000000	0.33
+Nextera	13	CTGTCTCTTATA	1000000	0.00
+smallRNA	0	TGGAATTCTCGG	1000000	0.00
+Using Illumina adapter for trimming (count: 3289). Second best hit was Nextera (count: 13)
+
+Writing report to '/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/example/result/01.QC/trim/GBM20_copy_1.fq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: ./example/AA/GBM20_copy_1.fq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.7
+Cutadapt version: 4.2
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 6
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+Running FastQC on the data once trimming has completed
+Output file(s) will be GZIP compressed
+
+Cutadapt seems to be fairly up-to-date (version 4.2). Setting -j 1
+Writing final adapter and quality trimmed output to GBM20_copy_1_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 6') and adapter trimming in a single pass for the adapter sequence: 'AGATCGGAAGAGC' from file ./example/AA/GBM20_copy_1.fq.gz <<< 
+Multicore support not enabled. Proceeding with single-core trimming.
+Path to Cutadapt set as: 'cutadapt' (default)
+Cutadapt seems to be working fine (tested command 'cutadapt --version')
+Cutadapt version: 4.2
+single-core operation.
+Output will be written into the directory: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/example/result/01.QC/trim/
+
+
+AUTO-DETECTING ADAPTER TYPE
+===========================
+Attempting to auto-detect adapter type from the first 1 million sequences of the first file (>> ./example/AA/GBM20_1.fq.gz <<)
+
+Found perfect matches for the following adapter sequences:
+Adapter type	Count	Sequence	Sequences analysed	Percentage
+Illumina	3289	AGATCGGAAGAGC	1000000	0.33
+Nextera	13	CTGTCTCTTATA	1000000	0.00
+smallRNA	0	TGGAATTCTCGG	1000000	0.00
+Using Illumina adapter for trimming (count: 3289). Second best hit was Nextera (count: 13)
+
+Writing report to '/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/example/result/01.QC/trim/GBM20_1.fq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: ./example/AA/GBM20_1.fq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.7
+Cutadapt version: 4.2
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 6
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+Running FastQC on the data once trimming has completed
+Output file(s) will be GZIP compressed
+
+Cutadapt seems to be fairly up-to-date (version 4.2). Setting -j 1
+Writing final adapter and quality trimmed output to GBM20_1_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 6') and adapter trimming in a single pass for the adapter sequence: 'AGATCGGAAGAGC' from file ./example/AA/GBM20_1.fq.gz <<< 
+10000000 sequences processed
+10000000 sequences processed
+20000000 sequences processed
+20000000 sequences processed
+30000000 sequences processed
+30000000 sequences processed
+40000000 sequences processed
+40000000 sequences processed
+50000000 sequences processed
+50000000 sequences processed
+60000000 sequences processed
+60000000 sequences processed
+70000000 sequences processed
+70000000 sequences processed
+80000000 sequences processed
+80000000 sequences processed
+90000000 sequences processed
+90000000 sequences processed
+100000000 sequences processed
+100000000 sequences processed
+110000000 sequences processed
+110000000 sequences processed
+This is cutadapt 4.2 with Python 3.8.13
+Command line parameters: -j 1 -e 0.1 -q 6 -O 3 -a AGATCGGAAGAGC ./example/AA/GBM20_copy_1.fq.gz
+Processing single-end reads on 1 core ...
+Finished in 3967.572 s (34.683 µs/read; 1.73 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:             114,395,257
+Reads with adapters:                 3,648,397 (3.2%)
+Reads written (passing filters):   114,395,257 (100.0%)
+
+Total basepairs processed: 17,159,288,550 bp
+Quality-trimmed:                       0 bp (0.0%)
+Total written (filtered):  17,127,278,013 bp (99.8%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 3648397 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 29.9%
+  C: 24.7%
+  G: 24.5%
+  T: 20.7%
+  none/other: 0.2%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	2498646	1787425.9	0	2498646
+4	560640	446856.5	0	560640
+5	102523	111714.1	0	102523
+6	15729	27928.5	0	15729
+7	8661	6982.1	0	8661
+8	8148	1745.5	0	8148
+9	9438	436.4	0	7860 1578
+10	10099	109.1	1	7506 2593
+11	8933	27.3	1	7393 1540
+12	8192	6.8	1	7352 840
+13	7858	1.7	1	7168 690
+14	8010	1.7	1	7306 704
+15	7507	1.7	1	6822 685
+16	7409	1.7	1	6762 647
+17	7483	1.7	1	6834 649
+18	7246	1.7	1	6604 642
+19	7234	1.7	1	6614 620
+20	7089	1.7	1	6441 648
+21	7170	1.7	1	6565 605
+22	7028	1.7	1	6418 610
+23	7029	1.7	1	6437 592
+24	6715	1.7	1	6110 605
+25	6739	1.7	1	6169 570
+26	6679	1.7	1	6072 607
+27	6567	1.7	1	5954 613
+28	6594	1.7	1	5980 614
+29	6541	1.7	1	5917 624
+30	6307	1.7	1	5704 603
+31	6204	1.7	1	5607 597
+32	6261	1.7	1	5662 599
+33	6094	1.7	1	5510 584
+34	6059	1.7	1	5453 606
+35	5844	1.7	1	5290 554
+36	5909	1.7	1	5328 581
+37	5905	1.7	1	5299 606
+38	5722	1.7	1	5195 527
+39	5592	1.7	1	5052 540
+40	5728	1.7	1	5145 583
+41	5432	1.7	1	4878 554
+42	5593	1.7	1	5002 591
+43	5300	1.7	1	4728 572
+44	5444	1.7	1	4884 560
+45	5251	1.7	1	4692 559
+46	5170	1.7	1	4628 542
+47	5099	1.7	1	4575 524
+48	5070	1.7	1	4501 569
+49	5015	1.7	1	4455 560
+50	4924	1.7	1	4375 549
+51	4763	1.7	1	4245 518
+52	4736	1.7	1	4207 529
+53	4541	1.7	1	4039 502
+54	4701	1.7	1	4183 518
+55	4432	1.7	1	3906 526
+56	4586	1.7	1	4045 541
+57	4360	1.7	1	3837 523
+58	4398	1.7	1	3884 514
+59	4485	1.7	1	3991 494
+60	4180	1.7	1	3688 492
+61	4141	1.7	1	3649 492
+62	4106	1.7	1	3604 502
+63	4103	1.7	1	3604 499
+64	3936	1.7	1	3464 472
+65	3769	1.7	1	3326 443
+66	3643	1.7	1	3149 494
+67	3851	1.7	1	3337 514
+68	3564	1.7	1	3052 512
+69	3540	1.7	1	3076 464
+70	3586	1.7	1	3111 475
+71	3333	1.7	1	2889 444
+72	3408	1.7	1	2943 465
+73	3228	1.7	1	2786 442
+74	3207	1.7	1	2761 446
+75	3209	1.7	1	2770 439
+76	2977	1.7	1	2536 441
+77	2874	1.7	1	2434 440
+78	2917	1.7	1	2523 394
+79	2765	1.7	1	2368 397
+80	2713	1.7	1	2311 402
+81	2690	1.7	1	2223 467
+82	2541	1.7	1	2189 352
+83	2355	1.7	1	1992 363
+84	2411	1.7	1	2005 406
+85	2290	1.7	1	1942 348
+86	2152	1.7	1	1825 327
+87	2110	1.7	1	1755 355
+88	2039	1.7	1	1687 352
+89	2054	1.7	1	1677 377
+90	1816	1.7	1	1492 324
+91	1883	1.7	1	1538 345
+92	1687	1.7	1	1343 344
+93	1711	1.7	1	1378 333
+94	1578	1.7	1	1266 312
+95	1536	1.7	1	1208 328
+96	1443	1.7	1	1167 276
+97	1385	1.7	1	1081 304
+98	1290	1.7	1	1030 260
+99	1271	1.7	1	1001 270
+100	1242	1.7	1	984 258
+101	1133	1.7	1	856 277
+102	1062	1.7	1	775 287
+103	999	1.7	1	744 255
+104	1014	1.7	1	736 278
+105	969	1.7	1	677 292
+106	921	1.7	1	665 256
+107	817	1.7	1	593 224
+108	803	1.7	1	589 214
+109	773	1.7	1	532 241
+110	788	1.7	1	549 239
+111	710	1.7	1	489 221
+112	665	1.7	1	457 208
+113	610	1.7	1	388 222
+114	585	1.7	1	376 209
+115	566	1.7	1	375 191
+116	568	1.7	1	388 180
+117	540	1.7	1	371 169
+118	482	1.7	1	316 166
+119	467	1.7	1	316 151
+120	453	1.7	1	279 174
+121	402	1.7	1	278 124
+122	409	1.7	1	253 156
+123	375	1.7	1	233 142
+124	385	1.7	1	259 126
+125	325	1.7	1	196 129
+126	341	1.7	1	212 129
+127	312	1.7	1	184 128
+128	275	1.7	1	172 103
+129	236	1.7	1	163 73
+130	237	1.7	1	137 100
+131	203	1.7	1	135 68
+132	158	1.7	1	97 61
+133	145	1.7	1	82 63
+134	127	1.7	1	80 47
+135	122	1.7	1	58 64
+136	107	1.7	1	58 49
+137	84	1.7	1	42 42
+138	92	1.7	1	42 50
+139	75	1.7	1	27 48
+140	63	1.7	1	23 40
+141	52	1.7	1	5 47
+142	48	1.7	1	8 40
+143	56	1.7	1	10 46
+144	53	1.7	1	4 49
+145	31	1.7	1	2 29
+146	39	1.7	1	4 35
+147	49	1.7	1	3 46
+148	42	1.7	1	1 41
+149	42	1.7	1	2 40
+150	7221	1.7	1	2 7219
+
+RUN STATISTICS FOR INPUT FILE: ./example/AA/GBM20_copy_1.fq.gz
+=============================================
+114395257 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Writing report to '/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/example/result/01.QC/trim/GBM20_copy_2.fq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: ./example/AA/GBM20_copy_2.fq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.7
+Cutadapt version: 4.2
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 6
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+Running FastQC on the data once trimming has completed
+Output file(s) will be GZIP compressed
+
+Cutadapt seems to be fairly up-to-date (version 4.2). Setting -j -j 1
+Writing final adapter and quality trimmed output to GBM20_copy_2_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 6') and adapter trimming in a single pass for the adapter sequence: 'AGATCGGAAGAGC' from file ./example/AA/GBM20_copy_2.fq.gz <<< 
+This is cutadapt 4.2 with Python 3.8.13
+Command line parameters: -j 1 -e 0.1 -q 6 -O 3 -a AGATCGGAAGAGC ./example/AA/GBM20_1.fq.gz
+Processing single-end reads on 1 core ...
+Finished in 3959.196 s (34.610 µs/read; 1.73 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:             114,395,257
+Reads with adapters:                 3,648,397 (3.2%)
+Reads written (passing filters):   114,395,257 (100.0%)
+
+Total basepairs processed: 17,159,288,550 bp
+Quality-trimmed:                       0 bp (0.0%)
+Total written (filtered):  17,127,278,013 bp (99.8%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 3648397 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 29.9%
+  C: 24.7%
+  G: 24.5%
+  T: 20.7%
+  none/other: 0.2%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	2498646	1787425.9	0	2498646
+4	560640	446856.5	0	560640
+5	102523	111714.1	0	102523
+6	15729	27928.5	0	15729
+7	8661	6982.1	0	8661
+8	8148	1745.5	0	8148
+9	9438	436.4	0	7860 1578
+10	10099	109.1	1	7506 2593
+11	8933	27.3	1	7393 1540
+12	8192	6.8	1	7352 840
+13	7858	1.7	1	7168 690
+14	8010	1.7	1	7306 704
+15	7507	1.7	1	6822 685
+16	7409	1.7	1	6762 647
+17	7483	1.7	1	6834 649
+18	7246	1.7	1	6604 642
+19	7234	1.7	1	6614 620
+20	7089	1.7	1	6441 648
+21	7170	1.7	1	6565 605
+22	7028	1.7	1	6418 610
+23	7029	1.7	1	6437 592
+24	6715	1.7	1	6110 605
+25	6739	1.7	1	6169 570
+26	6679	1.7	1	6072 607
+27	6567	1.7	1	5954 613
+28	6594	1.7	1	5980 614
+29	6541	1.7	1	5917 624
+30	6307	1.7	1	5704 603
+31	6204	1.7	1	5607 597
+32	6261	1.7	1	5662 599
+33	6094	1.7	1	5510 584
+34	6059	1.7	1	5453 606
+35	5844	1.7	1	5290 554
+36	5909	1.7	1	5328 581
+37	5905	1.7	1	5299 606
+38	5722	1.7	1	5195 527
+39	5592	1.7	1	5052 540
+40	5728	1.7	1	5145 583
+41	5432	1.7	1	4878 554
+42	5593	1.7	1	5002 591
+43	5300	1.7	1	4728 572
+44	5444	1.7	1	4884 560
+45	5251	1.7	1	4692 559
+46	5170	1.7	1	4628 542
+47	5099	1.7	1	4575 524
+48	5070	1.7	1	4501 569
+49	5015	1.7	1	4455 560
+50	4924	1.7	1	4375 549
+51	4763	1.7	1	4245 518
+52	4736	1.7	1	4207 529
+53	4541	1.7	1	4039 502
+54	4701	1.7	1	4183 518
+55	4432	1.7	1	3906 526
+56	4586	1.7	1	4045 541
+57	4360	1.7	1	3837 523
+58	4398	1.7	1	3884 514
+59	4485	1.7	1	3991 494
+60	4180	1.7	1	3688 492
+61	4141	1.7	1	3649 492
+62	4106	1.7	1	3604 502
+63	4103	1.7	1	3604 499
+64	3936	1.7	1	3464 472
+65	3769	1.7	1	3326 443
+66	3643	1.7	1	3149 494
+67	3851	1.7	1	3337 514
+68	3564	1.7	1	3052 512
+69	3540	1.7	1	3076 464
+70	3586	1.7	1	3111 475
+71	3333	1.7	1	2889 444
+72	3408	1.7	1	2943 465
+73	3228	1.7	1	2786 442
+74	3207	1.7	1	2761 446
+75	3209	1.7	1	2770 439
+76	2977	1.7	1	2536 441
+77	2874	1.7	1	2434 440
+78	2917	1.7	1	2523 394
+79	2765	1.7	1	2368 397
+80	2713	1.7	1	2311 402
+81	2690	1.7	1	2223 467
+82	2541	1.7	1	2189 352
+83	2355	1.7	1	1992 363
+84	2411	1.7	1	2005 406
+85	2290	1.7	1	1942 348
+86	2152	1.7	1	1825 327
+87	2110	1.7	1	1755 355
+88	2039	1.7	1	1687 352
+89	2054	1.7	1	1677 377
+90	1816	1.7	1	1492 324
+91	1883	1.7	1	1538 345
+92	1687	1.7	1	1343 344
+93	1711	1.7	1	1378 333
+94	1578	1.7	1	1266 312
+95	1536	1.7	1	1208 328
+96	1443	1.7	1	1167 276
+97	1385	1.7	1	1081 304
+98	1290	1.7	1	1030 260
+99	1271	1.7	1	1001 270
+100	1242	1.7	1	984 258
+101	1133	1.7	1	856 277
+102	1062	1.7	1	775 287
+103	999	1.7	1	744 255
+104	1014	1.7	1	736 278
+105	969	1.7	1	677 292
+106	921	1.7	1	665 256
+107	817	1.7	1	593 224
+108	803	1.7	1	589 214
+109	773	1.7	1	532 241
+110	788	1.7	1	549 239
+111	710	1.7	1	489 221
+112	665	1.7	1	457 208
+113	610	1.7	1	388 222
+114	585	1.7	1	376 209
+115	566	1.7	1	375 191
+116	568	1.7	1	388 180
+117	540	1.7	1	371 169
+118	482	1.7	1	316 166
+119	467	1.7	1	316 151
+120	453	1.7	1	279 174
+121	402	1.7	1	278 124
+122	409	1.7	1	253 156
+123	375	1.7	1	233 142
+124	385	1.7	1	259 126
+125	325	1.7	1	196 129
+126	341	1.7	1	212 129
+127	312	1.7	1	184 128
+128	275	1.7	1	172 103
+129	236	1.7	1	163 73
+130	237	1.7	1	137 100
+131	203	1.7	1	135 68
+132	158	1.7	1	97 61
+133	145	1.7	1	82 63
+134	127	1.7	1	80 47
+135	122	1.7	1	58 64
+136	107	1.7	1	58 49
+137	84	1.7	1	42 42
+138	92	1.7	1	42 50
+139	75	1.7	1	27 48
+140	63	1.7	1	23 40
+141	52	1.7	1	5 47
+142	48	1.7	1	8 40
+143	56	1.7	1	10 46
+144	53	1.7	1	4 49
+145	31	1.7	1	2 29
+146	39	1.7	1	4 35
+147	49	1.7	1	3 46
+148	42	1.7	1	1 41
+149	42	1.7	1	2 40
+150	7221	1.7	1	2 7219
+
+RUN STATISTICS FOR INPUT FILE: ./example/AA/GBM20_1.fq.gz
+=============================================
+114395257 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Writing report to '/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/example/result/01.QC/trim/GBM20_2.fq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: ./example/AA/GBM20_2.fq.gz
+Trimming mode: paired-end
+Trim Galore version: 0.6.7
+Cutadapt version: 4.2
+Number of cores used for trimming: 1
+Quality Phred score cutoff: 6
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 3 bp
+Minimum required sequence length for both reads before a sequence pair gets removed: 20 bp
+Running FastQC on the data once trimming has completed
+Output file(s) will be GZIP compressed
+
+Cutadapt seems to be fairly up-to-date (version 4.2). Setting -j -j 1
+Writing final adapter and quality trimmed output to GBM20_2_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 6') and adapter trimming in a single pass for the adapter sequence: 'AGATCGGAAGAGC' from file ./example/AA/GBM20_2.fq.gz <<< 
+10000000 sequences processed
+10000000 sequences processed
+20000000 sequences processed
+20000000 sequences processed
+30000000 sequences processed
+30000000 sequences processed
+40000000 sequences processed
+40000000 sequences processed
+50000000 sequences processed
+50000000 sequences processed
+60000000 sequences processed
+60000000 sequences processed
+70000000 sequences processed
+70000000 sequences processed
+80000000 sequences processed
+80000000 sequences processed
+90000000 sequences processed
+90000000 sequences processed
+100000000 sequences processed
+100000000 sequences processed
+110000000 sequences processed
+110000000 sequences processed
+This is cutadapt 4.2 with Python 3.8.13
+Command line parameters: -j 1 -e 0.1 -q 6 -O 3 -a AGATCGGAAGAGC ./example/AA/GBM20_copy_2.fq.gz
+Processing single-end reads on 1 core ...
+Finished in 4829.895 s (42.221 µs/read; 1.42 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:             114,395,257
+Reads with adapters:                 3,810,225 (3.3%)
+Reads written (passing filters):   114,395,257 (100.0%)
+
+Total basepairs processed: 17,159,288,550 bp
+Quality-trimmed:                       0 bp (0.0%)
+Total written (filtered):  17,120,421,610 bp (99.8%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 3810225 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 29.6%
+  C: 24.7%
+  G: 24.8%
+  T: 20.9%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	2520183	1787425.9	0	2520183
+4	563860	446856.5	0	563860
+5	106452	111714.1	0	106452
+6	17940	27928.5	0	17940
+7	10162	6982.1	0	10162
+8	9378	1745.5	0	9378
+9	10414	436.4	0	8786 1628
+10	11827	109.1	1	8398 3429
+11	10675	27.3	1	8378 2297
+12	9762	6.8	1	8172 1590
+13	9150	1.7	1	7832 1318
+14	9412	1.7	1	8059 1353
+15	8913	1.7	1	7588 1325
+16	8787	1.7	1	7539 1248
+17	8947	1.7	1	7637 1310
+18	8563	1.7	1	7378 1185
+19	8596	1.7	1	7378 1218
+20	8529	1.7	1	7275 1254
+21	8645	1.7	1	7399 1246
+22	8403	1.7	1	7200 1203
+23	8444	1.7	1	7157 1287
+24	8230	1.7	1	7013 1217
+25	8194	1.7	1	7004 1190
+26	8145	1.7	1	6904 1241
+27	7997	1.7	1	6795 1202
+28	8015	1.7	1	6863 1152
+29	7962	1.7	1	6760 1202
+30	7713	1.7	1	6599 1114
+31	7667	1.7	1	6504 1163
+32	7778	1.7	1	6623 1155
+33	7561	1.7	1	6365 1196
+34	7476	1.7	1	6334 1142
+35	7394	1.7	1	6216 1178
+36	7366	1.7	1	6255 1111
+37	7301	1.7	1	6181 1120
+38	7217	1.7	1	6101 1116
+39	7057	1.7	1	5934 1123
+40	7225	1.7	1	6119 1106
+41	6898	1.7	1	5808 1090
+42	7019	1.7	1	5897 1122
+43	6732	1.7	1	5677 1055
+44	6841	1.7	1	5811 1030
+45	6760	1.7	1	5699 1061
+46	6638	1.7	1	5560 1078
+47	6528	1.7	1	5515 1013
+48	6506	1.7	1	5404 1102
+49	6464	1.7	1	5390 1074
+50	6286	1.7	1	5261 1025
+51	6237	1.7	1	5226 1011
+52	6121	1.7	1	5119 1002
+53	5932	1.7	1	4962 970
+54	6154	1.7	1	5126 1028
+55	5809	1.7	1	4834 975
+56	6047	1.7	1	5016 1031
+57	5740	1.7	1	4749 991
+58	5846	1.7	1	4811 1035
+59	5979	1.7	1	4934 1045
+60	5587	1.7	1	4604 983
+61	5583	1.7	1	4602 981
+62	5495	1.7	1	4548 947
+63	5576	1.7	1	4566 1010
+64	5350	1.7	1	4416 934
+65	5191	1.7	1	4255 936
+66	5019	1.7	1	4090 929
+67	5225	1.7	1	4288 937
+68	4918	1.7	1	3998 920
+69	4857	1.7	1	3980 877
+70	4924	1.7	1	3997 927
+71	4615	1.7	1	3744 871
+72	4735	1.7	1	3841 894
+73	4543	1.7	1	3681 862
+74	4444	1.7	1	3610 834
+75	4430	1.7	1	3606 824
+76	4227	1.7	1	3401 826
+77	4100	1.7	1	3272 828
+78	4169	1.7	1	3354 815
+79	3970	1.7	1	3181 789
+80	3811	1.7	1	3065 746
+81	3820	1.7	1	3031 789
+82	3733	1.7	1	2964 769
+83	3530	1.7	1	2808 722
+84	3561	1.7	1	2808 753
+85	3410	1.7	1	2706 704
+86	3350	1.7	1	2629 721
+87	3145	1.7	1	2440 705
+88	3170	1.7	1	2446 724
+89	3098	1.7	1	2398 700
+90	2849	1.7	1	2180 669
+91	2937	1.7	1	2258 679
+92	2723	1.7	1	2065 658
+93	2616	1.7	1	2030 586
+94	2558	1.7	1	1959 599
+95	2454	1.7	1	1856 598
+96	2299	1.7	1	1757 542
+97	2267	1.7	1	1709 558
+98	2219	1.7	1	1621 598
+99	2114	1.7	1	1588 526
+100	2098	1.7	1	1562 536
+101	1987	1.7	1	1435 552
+102	1787	1.7	1	1315 472
+103	1728	1.7	1	1246 482
+104	1721	1.7	1	1278 443
+105	1711	1.7	1	1216 495
+106	1583	1.7	1	1150 433
+107	1467	1.7	1	1045 422
+108	1410	1.7	1	1031 379
+109	1387	1.7	1	973 414
+110	1404	1.7	1	1009 395
+111	1324	1.7	1	889 435
+112	1208	1.7	1	839 369
+113	1111	1.7	1	761 350
+114	1125	1.7	1	790 335
+115	1062	1.7	1	748 314
+116	1055	1.7	1	754 301
+117	994	1.7	1	696 298
+118	983	1.7	1	673 310
+119	832	1.7	1	592 240
+120	832	1.7	1	564 268
+121	739	1.7	1	515 224
+122	693	1.7	1	456 237
+123	671	1.7	1	447 224
+124	643	1.7	1	453 190
+125	544	1.7	1	373 171
+126	530	1.7	1	371 159
+127	448	1.7	1	293 155
+128	379	1.7	1	262 117
+129	301	1.7	1	212 89
+130	269	1.7	1	190 79
+131	233	1.7	1	145 88
+132	177	1.7	1	115 62
+133	147	1.7	1	92 55
+134	136	1.7	1	86 50
+135	125	1.7	1	66 59
+136	115	1.7	1	70 45
+137	78	1.7	1	45 33
+138	92	1.7	1	46 46
+139	78	1.7	1	31 47
+140	64	1.7	1	24 40
+141	61	1.7	1	7 54
+142	52	1.7	1	8 44
+143	37	1.7	1	8 29
+144	40	1.7	1	4 36
+145	43	1.7	1	2 41
+146	42	1.7	1	4 38
+147	32	1.7	1	1 31
+148	40	1.7	1	1 39
+149	36	1.7	1	2 34
+150	72	1.7	1	1 71
+
+RUN STATISTICS FOR INPUT FILE: ./example/AA/GBM20_copy_2.fq.gz
+=============================================
+114395257 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Validate paired-end files GBM20_copy_1_trimmed.fq.gz and GBM20_copy_2_trimmed.fq.gz
+file_1: GBM20_copy_1_trimmed.fq.gz, file_2: GBM20_copy_2_trimmed.fq.gz
+
+
+>>>>> Now validing the length of the 2 paired-end infiles: GBM20_copy_1_trimmed.fq.gz and GBM20_copy_2_trimmed.fq.gz <<<<<
+Writing validated paired-end Read 1 reads to GBM20_copy_1_val_1.fq.gz
+Writing validated paired-end Read 2 reads to GBM20_copy_2_val_2.fq.gz
+
+This is cutadapt 4.2 with Python 3.8.13
+Command line parameters: -j 1 -e 0.1 -q 6 -O 3 -a AGATCGGAAGAGC ./example/AA/GBM20_2.fq.gz
+Processing single-end reads on 1 core ...
+Finished in 4830.923 s (42.230 µs/read; 1.42 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:             114,395,257
+Reads with adapters:                 3,810,225 (3.3%)
+Reads written (passing filters):   114,395,257 (100.0%)
+
+Total basepairs processed: 17,159,288,550 bp
+Quality-trimmed:                       0 bp (0.0%)
+Total written (filtered):  17,120,421,610 bp (99.8%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 3810225 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 29.6%
+  C: 24.7%
+  G: 24.8%
+  T: 20.9%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	2520183	1787425.9	0	2520183
+4	563860	446856.5	0	563860
+5	106452	111714.1	0	106452
+6	17940	27928.5	0	17940
+7	10162	6982.1	0	10162
+8	9378	1745.5	0	9378
+9	10414	436.4	0	8786 1628
+10	11827	109.1	1	8398 3429
+11	10675	27.3	1	8378 2297
+12	9762	6.8	1	8172 1590
+13	9150	1.7	1	7832 1318
+14	9412	1.7	1	8059 1353
+15	8913	1.7	1	7588 1325
+16	8787	1.7	1	7539 1248
+17	8947	1.7	1	7637 1310
+18	8563	1.7	1	7378 1185
+19	8596	1.7	1	7378 1218
+20	8529	1.7	1	7275 1254
+21	8645	1.7	1	7399 1246
+22	8403	1.7	1	7200 1203
+23	8444	1.7	1	7157 1287
+24	8230	1.7	1	7013 1217
+25	8194	1.7	1	7004 1190
+26	8145	1.7	1	6904 1241
+27	7997	1.7	1	6795 1202
+28	8015	1.7	1	6863 1152
+29	7962	1.7	1	6760 1202
+30	7713	1.7	1	6599 1114
+31	7667	1.7	1	6504 1163
+32	7778	1.7	1	6623 1155
+33	7561	1.7	1	6365 1196
+34	7476	1.7	1	6334 1142
+35	7394	1.7	1	6216 1178
+36	7366	1.7	1	6255 1111
+37	7301	1.7	1	6181 1120
+38	7217	1.7	1	6101 1116
+39	7057	1.7	1	5934 1123
+40	7225	1.7	1	6119 1106
+41	6898	1.7	1	5808 1090
+42	7019	1.7	1	5897 1122
+43	6732	1.7	1	5677 1055
+44	6841	1.7	1	5811 1030
+45	6760	1.7	1	5699 1061
+46	6638	1.7	1	5560 1078
+47	6528	1.7	1	5515 1013
+48	6506	1.7	1	5404 1102
+49	6464	1.7	1	5390 1074
+50	6286	1.7	1	5261 1025
+51	6237	1.7	1	5226 1011
+52	6121	1.7	1	5119 1002
+53	5932	1.7	1	4962 970
+54	6154	1.7	1	5126 1028
+55	5809	1.7	1	4834 975
+56	6047	1.7	1	5016 1031
+57	5740	1.7	1	4749 991
+58	5846	1.7	1	4811 1035
+59	5979	1.7	1	4934 1045
+60	5587	1.7	1	4604 983
+61	5583	1.7	1	4602 981
+62	5495	1.7	1	4548 947
+63	5576	1.7	1	4566 1010
+64	5350	1.7	1	4416 934
+65	5191	1.7	1	4255 936
+66	5019	1.7	1	4090 929
+67	5225	1.7	1	4288 937
+68	4918	1.7	1	3998 920
+69	4857	1.7	1	3980 877
+70	4924	1.7	1	3997 927
+71	4615	1.7	1	3744 871
+72	4735	1.7	1	3841 894
+73	4543	1.7	1	3681 862
+74	4444	1.7	1	3610 834
+75	4430	1.7	1	3606 824
+76	4227	1.7	1	3401 826
+77	4100	1.7	1	3272 828
+78	4169	1.7	1	3354 815
+79	3970	1.7	1	3181 789
+80	3811	1.7	1	3065 746
+81	3820	1.7	1	3031 789
+82	3733	1.7	1	2964 769
+83	3530	1.7	1	2808 722
+84	3561	1.7	1	2808 753
+85	3410	1.7	1	2706 704
+86	3350	1.7	1	2629 721
+87	3145	1.7	1	2440 705
+88	3170	1.7	1	2446 724
+89	3098	1.7	1	2398 700
+90	2849	1.7	1	2180 669
+91	2937	1.7	1	2258 679
+92	2723	1.7	1	2065 658
+93	2616	1.7	1	2030 586
+94	2558	1.7	1	1959 599
+95	2454	1.7	1	1856 598
+96	2299	1.7	1	1757 542
+97	2267	1.7	1	1709 558
+98	2219	1.7	1	1621 598
+99	2114	1.7	1	1588 526
+100	2098	1.7	1	1562 536
+101	1987	1.7	1	1435 552
+102	1787	1.7	1	1315 472
+103	1728	1.7	1	1246 482
+104	1721	1.7	1	1278 443
+105	1711	1.7	1	1216 495
+106	1583	1.7	1	1150 433
+107	1467	1.7	1	1045 422
+108	1410	1.7	1	1031 379
+109	1387	1.7	1	973 414
+110	1404	1.7	1	1009 395
+111	1324	1.7	1	889 435
+112	1208	1.7	1	839 369
+113	1111	1.7	1	761 350
+114	1125	1.7	1	790 335
+115	1062	1.7	1	748 314
+116	1055	1.7	1	754 301
+117	994	1.7	1	696 298
+118	983	1.7	1	673 310
+119	832	1.7	1	592 240
+120	832	1.7	1	564 268
+121	739	1.7	1	515 224
+122	693	1.7	1	456 237
+123	671	1.7	1	447 224
+124	643	1.7	1	453 190
+125	544	1.7	1	373 171
+126	530	1.7	1	371 159
+127	448	1.7	1	293 155
+128	379	1.7	1	262 117
+129	301	1.7	1	212 89
+130	269	1.7	1	190 79
+131	233	1.7	1	145 88
+132	177	1.7	1	115 62
+133	147	1.7	1	92 55
+134	136	1.7	1	86 50
+135	125	1.7	1	66 59
+136	115	1.7	1	70 45
+137	78	1.7	1	45 33
+138	92	1.7	1	46 46
+139	78	1.7	1	31 47
+140	64	1.7	1	24 40
+141	61	1.7	1	7 54
+142	52	1.7	1	8 44
+143	37	1.7	1	8 29
+144	40	1.7	1	4 36
+145	43	1.7	1	2 41
+146	42	1.7	1	4 38
+147	32	1.7	1	1 31
+148	40	1.7	1	1 39
+149	36	1.7	1	2 34
+150	72	1.7	1	1 71
+
+RUN STATISTICS FOR INPUT FILE: ./example/AA/GBM20_2.fq.gz
+=============================================
+114395257 sequences processed in total
+The length threshold of paired-end sequences gets evaluated later on (in the validation step)
+
+Validate paired-end files GBM20_1_trimmed.fq.gz and GBM20_2_trimmed.fq.gz
+file_1: GBM20_1_trimmed.fq.gz, file_2: GBM20_2_trimmed.fq.gz
+
+
+>>>>> Now validing the length of the 2 paired-end infiles: GBM20_1_trimmed.fq.gz and GBM20_2_trimmed.fq.gz <<<<<
+Writing validated paired-end Read 1 reads to GBM20_1_val_1.fq.gz
+Writing validated paired-end Read 2 reads to GBM20_2_val_2.fq.gz
+
+Total number of sequences analysed: 114395257
+
+Number of sequence pairs removed because at least one read was shorter than the length cutoff (20 bp): 9777 (0.01%)
+
+
+  >>> Now running FastQC on the validated data GBM20_copy_1_val_1.fq.gz<<<
+
+Started analysis of GBM20_copy_1_val_1.fq.gz
+Total number of sequences analysed: 114395257
+
+Number of sequence pairs removed because at least one read was shorter than the length cutoff (20 bp): 9777 (0.01%)
+
+
+  >>> Now running FastQC on the validated data GBM20_1_val_1.fq.gz<<<
+
+Started analysis of GBM20_1_val_1.fq.gz
+Approx 5% complete for GBM20_copy_1_val_1.fq.gz
+Approx 5% complete for GBM20_1_val_1.fq.gz
+Approx 10% complete for GBM20_copy_1_val_1.fq.gz
+Approx 10% complete for GBM20_1_val_1.fq.gz
+Approx 15% complete for GBM20_copy_1_val_1.fq.gz
+Approx 15% complete for GBM20_1_val_1.fq.gz
+Approx 20% complete for GBM20_copy_1_val_1.fq.gz
+Approx 20% complete for GBM20_1_val_1.fq.gz
+Approx 25% complete for GBM20_copy_1_val_1.fq.gz
+Approx 25% complete for GBM20_1_val_1.fq.gz
+Approx 30% complete for GBM20_1_val_1.fq.gz
+Approx 30% complete for GBM20_copy_1_val_1.fq.gz
+Approx 35% complete for GBM20_1_val_1.fq.gz
+Approx 35% complete for GBM20_copy_1_val_1.fq.gz
+Approx 40% complete for GBM20_copy_1_val_1.fq.gz
+Approx 40% complete for GBM20_1_val_1.fq.gz
+Approx 45% complete for GBM20_copy_1_val_1.fq.gz
+Approx 45% complete for GBM20_1_val_1.fq.gz
+Approx 50% complete for GBM20_copy_1_val_1.fq.gz
+Approx 50% complete for GBM20_1_val_1.fq.gz
+Approx 55% complete for GBM20_copy_1_val_1.fq.gz
+Approx 55% complete for GBM20_1_val_1.fq.gz
+Approx 60% complete for GBM20_copy_1_val_1.fq.gz
+Approx 60% complete for GBM20_1_val_1.fq.gz
+Approx 65% complete for GBM20_copy_1_val_1.fq.gz
+Approx 65% complete for GBM20_1_val_1.fq.gz
+Approx 70% complete for GBM20_copy_1_val_1.fq.gz
+Approx 70% complete for GBM20_1_val_1.fq.gz
+Approx 75% complete for GBM20_copy_1_val_1.fq.gz
+Approx 75% complete for GBM20_1_val_1.fq.gz
+Approx 80% complete for GBM20_copy_1_val_1.fq.gz
+Approx 80% complete for GBM20_1_val_1.fq.gz
+Approx 85% complete for GBM20_copy_1_val_1.fq.gz
+Approx 85% complete for GBM20_1_val_1.fq.gz
+Approx 90% complete for GBM20_copy_1_val_1.fq.gz
+Approx 90% complete for GBM20_1_val_1.fq.gz
+Approx 95% complete for GBM20_copy_1_val_1.fq.gz
+Approx 95% complete for GBM20_1_val_1.fq.gz
+
+  >>> Now running FastQC on the validated data GBM20_copy_2_val_2.fq.gz<<<
+
+Started analysis of GBM20_copy_2_val_2.fq.gz
+
+  >>> Now running FastQC on the validated data GBM20_2_val_2.fq.gz<<<
+
+Started analysis of GBM20_2_val_2.fq.gz
+Approx 5% complete for GBM20_copy_2_val_2.fq.gz
+Approx 5% complete for GBM20_2_val_2.fq.gz
+Approx 10% complete for GBM20_copy_2_val_2.fq.gz
+Approx 10% complete for GBM20_2_val_2.fq.gz
+Approx 15% complete for GBM20_copy_2_val_2.fq.gz
+Approx 15% complete for GBM20_2_val_2.fq.gz
+Approx 20% complete for GBM20_copy_2_val_2.fq.gz
+Approx 20% complete for GBM20_2_val_2.fq.gz
+Approx 25% complete for GBM20_copy_2_val_2.fq.gz
+Approx 25% complete for GBM20_2_val_2.fq.gz
+Approx 30% complete for GBM20_copy_2_val_2.fq.gz
+Approx 30% complete for GBM20_2_val_2.fq.gz
+Approx 35% complete for GBM20_copy_2_val_2.fq.gz
+Approx 35% complete for GBM20_2_val_2.fq.gz
+Approx 40% complete for GBM20_copy_2_val_2.fq.gz
+Approx 40% complete for GBM20_2_val_2.fq.gz
+Approx 45% complete for GBM20_copy_2_val_2.fq.gz
+Approx 45% complete for GBM20_2_val_2.fq.gz
+Approx 50% complete for GBM20_copy_2_val_2.fq.gz
+Approx 50% complete for GBM20_2_val_2.fq.gz
+Approx 55% complete for GBM20_copy_2_val_2.fq.gz
+Approx 55% complete for GBM20_2_val_2.fq.gz
+Approx 60% complete for GBM20_copy_2_val_2.fq.gz
+Approx 60% complete for GBM20_2_val_2.fq.gz
+Approx 65% complete for GBM20_copy_2_val_2.fq.gz
+Approx 65% complete for GBM20_2_val_2.fq.gz
+Approx 70% complete for GBM20_copy_2_val_2.fq.gz
+Approx 70% complete for GBM20_2_val_2.fq.gz
+Approx 75% complete for GBM20_copy_2_val_2.fq.gz
+Approx 75% complete for GBM20_2_val_2.fq.gz
+Approx 80% complete for GBM20_copy_2_val_2.fq.gz
+Approx 80% complete for GBM20_2_val_2.fq.gz
+Approx 85% complete for GBM20_copy_2_val_2.fq.gz
+Approx 85% complete for GBM20_2_val_2.fq.gz
+Approx 90% complete for GBM20_copy_2_val_2.fq.gz
+Approx 90% complete for GBM20_2_val_2.fq.gz
+Approx 95% complete for GBM20_copy_2_val_2.fq.gz
+Approx 95% complete for GBM20_2_val_2.fq.gz
+Deleting both intermediate output files GBM20_copy_1_trimmed.fq.gz and GBM20_copy_2_trimmed.fq.gz
+
+====================================================================================================
+
+Waiting at most 5 seconds for missing files.
+Deleting both intermediate output files GBM20_1_trimmed.fq.gz and GBM20_2_trimmed.fq.gz
+
+====================================================================================================
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule fastqc_trim  in line 26 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/QC.py:
+Job Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+./example/result/01.QC/GBM20 completed successfully, but some output files are missing. 0
+MissingOutputException in rule fastqc_trim  in line 26 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/QC.py:
+Job Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+./example/result/01.QC/GBM20_copy completed successfully, but some output files are missing. 0
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-12-23T101004.656603.snakemake.log

@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+#PBS -N Circlize
+#PBS -o logs/Circlize.log
+#PBS -e logs/Circlize.err
+#PBS -q batch
+#PBS -l nodes=1:ppn=2
+#PBS -l walltime=48:00:00
+
+
+source /home/qukun/minghaofang/miniconda3/etc/profile.d/conda.sh
+conda activate ecc_pipe
+
+
+cd /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+python3 ecc_pipe_master.py --Analysis --mode Visualize \
+		--bed_file example/02.downstream/cresil/ecc_pipe_result/cresil_result.analysis.bed \
+		--geno hg38 --ecc_id 1
+
+

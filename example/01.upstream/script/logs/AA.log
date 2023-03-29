@@ -1,0 +1,898 @@
+./example/result/AA
+Building DAG of jobs...
+Relative file path './example/result/AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+GBM20
+Relative file path './example/AA/GBM20_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+GBM20_copy
+Relative file path './example/AA/GBM20_copy_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_copy_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+IncompleteFilesException:
+The files below seem to be incomplete. If you are sure that certain files are not incomplete, mark them as complete with
+
+    snakemake --cleanup-metadata <filenames>
+
+To re-generate the files rerun your command with the --rerun-incomplete flag.
+Incomplete files:
+./example/result/AA/GBM20
+./example/result/AA/GBM20_copy
+./example/result/AA
+./example/result/AA
+GBM20
+GBM20_copy
+run AA for eccDNA
+./example/result/AA
+Building DAG of jobs...
+Relative file path './example/result/AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+GBM20
+Relative file path './example/AA/GBM20_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+GBM20_copy
+Relative file path './example/AA/GBM20_copy_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_copy_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+AA           2             12             12
+all          1              1              1
+total        3              1             12
+
+
+[Wed Dec  7 20:09:45 2022]
+rule AA:
+    input: ./example/AA/GBM20_1.fq.gz, ./example/AA/GBM20_2.fq.gz
+    output: ./example/result/AA/GBM20
+    log: ./example/result/AA/logs/GBM20.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/AA/GBM20
+    wildcards: sample=GBM20
+    threads: 12
+    resources: tmpdir=/tmp
+
+
+[Wed Dec  7 20:09:45 2022]
+rule AA:
+    input: ./example/AA/GBM20_copy_1.fq.gz, ./example/AA/GBM20_copy_2.fq.gz
+    output: ./example/result/AA/GBM20_copy
+    log: ./example/result/AA/logs/GBM20_copy.01.log
+    jobid: 2
+    reason: Missing output files: ./example/result/AA/GBM20_copy
+    wildcards: sample=GBM20_copy
+    threads: 12
+    resources: tmpdir=/tmp
+
+
+[Wed Dec  7 20:09:45 2022]
+localrule all:
+    input: ./example/result/AA/GBM20, ./example/result/AA/GBM20_copy
+    jobid: 0
+    reason: Input files updated by another job: ./example/result/AA/GBM20_copy, ./example/result/AA/GBM20
+    resources: tmpdir=/tmp
+
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+AA           2             12             12
+all          1              1              1
+total        3              1             12
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all
+    missing output files:
+        AA
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+./example/result/AA
+Global ref name is GRCh38
+read length: 149.82913952332365 insert size: 407.6466545797145 insert std dev: 91.94136330459132 max_insert: 683.4707444934884 percent proper: 0.9913429087198807 num_sdevs 3
+coverage stats (11.26602468968497, 11.204262109126475, 1.2976660550822443, 11.448738236001475, 11.332674994981051, 3.0003494007725124, 149.82913952332365, 407.6466545797145, 91.94136330459132, 131.82256466594055, 683.4707444934884, 2, 0.9913429087198807, 3, 14976282016) 995
+pair support 2
+[root:INFO]	Commandline: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/src/AmpliconArchitect.py --ref GRCh38 --downsample 10 --bed ./example/result/AA/GBM20_copy/GBM20_copy_AA_CNV_SEEDS.bed --bam ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam --runmode FULL --extendmode EXPLORE --insert_sdevs 3.0 --out ./example/result/AA/GBM20_copy/GBM20_copy_AA_results//GBM20_copy 
+[root:INFO]	AmpliconArchitect version 1.3.r2
+
+[root:INFO]	Python version 3.8.13 | packaged by conda-forge | (default, Mar 25 2022, 06:04:10) 
+[GCC 10.3.0]
+
+[root:INFO]	#TIME 0.562	Loading libraries and reference annotations for: GRCh38
+Global ref name is GRCh38
+[root:INFO]	#TIME 15.462	Initiating bam_to_breakpoint object for: ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam
+[root:INFO]	#TIME 15.514	Reusing cstats from /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo/coverage.stats
+[root:INFO]	#TIME 15.523	Exploring interval: chr17	21843762	21908026
+Global ref name is GRCh38
+read length: 149.82913952332365 insert size: 407.6466545797145 insert std dev: 91.94136330459132 max_insert: 683.4707444934884 percent proper: 0.9913429087198807 num_sdevs 3
+coverage stats (11.26602468968497, 11.204262109126475, 1.2976660550822443, 11.448738236001475, 11.332674994981051, 3.0003494007725124, 149.82913952332365, 407.6466545797145, 91.94136330459132, 131.82256466594055, 683.4707444934884, 2, 0.9913429087198807, 3, 14976282010) 995
+pair support 2
+[root:INFO]	Commandline: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/src/AmpliconArchitect.py --ref GRCh38 --downsample 10 --bed ./example/result/AA/GBM20/GBM20_AA_CNV_SEEDS.bed --bam ./example/result/AA/GBM20/GBM20.cs.rmdup.bam --runmode FULL --extendmode EXPLORE --insert_sdevs 3.0 --out ./example/result/AA/GBM20/GBM20_AA_results//GBM20 
+[root:INFO]	AmpliconArchitect version 1.3.r2
+
+[root:INFO]	Python version 3.8.13 | packaged by conda-forge | (default, Mar 25 2022, 06:04:10) 
+[GCC 10.3.0]
+
+[root:INFO]	#TIME 0.497	Loading libraries and reference annotations for: GRCh38
+Global ref name is GRCh38
+[root:INFO]	#TIME 4.924	Initiating bam_to_breakpoint object for: ./example/result/AA/GBM20/GBM20.cs.rmdup.bam
+[root:INFO]	#TIME 4.925	Reusing cstats from /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo/coverage.stats
+[root:INFO]	#TIME 4.926	Exploring interval: chr17	21843762	21908026
+[root:INFO]	#TIME 72.019	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 95.911	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 64.259	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 88.684	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 1066.237	 Selecting neighbors
+[root:INFO]	#TIME 1059.380	 Selecting neighbors
+[root:INFO]	#TIME 1481.810	 New neighbor: chr10	38835637	38923102	917 (weight=917)
+[root:INFO]	#TIME 1481.840	 New neighbor: chr17	26775263	26856545	38 (weight=38)
+[root:INFO]	#TIME 1483.202	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 1513.015	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 1479.927	 New neighbor: chr10	38835637	38923102	917 (weight=917)
+[root:INFO]	#TIME 1479.927	 New neighbor: chr17	26775263	26856545	38 (weight=38)
+[root:INFO]	#TIME 1481.215	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 1510.790	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 3608.476	 Selecting neighbors
+[root:INFO]	#TIME 3620.053	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 3625.352	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 3618.959	 Selecting neighbors
+[root:INFO]	#TIME 3630.465	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 3635.601	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 3923.606	 Selecting neighbors
+[root:INFO]	#TIME 3923.613	Interval sets for amplicons determined: 
+[root:INFO]	[amplicon1]	chr10:38835637-38923102,chr17:21827695-21940158,chr17:26775263-26856545
+[root:INFO]	#TIME 3923.615	Reconstructing amplicon1
+[root:INFO]	#TIME 3923.623	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 3924.028	 Detecting breakpoint edges (interval filter vertices)
+[root:INFO]	#TIME 3940.322	 Selecting neighbors
+[root:INFO]	#TIME 3940.325	Interval sets for amplicons determined: 
+[root:INFO]	[amplicon1]	chr10:38835637-38923102,chr17:21827695-21940158,chr17:26775263-26856545
+[root:INFO]	#TIME 3940.328	Reconstructing amplicon1
+[root:INFO]	#TIME 3940.331	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 3940.668	 Detecting breakpoint edges (interval filter vertices)
+[root:INFO]	#TIME 6943.439	 Building breakpoint graph
+[root:INFO]	#TIME 6951.082	 Optimizing graph copy number flow
+[root:INFO]	#TIME 6966.847	 Plotting SV View
+[root:INFO]	#TIME 6968.971	Plotting SV View for amplicon1
+[matplotlib.font_manager:WARNING]	findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[matplotlib.font_manager:WARNING]	findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial
+[matplotlib.font_manager:WARNING]	findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[matplotlib.font_manager:WARNING]	findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial
+[root:INFO]	#TIME 7021.877	Total Runtime
+[root:INFO]	#TIME 6969.004	 Building breakpoint graph
+[root:INFO]	#TIME 6976.661	 Optimizing graph copy number flow
+AmpliconClassifier 0.4.12
+/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconClassifier/amplicon_classifier.py -i ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy.input --ref GRCh38 -o ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy --report_complexity
+reading /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/Genes_hg38.gff
+read 22998 genes
+
+GBM20_copy amplicon1
+Classification stage completed
+Writing outputs...
+done
+2022-12-07 20:09:48.629693
+PrepareAA version 0.1344.1
+
+Running PrepareAA on sample: GBM20_copy
+Running pipeline on ./example/AA/GBM20_copy_1.fq.gz ./example/AA/GBM20_copy_2.fq.gz
+./example/result/AA/GBM20_copy/GBM20_copy
+Checking for ref index
+
+Performing alignment and sorting
+{ bwa mem -K 10000000 -t 12 /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/hg38full.fa ./example/AA/GBM20_copy_1.fq.gz ./example/AA/GBM20_copy_2.fq.gz | samtools view -Shu - | samtools sort -m 4G -@4 -o ./example/result/AA/GBM20_copy/GBM20_copy.cs.bam -; } 2>./example/result/AA/GBM20_copy/GBM20_copy_aln_stage.stderr
+
+Performing duplicate removal & indexing
+samtools rmdup -s ./example/result/AA/GBM20_copy/GBM20_copy.cs.bam ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam
+
+Running samtools index
+samtools index ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam
+Removing temp BAM
+./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam: 224847388 + 0 properly paired (98.28% : N/A)
+
+Running CNVKit batch
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cnvkit.py batch -m wgs -r /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/GRCh38_cnvkit_filtered_ref.cnn -p 12 -d ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output/ ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam
+Set Rscript flag: --rscript-path /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript
+
+Running CNVKit segment
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cnvkit.py segment ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cnr --rscript-path /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript -p 12 -m cbs -o ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cns
+
+Cleaning up temporary files
+rm ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output//*tmp.bed ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output//*.cnn ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output//*target.bed
+gzip -f ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cnr
+
+Running amplified_intervals
+python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/src/amplified_intervals.py --ref GRCh38 --bed ./example/result/AA/GBM20_copy//GBM20_copy.cs.rmdup_CNV_CALLS_pre_filtered.bed --bam ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam --gain 4.0 --cnsize_min 10000 --out ./example/result/AA/GBM20_copy/GBM20_copy_AA_CNV_SEEDS
+python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/src/AmpliconArchitect.py --ref GRCh38 --downsample 10 --bed ./example/result/AA/GBM20_copy/GBM20_copy_AA_CNV_SEEDS.bed --bam ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam --runmode FULL --extendmode EXPLORE --insert_sdevs 3.0 --out ./example/result/AA/GBM20_copy/GBM20_copy_AA_results//GBM20_copy
+
+Running AC
+/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconClassifier/make_input.sh ./example/result/AA/GBM20_copy/GBM20_copy_AA_results/ ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconClassifier/amplicon_classifier.py -i ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy.input --ref GRCh38 -o ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy --report_complexity
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconClassifier/make_results_table.py -i ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy.input --classification_file ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy_amplicon_classification_profiles.tsv --cnv_bed ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup_CNV_CALLS.bed --run_metadata_file ./example/result/AA/GBM20_copy/GBM20_copy_run_metadata.json
+All stages appear to have completed successfully.
+2022-12-08 01:42:20.183958
+[root:INFO]	#TIME 6988.949	 Plotting SV View
+[root:INFO]	#TIME 6990.983	Plotting SV View for amplicon1
+[matplotlib.font_manager:WARNING]	findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[matplotlib.font_manager:WARNING]	findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial
+[matplotlib.font_manager:WARNING]	findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[matplotlib.font_manager:WARNING]	findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial
+[root:INFO]	#TIME 7035.269	Total Runtime
+AmpliconClassifier 0.4.12
+/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconClassifier/amplicon_classifier.py -i ./example/result/AA/GBM20/GBM20_classification/GBM20.input --ref GRCh38 -o ./example/result/AA/GBM20/GBM20_classification/GBM20 --report_complexity
+reading /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/Genes_hg38.gff
+read 22998 genes
+
+GBM20 amplicon1
+Classification stage completed
+Writing outputs...
+done
+2022-12-07 20:09:48.628462
+PrepareAA version 0.1344.1
+
+Running PrepareAA on sample: GBM20
+Running pipeline on ./example/AA/GBM20_1.fq.gz ./example/AA/GBM20_2.fq.gz
+./example/result/AA/GBM20/GBM20
+Checking for ref index
+
+Performing alignment and sorting
+{ bwa mem -K 10000000 -t 12 /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/hg38full.fa ./example/AA/GBM20_1.fq.gz ./example/AA/GBM20_2.fq.gz | samtools view -Shu - | samtools sort -m 4G -@4 -o ./example/result/AA/GBM20/GBM20.cs.bam -; } 2>./example/result/AA/GBM20/GBM20_aln_stage.stderr
+
+Performing duplicate removal & indexing
+samtools rmdup -s ./example/result/AA/GBM20/GBM20.cs.bam ./example/result/AA/GBM20/GBM20.cs.rmdup.bam
+
+Running samtools index
+samtools index ./example/result/AA/GBM20/GBM20.cs.rmdup.bam
+Removing temp BAM
+./example/result/AA/GBM20/GBM20.cs.rmdup.bam: 224847388 + 0 properly paired (98.28% : N/A)
+
+Running CNVKit batch
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cnvkit.py batch -m wgs -r /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/GRCh38_cnvkit_filtered_ref.cnn -p 12 -d ./example/result/AA/GBM20/GBM20_cnvkit_output/ ./example/result/AA/GBM20/GBM20.cs.rmdup.bam
+Set Rscript flag: --rscript-path /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript
+
+Running CNVKit segment
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cnvkit.py segment ./example/result/AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cnr --rscript-path /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript -p 12 -m cbs -o ./example/result/AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cns
+
+Cleaning up temporary files
+rm ./example/result/AA/GBM20/GBM20_cnvkit_output//*tmp.bed ./example/result/AA/GBM20/GBM20_cnvkit_output//*.cnn ./example/result/AA/GBM20/GBM20_cnvkit_output//*target.bed
+gzip -f ./example/result/AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cnr
+
+Running amplified_intervals
+python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/src/amplified_intervals.py --ref GRCh38 --bed ./example/result/AA/GBM20//GBM20.cs.rmdup_CNV_CALLS_pre_filtered.bed --bam ./example/result/AA/GBM20/GBM20.cs.rmdup.bam --gain 4.0 --cnsize_min 10000 --out ./example/result/AA/GBM20/GBM20_AA_CNV_SEEDS
+python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/src/AmpliconArchitect.py --ref GRCh38 --downsample 10 --bed ./example/result/AA/GBM20/GBM20_AA_CNV_SEEDS.bed --bam ./example/result/AA/GBM20/GBM20.cs.rmdup.bam --runmode FULL --extendmode EXPLORE --insert_sdevs 3.0 --out ./example/result/AA/GBM20/GBM20_AA_results//GBM20
+
+Running AC
+/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconClassifier/make_input.sh ./example/result/AA/GBM20/GBM20_AA_results/ ./example/result/AA/GBM20/GBM20_classification/GBM20
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconClassifier/amplicon_classifier.py -i ./example/result/AA/GBM20/GBM20_classification/GBM20.input --ref GRCh38 -o ./example/result/AA/GBM20/GBM20_classification/GBM20 --report_complexity
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconClassifier/make_results_table.py -i ./example/result/AA/GBM20/GBM20_classification/GBM20.input --classification_file ./example/result/AA/GBM20/GBM20_classification/GBM20_amplicon_classification_profiles.tsv --cnv_bed ./example/result/AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup_CNV_CALLS.bed --run_metadata_file ./example/result/AA/GBM20/GBM20_run_metadata.json
+All stages appear to have completed successfully.
+2022-12-08 01:43:22.649693
+./example/result/AA
+GBM20
+GBM20_copy
+run AA for eccDNA
+WorkflowError in line 1 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/analysis/AA.py:
+Workflow defines configfile ../AA_config.yaml but it is not present or accessible.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/analysis/AA.py", line 1, in <module>
+run AA for eccDNA
+./example/result/AA
+Building DAG of jobs...
+Relative file path './example/result/AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+GBM20
+Relative file path './example/AA/GBM20_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+GBM20_copy
+Relative file path './example/AA/GBM20_copy_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_copy_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+AA           2             12             12
+all          1              1              1
+total        3              1             12
+
+
+[Tue Dec 13 21:52:35 2022]
+rule AA:
+    input: ./example/AA/GBM20_1.fq.gz, ./example/AA/GBM20_2.fq.gz
+    output: ./example/result/AA/GBM20
+    log: ./example/result/AA/logs/GBM20.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/AA/GBM20
+    wildcards: sample=GBM20
+    threads: 12
+    resources: tmpdir=/tmp
+
+
+[Tue Dec 13 21:52:35 2022]
+rule AA:
+    input: ./example/AA/GBM20_copy_1.fq.gz, ./example/AA/GBM20_copy_2.fq.gz
+    output: ./example/result/AA/GBM20_copy
+    log: ./example/result/AA/logs/GBM20_copy.01.log
+    jobid: 2
+    reason: Missing output files: ./example/result/AA/GBM20_copy
+    wildcards: sample=GBM20_copy
+    threads: 12
+    resources: tmpdir=/tmp
+
+
+[Tue Dec 13 21:52:35 2022]
+localrule all:
+    input: ./example/result/AA/GBM20, ./example/result/AA/GBM20_copy
+    jobid: 0
+    reason: Input files updated by another job: ./example/result/AA/GBM20, ./example/result/AA/GBM20_copy
+    resources: tmpdir=/tmp
+
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+AA           2             12             12
+all          1              1              1
+total        3              1             12
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all
+    missing output files:
+        AA
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+./example/result/AA
+2022-12-13 21:52:40.691422
+PrepareAA version 0.1344.1
+
+coverage.stats file not found in /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo//
+Creating a new coverage.stats file.
+touch /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo//coverage.stats && chmod a+rw /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo//coverage.stats
+2022-12-13 21:52:40.691958
+PrepareAA version 0.1344.1
+
+coverage.stats file not found in /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo//
+Creating a new coverage.stats file.
+touch /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo//coverage.stats && chmod a+rw /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc-pipe/resource/AA/AmpliconArchitect/data_repo//coverage.stats
+./example/result/AA
+GBM20
+GBM20_copy
+run AA for eccDNA
+./example/result/AA
+Building DAG of jobs...
+Relative file path './example/result/AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+GBM20
+Relative file path './example/AA/GBM20_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+GBM20_copy
+Relative file path './example/AA/GBM20_copy_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/AA/GBM20_copy_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+AA           2             12             12
+all          1              1              1
+total        3              1             12
+
+
+[Tue Dec 13 22:06:28 2022]
+rule AA:
+    input: ./example/AA/GBM20_1.fq.gz, ./example/AA/GBM20_2.fq.gz
+    output: ./example/result/AA/GBM20
+    log: ./example/result/AA/logs/GBM20.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/AA/GBM20
+    wildcards: sample=GBM20
+    threads: 12
+    resources: tmpdir=/tmp
+
+
+[Tue Dec 13 22:06:28 2022]
+rule AA:
+    input: ./example/AA/GBM20_copy_1.fq.gz, ./example/AA/GBM20_copy_2.fq.gz
+    output: ./example/result/AA/GBM20_copy
+    log: ./example/result/AA/logs/GBM20_copy.01.log
+    jobid: 2
+    reason: Missing output files: ./example/result/AA/GBM20_copy
+    wildcards: sample=GBM20_copy
+    threads: 12
+    resources: tmpdir=/tmp
+
+
+[Tue Dec 13 22:06:28 2022]
+localrule all:
+    input: ./example/result/AA/GBM20, ./example/result/AA/GBM20_copy
+    jobid: 0
+    reason: Input files updated by another job: ./example/result/AA/GBM20_copy, ./example/result/AA/GBM20
+    resources: tmpdir=/tmp
+
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+AA           2             12             12
+all          1              1              1
+total        3              1             12
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all
+    missing output files:
+        AA
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+./example/result/AA
+Global ref name is GRCh38
+read length: 149.82913952332365 insert size: 407.6466545797145 insert std dev: 91.94136330459132 max_insert: 683.4707444934884 percent proper: 0.9913429087198807 num_sdevs 3
+coverage stats (11.26602468968497, 11.204262109126475, 1.2976660550822443, 11.448738236001475, 11.332674994981051, 3.0003494007725124, 149.82913952332365, 407.6466545797145, 91.94136330459132, 131.82256466594055, 683.4707444934884, 2, 0.9913429087198807, 3, 14976282011) 995
+pair support 2
+Global ref name is GRCh38
+read length: 149.82913952332365 insert size: 407.6466545797145 insert std dev: 91.94136330459132 max_insert: 683.4707444934884 percent proper: 0.9913429087198807 num_sdevs 3
+coverage stats (11.26602468968497, 11.204262109126475, 1.2976660550822443, 11.448738236001475, 11.332674994981051, 3.0003494007725124, 149.82913952332365, 407.6466545797145, 91.94136330459132, 131.82256466594055, 683.4707444934884, 2, 0.9913429087198807, 3, 14976282016) 995
+pair support 2
+[root:INFO]	Commandline: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/src/AmpliconArchitect.py --ref GRCh38 --downsample 10 --bed ./example/result/AA/GBM20_copy/GBM20_copy_AA_CNV_SEEDS.bed --bam ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam --runmode FULL --extendmode EXPLORE --insert_sdevs 3.0 --out ./example/result/AA/GBM20_copy/GBM20_copy_AA_results//GBM20_copy 
+[root:INFO]	AmpliconArchitect version 1.3.r2
+
+[root:INFO]	Python version 3.8.13 | packaged by conda-forge | (default, Mar 25 2022, 06:04:10) 
+[GCC 10.3.0]
+
+[root:INFO]	Commandline: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/src/AmpliconArchitect.py --ref GRCh38 --downsample 10 --bed ./example/result/AA/GBM20/GBM20_AA_CNV_SEEDS.bed --bam ./example/result/AA/GBM20/GBM20.cs.rmdup.bam --runmode FULL --extendmode EXPLORE --insert_sdevs 3.0 --out ./example/result/AA/GBM20/GBM20_AA_results//GBM20 
+[root:INFO]	AmpliconArchitect version 1.3.r2
+
+[root:INFO]	Python version 3.8.13 | packaged by conda-forge | (default, Mar 25 2022, 06:04:10) 
+[GCC 10.3.0]
+
+[root:INFO]	#TIME 0.435	Loading libraries and reference annotations for: GRCh38
+[root:INFO]	#TIME 0.505	Loading libraries and reference annotations for: GRCh38
+Global ref name is GRCh38
+[root:INFO]	#TIME 38.970	Initiating bam_to_breakpoint object for: ./example/result/AA/GBM20/GBM20.cs.rmdup.bam
+Global ref name is GRCh38
+[root:INFO]	#TIME 38.970	Initiating bam_to_breakpoint object for: ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam
+[root:INFO]	#TIME 39.000	Reusing cstats from /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo/coverage.stats
+[root:INFO]	#TIME 39.000	Reusing cstats from /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo/coverage.stats
+[root:INFO]	#TIME 39.001	Exploring interval: chr17	21843762	21908026
+[root:INFO]	#TIME 39.001	Exploring interval: chr17	21843762	21908026
+[root:INFO]	#TIME 99.542	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 102.187	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 122.091	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 130.610	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 1022.044	 Selecting neighbors
+[root:INFO]	#TIME 1099.845	 Selecting neighbors
+[root:INFO]	#TIME 1406.147	 New neighbor: chr10	38835637	38923102	917 (weight=917)
+[root:INFO]	#TIME 1406.191	 New neighbor: chr17	26775263	26856545	38 (weight=38)
+[root:INFO]	#TIME 1407.620	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 1436.479	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 1513.806	 New neighbor: chr10	38835637	38923102	917 (weight=917)
+[root:INFO]	#TIME 1513.838	 New neighbor: chr17	26775263	26856545	38 (weight=38)
+[root:INFO]	#TIME 1515.259	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 1545.537	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 3342.871	 Selecting neighbors
+[root:INFO]	#TIME 3353.375	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 3358.158	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 3636.423	 Selecting neighbors
+[root:INFO]	#TIME 3636.443	Interval sets for amplicons determined: 
+[root:INFO]	[amplicon1]	chr10:38835637-38923102,chr17:21827695-21940158,chr17:26775263-26856545
+[root:INFO]	#TIME 3636.446	Reconstructing amplicon1
+[root:INFO]	#TIME 3636.452	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 3637.014	 Detecting breakpoint edges (interval filter vertices)
+[root:INFO]	#TIME 3649.935	 Selecting neighbors
+[root:INFO]	#TIME 3661.491	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 3667.484	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 3965.681	 Selecting neighbors
+[root:INFO]	#TIME 3965.697	Interval sets for amplicons determined: 
+[root:INFO]	[amplicon1]	chr10:38835637-38923102,chr17:21827695-21940158,chr17:26775263-26856545
+[root:INFO]	#TIME 3965.699	Reconstructing amplicon1
+[root:INFO]	#TIME 3965.706	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 3966.550	 Detecting breakpoint edges (interval filter vertices)
+[root:INFO]	#TIME 6326.384	 Building breakpoint graph
+[root:INFO]	#TIME 6333.411	 Optimizing graph copy number flow
+[root:INFO]	#TIME 6350.882	 Plotting SV View
+[root:INFO]	#TIME 6352.900	Plotting SV View for amplicon1
+[matplotlib.font_manager:WARNING]	findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[matplotlib.font_manager:WARNING]	findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial
+[matplotlib.font_manager:WARNING]	findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[matplotlib.font_manager:WARNING]	findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial
+[root:INFO]	#TIME 6403.189	Total Runtime
+AmpliconClassifier 0.4.12
+/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/amplicon_classifier.py -i ./example/result/AA/GBM20/GBM20_classification/GBM20.input --ref GRCh38 -o ./example/result/AA/GBM20/GBM20_classification/GBM20 --report_complexity
+reading /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/Genes_hg38.gff
+read 22998 genes
+
+GBM20 amplicon1
+Classification stage completed
+Writing outputs...
+done
+2022-12-13 22:06:34.086096
+PrepareAA version 0.1344.1
+
+Running PrepareAA on sample: GBM20
+Running pipeline on ./example/AA/GBM20_1.fq.gz ./example/AA/GBM20_2.fq.gz
+./example/result/AA/GBM20/GBM20
+Checking for ref index
+
+Performing alignment and sorting
+{ bwa mem -K 10000000 -t 12 /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/hg38full.fa ./example/AA/GBM20_1.fq.gz ./example/AA/GBM20_2.fq.gz | samtools view -Shu - | samtools sort -m 4G -@4 -o ./example/result/AA/GBM20/GBM20.cs.bam -; } 2>./example/result/AA/GBM20/GBM20_aln_stage.stderr
+
+Performing duplicate removal & indexing
+samtools rmdup -s ./example/result/AA/GBM20/GBM20.cs.bam ./example/result/AA/GBM20/GBM20.cs.rmdup.bam
+
+Running samtools index
+samtools index ./example/result/AA/GBM20/GBM20.cs.rmdup.bam
+Removing temp BAM
+./example/result/AA/GBM20/GBM20.cs.rmdup.bam: 224847388 + 0 properly paired (98.28% : N/A)
+
+Running CNVKit batch
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cnvkit.py batch -m wgs -r /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/GRCh38_cnvkit_filtered_ref.cnn -p 12 -d ./example/result/AA/GBM20/GBM20_cnvkit_output/ ./example/result/AA/GBM20/GBM20.cs.rmdup.bam
+Set Rscript flag: --rscript-path /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript
+
+Running CNVKit segment
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cnvkit.py segment ./example/result/AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cnr --rscript-path /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript -p 12 -m cbs -o ./example/result/AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cns
+
+Cleaning up temporary files
+rm ./example/result/AA/GBM20/GBM20_cnvkit_output//*tmp.bed ./example/result/AA/GBM20/GBM20_cnvkit_output//*.cnn ./example/result/AA/GBM20/GBM20_cnvkit_output//*target.bed
+gzip -f ./example/result/AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cnr
+
+Running amplified_intervals
+python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/src/amplified_intervals.py --ref GRCh38 --bed ./example/result/AA/GBM20//GBM20.cs.rmdup_CNV_CALLS_pre_filtered.bed --bam ./example/result/AA/GBM20/GBM20.cs.rmdup.bam --gain 4.0 --cnsize_min 10000 --out ./example/result/AA/GBM20/GBM20_AA_CNV_SEEDS
+python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/src/AmpliconArchitect.py --ref GRCh38 --downsample 10 --bed ./example/result/AA/GBM20/GBM20_AA_CNV_SEEDS.bed --bam ./example/result/AA/GBM20/GBM20.cs.rmdup.bam --runmode FULL --extendmode EXPLORE --insert_sdevs 3.0 --out ./example/result/AA/GBM20/GBM20_AA_results//GBM20
+
+Running AC
+/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/make_input.sh ./example/result/AA/GBM20/GBM20_AA_results/ ./example/result/AA/GBM20/GBM20_classification/GBM20
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/amplicon_classifier.py -i ./example/result/AA/GBM20/GBM20_classification/GBM20.input --ref GRCh38 -o ./example/result/AA/GBM20/GBM20_classification/GBM20 --report_complexity
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/make_results_table.py -i ./example/result/AA/GBM20/GBM20_classification/GBM20.input --classification_file ./example/result/AA/GBM20/GBM20_classification/GBM20_amplicon_classification_profiles.tsv --cnv_bed ./example/result/AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup_CNV_CALLS.bed --run_metadata_file ./example/result/AA/GBM20/GBM20_run_metadata.json
+All stages appear to have completed successfully.
+2022-12-14 03:35:00.599249
+[root:INFO]	#TIME 7001.323	 Building breakpoint graph
+[root:INFO]	#TIME 7009.087	 Optimizing graph copy number flow
+[root:INFO]	#TIME 7027.595	 Plotting SV View
+[root:INFO]	#TIME 7029.480	Plotting SV View for amplicon1
+[matplotlib.font_manager:WARNING]	findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[matplotlib.font_manager:WARNING]	findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial
+[matplotlib.font_manager:WARNING]	findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[matplotlib.font_manager:WARNING]	findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial
+[root:INFO]	#TIME 7081.049	Total Runtime
+AmpliconClassifier 0.4.12
+/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/amplicon_classifier.py -i ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy.input --ref GRCh38 -o ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy --report_complexity
+reading /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/Genes_hg38.gff
+read 22998 genes
+
+GBM20_copy amplicon1
+Classification stage completed
+Writing outputs...
+done
+2022-12-13 22:06:34.086218
+PrepareAA version 0.1344.1
+
+Running PrepareAA on sample: GBM20_copy
+Running pipeline on ./example/AA/GBM20_copy_1.fq.gz ./example/AA/GBM20_copy_2.fq.gz
+./example/result/AA/GBM20_copy/GBM20_copy
+Checking for ref index
+
+Performing alignment and sorting
+{ bwa mem -K 10000000 -t 12 /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/hg38full.fa ./example/AA/GBM20_copy_1.fq.gz ./example/AA/GBM20_copy_2.fq.gz | samtools view -Shu - | samtools sort -m 4G -@4 -o ./example/result/AA/GBM20_copy/GBM20_copy.cs.bam -; } 2>./example/result/AA/GBM20_copy/GBM20_copy_aln_stage.stderr
+
+Performing duplicate removal & indexing
+samtools rmdup -s ./example/result/AA/GBM20_copy/GBM20_copy.cs.bam ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam
+
+Running samtools index
+samtools index ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam
+Removing temp BAM
+./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam: 224847388 + 0 properly paired (98.28% : N/A)
+
+Running CNVKit batch
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cnvkit.py batch -m wgs -r /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/GRCh38_cnvkit_filtered_ref.cnn -p 12 -d ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output/ ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam
+Set Rscript flag: --rscript-path /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript
+
+Running CNVKit segment
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cnvkit.py segment ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cnr --rscript-path /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript -p 12 -m cbs -o ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cns
+
+Cleaning up temporary files
+rm ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output//*tmp.bed ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output//*.cnn ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output//*target.bed
+gzip -f ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cnr
+
+Running amplified_intervals
+python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/src/amplified_intervals.py --ref GRCh38 --bed ./example/result/AA/GBM20_copy//GBM20_copy.cs.rmdup_CNV_CALLS_pre_filtered.bed --bam ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam --gain 4.0 --cnsize_min 10000 --out ./example/result/AA/GBM20_copy/GBM20_copy_AA_CNV_SEEDS
+python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/src/AmpliconArchitect.py --ref GRCh38 --downsample 10 --bed ./example/result/AA/GBM20_copy/GBM20_copy_AA_CNV_SEEDS.bed --bam ./example/result/AA/GBM20_copy/GBM20_copy.cs.rmdup.bam --runmode FULL --extendmode EXPLORE --insert_sdevs 3.0 --out ./example/result/AA/GBM20_copy/GBM20_copy_AA_results//GBM20_copy
+
+Running AC
+/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/make_input.sh ./example/result/AA/GBM20_copy/GBM20_copy_AA_results/ ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/amplicon_classifier.py -i ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy.input --ref GRCh38 -o ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy --report_complexity
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/make_results_table.py -i ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy.input --classification_file ./example/result/AA/GBM20_copy/GBM20_copy_classification/GBM20_copy_amplicon_classification_profiles.tsv --cnv_bed ./example/result/AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup_CNV_CALLS.bed --run_metadata_file ./example/result/AA/GBM20_copy/GBM20_copy_run_metadata.json
+All stages appear to have completed successfully.
+2022-12-14 03:46:24.393437
+./example/result/AA
+GBM20
+GBM20_copy
+run AA for eccDNA
+./example/result/02.AA
+Building DAG of jobs...
+Relative file path './example/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+GBM20
+Relative file path './example/result/01.QC/01.trim/GBM20_1_val_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/01.trim/GBM20_2_val_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+MissingInputException in rule AA  in line 37 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py:
+Missing input files for rule AA:
+    output: ./example/result/02.AA/GBM20
+    wildcards: sample=GBM20
+    affected files:
+        ./example/result/01.QC/01.trim/GBM20_2_val_2.fq.gz
+        ./example/result/01.QC/01.trim/GBM20_1_val_1.fq.gz
+./example/result/02.AA
+./example/result/02.AA
+GBM20
+run AA for eccDNA
+./example/result/02.AA
+Building DAG of jobs...
+Relative file path './example/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+GBM20
+Relative file path './example/result/01.QC/trim/GBM20_1_val_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/trim/GBM20_2_val_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+GBM20_copy
+Relative file path './example/result/01.QC/trim/GBM20_copy_1_val_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/trim/GBM20_copy_2_val_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+AA           2             12             12
+all          1              1              1
+total        3              1             12
+
+
+[Fri Dec 23 16:08:21 2022]
+rule AA:
+    input: ./example/result/01.QC/trim/GBM20_1_val_1.fq.gz, ./example/result/01.QC/trim/GBM20_2_val_2.fq.gz
+    output: ./example/result/02.AA/GBM20
+    log: ./example/result/02.AA/logs/GBM20.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/02.AA/GBM20
+    wildcards: sample=GBM20
+    threads: 12
+    resources: tmpdir=/tmp
+
+
+[Fri Dec 23 16:08:21 2022]
+rule AA:
+    input: ./example/result/01.QC/trim/GBM20_copy_1_val_1.fq.gz, ./example/result/01.QC/trim/GBM20_copy_2_val_2.fq.gz
+    output: ./example/result/02.AA/GBM20_copy
+    log: ./example/result/02.AA/logs/GBM20_copy.01.log
+    jobid: 2
+    reason: Missing output files: ./example/result/02.AA/GBM20_copy
+    wildcards: sample=GBM20_copy
+    threads: 12
+    resources: tmpdir=/tmp
+
+
+[Fri Dec 23 16:08:21 2022]
+localrule all:
+    input: ./example/result/02.AA/GBM20, ./example/result/02.AA/GBM20_copy
+    jobid: 0
+    reason: Input files updated by another job: ./example/result/02.AA/GBM20_copy, ./example/result/02.AA/GBM20
+    resources: tmpdir=/tmp
+
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+AA           2             12             12
+all          1              1              1
+total        3              1             12
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all
+    missing output files:
+        AA
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+./example/result/02.AA
+Global ref name is GRCh38
+read length: 149.5743962243666 insert size: 407.61403860616696 insert std dev: 91.99485467877102 max_insert: 683.59860264248 percent proper: 0.9914046261450579 num_sdevs 3
+coverage stats (11.261825853109494, 11.184956810135258, 1.2871357545314626, 11.429272801197449, 11.31890053599908, 2.9964910507103273, 149.5743962243666, 407.61403860616696, 91.99485467877102, 131.62947456985393, 683.59860264248, 2, 0.9914046261450579, 3, 14859171816) 995
+pair support 2
+[root:INFO]	Commandline: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/src/AmpliconArchitect.py --ref GRCh38 --downsample 10 --bed ./example/result/02.AA/GBM20_copy/GBM20_copy_AA_CNV_SEEDS.bed --bam ./example/result/02.AA/GBM20_copy/GBM20_copy.cs.rmdup.bam --runmode FULL --extendmode EXPLORE --insert_sdevs 3.0 --out ./example/result/02.AA/GBM20_copy/GBM20_copy_AA_results//GBM20_copy 
+[root:INFO]	AmpliconArchitect version 1.3.r2
+
+[root:INFO]	Python version 3.8.13 | packaged by conda-forge | (default, Mar 25 2022, 06:04:10) 
+[GCC 10.3.0]
+
+[root:INFO]	#TIME 0.411	Loading libraries and reference annotations for: GRCh38
+Global ref name is GRCh38
+read length: 149.5743962243666 insert size: 407.61403860616696 insert std dev: 91.99485467877102 max_insert: 683.59860264248 percent proper: 0.9914046261450579 num_sdevs 3
+coverage stats (11.261825853109494, 11.184956810135258, 1.2871357545314626, 11.429272801197449, 11.31890053599908, 2.9964910507103273, 149.5743962243666, 407.61403860616696, 91.99485467877102, 131.62947456985393, 683.59860264248, 2, 0.9914046261450579, 3, 14859171812) 995
+pair support 2
+[root:INFO]	Commandline: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/src/AmpliconArchitect.py --ref GRCh38 --downsample 10 --bed ./example/result/02.AA/GBM20/GBM20_AA_CNV_SEEDS.bed --bam ./example/result/02.AA/GBM20/GBM20.cs.rmdup.bam --runmode FULL --extendmode EXPLORE --insert_sdevs 3.0 --out ./example/result/02.AA/GBM20/GBM20_AA_results//GBM20 
+[root:INFO]	AmpliconArchitect version 1.3.r2
+
+[root:INFO]	Python version 3.8.13 | packaged by conda-forge | (default, Mar 25 2022, 06:04:10) 
+[GCC 10.3.0]
+
+[root:INFO]	#TIME 0.425	Loading libraries and reference annotations for: GRCh38
+Global ref name is GRCh38
+[root:INFO]	#TIME 4.660	Initiating bam_to_breakpoint object for: ./example/result/02.AA/GBM20_copy/GBM20_copy.cs.rmdup.bam
+[root:INFO]	#TIME 4.663	Reusing cstats from /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo/coverage.stats
+[root:INFO]	#TIME 4.667	Exploring interval: chr17	21843762	21908026
+Global ref name is GRCh38
+[root:INFO]	#TIME 3.178	Initiating bam_to_breakpoint object for: ./example/result/02.AA/GBM20/GBM20.cs.rmdup.bam
+[root:INFO]	#TIME 3.179	Reusing cstats from /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo/coverage.stats
+[root:INFO]	#TIME 3.179	Exploring interval: chr17	21843762	21908026
+[root:INFO]	#TIME 54.145	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 52.942	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 75.815	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 74.360	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 952.038	 Selecting neighbors
+[root:INFO]	#TIME 957.353	 Selecting neighbors
+[root:INFO]	#TIME 1336.741	 New neighbor: chr10	38835637	38923102	918 (weight=918)
+[root:INFO]	#TIME 1336.768	 New neighbor: chr17	26775263	26856545	38 (weight=38)
+[root:INFO]	#TIME 1333.559	 New neighbor: chr10	38835637	38923102	918 (weight=918)
+[root:INFO]	#TIME 1333.559	 New neighbor: chr17	26775263	26856545	38 (weight=38)
+[root:INFO]	#TIME 1337.962	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 1334.742	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 1365.487	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 1361.990	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 3267.824	 Selecting neighbors
+[root:INFO]	#TIME 3265.459	 Selecting neighbors
+[root:INFO]	#TIME 3280.058	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 3277.633	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 3286.191	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 3282.637	 Detecting breakpoint edges (interval neighbors)
+[root:INFO]	#TIME 3557.245	 Selecting neighbors
+[root:INFO]	#TIME 3557.251	Interval sets for amplicons determined: 
+[root:INFO]	[amplicon1]	chr10:38835637-38923102,chr17:21827695-21940158,chr17:26775263-26856545
+[root:INFO]	#TIME 3557.253	Reconstructing amplicon1
+[root:INFO]	#TIME 3557.259	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 3557.611	 Detecting breakpoint edges (interval filter vertices)
+[root:INFO]	#TIME 3553.538	 Selecting neighbors
+[root:INFO]	#TIME 3553.540	Interval sets for amplicons determined: 
+[root:INFO]	[amplicon1]	chr10:38835637-38923102,chr17:21827695-21940158,chr17:26775263-26856545
+[root:INFO]	#TIME 3553.543	Reconstructing amplicon1
+[root:INFO]	#TIME 3553.545	 Calculating coverage meanshift segmentation
+[root:INFO]	#TIME 3553.824	 Detecting breakpoint edges (interval filter vertices)
+[root:INFO]	#TIME 6269.765	 Building breakpoint graph
+[root:INFO]	#TIME 6276.649	 Optimizing graph copy number flow
+[root:INFO]	#TIME 6276.075	 Building breakpoint graph
+[root:INFO]	#TIME 6283.191	 Optimizing graph copy number flow
+[root:INFO]	#TIME 6294.793	 Plotting SV View
+[root:INFO]	#TIME 6296.860	Plotting SV View for amplicon1
+[root:INFO]	#TIME 6295.573	 Plotting SV View
+[root:INFO]	#TIME 6297.568	Plotting SV View for amplicon1
+[matplotlib.font_manager:WARNING]	findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[matplotlib.font_manager:WARNING]	findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial
+[matplotlib.font_manager:WARNING]	findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[matplotlib.font_manager:WARNING]	findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial
+[matplotlib.font_manager:WARNING]	findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[matplotlib.font_manager:WARNING]	findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial
+[matplotlib.font_manager:WARNING]	findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[matplotlib.font_manager:WARNING]	findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial
+[root:INFO]	#TIME 6345.829	Total Runtime
+[root:INFO]	#TIME 6341.728	Total Runtime
+AmpliconClassifier 0.4.12
+/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/amplicon_classifier.py -i ./example/result/02.AA/GBM20_copy/GBM20_copy_classification/GBM20_copy.input --ref GRCh38 -o ./example/result/02.AA/GBM20_copy/GBM20_copy_classification/GBM20_copy --report_complexity
+reading /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/Genes_hg38.gff
+read 22998 genes
+
+GBM20_copy amplicon1
+Classification stage completed
+Writing outputs...
+done
+AmpliconClassifier 0.4.12
+/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/amplicon_classifier.py -i ./example/result/02.AA/GBM20/GBM20_classification/GBM20.input --ref GRCh38 -o ./example/result/02.AA/GBM20/GBM20_classification/GBM20 --report_complexity
+reading /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/Genes_hg38.gff
+read 22998 genes
+
+GBM20_copy amplicon1
+Classification stage completed
+Writing outputs...
+done
+2022-12-23 16:08:25.503549
+PrepareAA version 0.1344.1
+
+Running PrepareAA on sample: GBM20_copy
+Running pipeline on ./example/result/01.QC/trim/GBM20_copy_1_val_1.fq.gz ./example/result/01.QC/trim/GBM20_copy_2_val_2.fq.gz
+./example/result/02.AA/GBM20_copy/GBM20_copy
+Checking for ref index
+
+Performing alignment and sorting
+{ bwa mem -K 10000000 -t 12 /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/hg38full.fa ./example/result/01.QC/trim/GBM20_copy_1_val_1.fq.gz ./example/result/01.QC/trim/GBM20_copy_2_val_2.fq.gz | samtools view -Shu - | samtools sort -m 4G -@4 -o ./example/result/02.AA/GBM20_copy/GBM20_copy.cs.bam -; } 2>./example/result/02.AA/GBM20_copy/GBM20_copy_aln_stage.stderr
+
+Performing duplicate removal & indexing
+samtools rmdup -s ./example/result/02.AA/GBM20_copy/GBM20_copy.cs.bam ./example/result/02.AA/GBM20_copy/GBM20_copy.cs.rmdup.bam
+
+Running samtools index
+samtools index ./example/result/02.AA/GBM20_copy/GBM20_copy.cs.rmdup.bam
+Removing temp BAM
+./example/result/02.AA/GBM20_copy/GBM20_copy.cs.rmdup.bam: 224876294 + 0 properly paired (98.30% : N/A)
+
+Running CNVKit batch
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cnvkit.py batch -m wgs -r /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/GRCh38_cnvkit_filtered_ref.cnn -p 12 -d ./example/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/ ./example/result/02.AA/GBM20_copy/GBM20_copy.cs.rmdup.bam
+Set Rscript flag: --rscript-path /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript
+
+Running CNVKit segment
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cnvkit.py segment ./example/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cnr --rscript-path /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript -p 12 -m cbs -o ./example/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cns
+
+Cleaning up temporary files
+rm ./example/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output//*tmp.bed ./example/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output//*.cnn ./example/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output//*target.bed
+gzip -f ./example/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cnr
+
+Running amplified_intervals
+python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/src/amplified_intervals.py --ref GRCh38 --bed ./example/result/02.AA/GBM20_copy//GBM20_copy.cs.rmdup_CNV_CALLS_pre_filtered.bed --bam ./example/result/02.AA/GBM20_copy/GBM20_copy.cs.rmdup.bam --gain 4.0 --cnsize_min 10000 --out ./example/result/02.AA/GBM20_copy/GBM20_copy_AA_CNV_SEEDS
+python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/src/AmpliconArchitect.py --ref GRCh38 --downsample 10 --bed ./example/result/02.AA/GBM20_copy/GBM20_copy_AA_CNV_SEEDS.bed --bam ./example/result/02.AA/GBM20_copy/GBM20_copy.cs.rmdup.bam --runmode FULL --extendmode EXPLORE --insert_sdevs 3.0 --out ./example/result/02.AA/GBM20_copy/GBM20_copy_AA_results//GBM20_copy
+
+Running AC
+/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/make_input.sh ./example/result/02.AA/GBM20_copy/GBM20_copy_AA_results/ ./example/result/02.AA/GBM20_copy/GBM20_copy_classification/GBM20_copy
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/amplicon_classifier.py -i ./example/result/02.AA/GBM20_copy/GBM20_copy_classification/GBM20_copy.input --ref GRCh38 -o ./example/result/02.AA/GBM20_copy/GBM20_copy_classification/GBM20_copy --report_complexity
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/make_results_table.py -i ./example/result/02.AA/GBM20_copy/GBM20_copy_classification/GBM20_copy.input --classification_file ./example/result/02.AA/GBM20_copy/GBM20_copy_classification/GBM20_copy_amplicon_classification_profiles.tsv --cnv_bed ./example/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup_CNV_CALLS.bed --run_metadata_file ./example/result/02.AA/GBM20_copy/GBM20_copy_run_metadata.json
+All stages appear to have completed successfully.
+2022-12-23 22:11:55.057523
+2022-12-23 16:08:25.502813
+PrepareAA version 0.1344.1
+
+Running PrepareAA on sample: GBM20
+Running pipeline on ./example/result/01.QC/trim/GBM20_1_val_1.fq.gz ./example/result/01.QC/trim/GBM20_2_val_2.fq.gz
+./example/result/02.AA/GBM20/GBM20
+Checking for ref index
+
+Performing alignment and sorting
+{ bwa mem -K 10000000 -t 12 /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/hg38full.fa ./example/result/01.QC/trim/GBM20_1_val_1.fq.gz ./example/result/01.QC/trim/GBM20_2_val_2.fq.gz | samtools view -Shu - | samtools sort -m 4G -@4 -o ./example/result/02.AA/GBM20/GBM20.cs.bam -; } 2>./example/result/02.AA/GBM20/GBM20_aln_stage.stderr
+
+Performing duplicate removal & indexing
+samtools rmdup -s ./example/result/02.AA/GBM20/GBM20.cs.bam ./example/result/02.AA/GBM20/GBM20.cs.rmdup.bam
+
+Running samtools index
+samtools index ./example/result/02.AA/GBM20/GBM20.cs.rmdup.bam
+Removing temp BAM
+./example/result/02.AA/GBM20/GBM20.cs.rmdup.bam: 224876294 + 0 properly paired (98.30% : N/A)
+
+Running CNVKit batch
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cnvkit.py batch -m wgs -r /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/data_repo//GRCh38/GRCh38_cnvkit_filtered_ref.cnn -p 12 -d ./example/result/02.AA/GBM20/GBM20_cnvkit_output/ ./example/result/02.AA/GBM20/GBM20.cs.rmdup.bam
+Set Rscript flag: --rscript-path /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript
+
+Running CNVKit segment
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cnvkit.py segment ./example/result/02.AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cnr --rscript-path /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript -p 12 -m cbs -o ./example/result/02.AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cns
+
+Cleaning up temporary files
+rm ./example/result/02.AA/GBM20/GBM20_cnvkit_output//*tmp.bed ./example/result/02.AA/GBM20/GBM20_cnvkit_output//*.cnn ./example/result/02.AA/GBM20/GBM20_cnvkit_output//*target.bed
+gzip -f ./example/result/02.AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cnr
+
+Running amplified_intervals
+python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/src/amplified_intervals.py --ref GRCh38 --bed ./example/result/02.AA/GBM20//GBM20.cs.rmdup_CNV_CALLS_pre_filtered.bed --bam ./example/result/02.AA/GBM20/GBM20.cs.rmdup.bam --gain 4.0 --cnsize_min 10000 --out ./example/result/02.AA/GBM20/GBM20_AA_CNV_SEEDS
+python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconArchitect/src/AmpliconArchitect.py --ref GRCh38 --downsample 10 --bed ./example/result/02.AA/GBM20/GBM20_AA_CNV_SEEDS.bed --bam ./example/result/02.AA/GBM20/GBM20.cs.rmdup.bam --runmode FULL --extendmode EXPLORE --insert_sdevs 3.0 --out ./example/result/02.AA/GBM20/GBM20_AA_results//GBM20
+
+Running AC
+/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/make_input.sh ./example/result/02.AA/GBM20/GBM20_AA_results/ ./example/result/02.AA/GBM20/GBM20_classification/GBM20
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/amplicon_classifier.py -i ./example/result/02.AA/GBM20/GBM20_classification/GBM20.input --ref GRCh38 -o ./example/result/02.AA/GBM20/GBM20_classification/GBM20 --report_complexity
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/resource/AA/AmpliconClassifier/make_results_table.py -i ./example/result/02.AA/GBM20/GBM20_classification/GBM20.input --classification_file ./example/result/02.AA/GBM20/GBM20_classification/GBM20_amplicon_classification_profiles.tsv --cnv_bed ./example/result/02.AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup_CNV_CALLS.bed --run_metadata_file ./example/result/02.AA/GBM20/GBM20_run_metadata.json
+All stages appear to have completed successfully.
+2022-12-23 22:11:55.066507
+./example/result/02.AA
+GBM20
+GBM20_copy
+run AA for eccDNA

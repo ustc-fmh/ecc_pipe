@@ -1,0 +1,9 @@
+ecc_master_path: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+output_path: ./example/result/02.circlemap
+input_file:
+    test_data:
+            ["./example/result/01.QC/trim/test_data_1_val_1.fq.gz","./example/result/01.QC/trim/test_data_2_val_2.fq.gz"]
+    test_data_copy:
+            ["./example/result/01.QC/trim/test_data_copy_1_val_1.fq.gz","./example/result/01.QC/trim/test_data_copy_2_val_2.fq.gz"]
+threads: 12
+reference: hg38

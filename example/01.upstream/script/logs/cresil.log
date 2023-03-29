@@ -1,0 +1,455 @@
+Building DAG of jobs...
+Relative file path './example/result/cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+exp_reads
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Nothing to be done (all requested files are present and up to date).
+exp_reads
+run cresil for eccDNA
+Building DAG of jobs...
+Relative file path './example/result/cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+exp_reads
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+AA           1             12             12
+all          1              1              1
+total        2              1             12
+
+
+[Tue Dec 20 19:53:55 2022]
+rule AA:
+    input: ./example/cresil/exp_reads.fastq
+    output: ./example/result/cresil/exp_reads
+    log: ./example/result/cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+
+[Tue Dec 20 19:53:55 2022]
+localrule all:
+    input: ./example/result/cresil/exp_reads
+    jobid: 0
+    reason: Input files updated by another job: ./example/result/cresil/exp_reads
+    resources: tmpdir=/tmp
+
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+AA           1             12             12
+all          1              1              1
+total        2              1             12
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all
+    missing output files:
+        AA
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+
+######### CReSIL : start trimming process (thread : 12)
+[2022-12-20 19:54:22.336038] total read : 362
+[2022-12-20 19:54:52.084178] finished trimming process
+
+
+######### CReSIL : Start identifying process (thread : 12)
+[2022-12-20 19:54:59.642329] total trimmed region : 660
+[2022-12-20 19:55:11.802953] calculating breakpoints and merging regions
+[2022-12-20 19:55:11.902119] analyzing graphs
+[2022-12-20 19:55:12.459886] initial subgraphs : 3
+[2022-12-20 19:55:12.463722] preparing data for correcting sequences from subgraphs : 3
+[2022-12-20 19:55:12.871057] finished preparing data
+[2022-12-20 19:55:12.872802] running sequence correction
+[2022-12-20 19:56:27.784805] running variant calling
+[2022-12-20 19:56:31.021044] creating GFA files
+exp_reads
+run cresil for eccDNA
+Building DAG of jobs...
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+exp_reads
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+
+[Wed Feb  1 09:18:06 2023]
+rule cresil:
+    input: ./example/cresil/exp_reads.fastq
+    output: ./example/result/02.cresil/exp_reads
+    log: ./example/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+[Wed Feb  1 09:18:06 2023]
+localrule all:
+    input: ./example/result/02.cresil/exp_reads
+    jobid: 0
+    reason: Input files updated by another job: ./example/result/02.cresil/exp_reads
+    resources: tmpdir=/tmp
+
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all
+    missing output files:
+        cresil
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+
+######### CReSIL : start trimming process (thread : 12)
+[2023-02-01 09:18:44.054831] indexing an input file
+[2023-02-01 09:18:44.633122] finised indexing an input file
+[2023-02-01 09:18:44.634423] total read : 362
+[2023-02-01 09:19:18.162451] finished trimming process
+
+
+######### CReSIL : Start identifying process : WGLS - depth (thread : 12)
+[2023-02-01 09:19:33.776047] total trimmed region : 660
+[2023-02-01 09:19:49.554785] identifying potential eccDNA regions by depth
+[2023-02-01 09:19:49.554785] creating a BAM file
+[2023-02-01 09:19:49.663134] finished creating a BAM file
+[2023-02-01 09:19:49.663134] estimating read depth
+[2023-02-01 09:19:49.918648] finished estimating read depth
+[2023-02-01 09:19:49.918648] identifying potential regions
+exp_reads
+exp_reads
+run cresil for eccDNA
+Building DAG of jobs...
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+exp_reads
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+
+[Wed Feb  1 09:43:56 2023]
+rule cresil:
+    input: ./example/cresil/exp_reads.fastq
+    output: ./example/result/02.cresil/exp_reads
+    log: ./example/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+[Wed Feb  1 09:43:56 2023]
+localrule all:
+    input: ./example/result/02.cresil/exp_reads
+    jobid: 0
+    reason: Input files updated by another job: ./example/result/02.cresil/exp_reads
+    resources: tmpdir=/tmp
+
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all
+    missing output files:
+        cresil
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+
+######### CReSIL : start trimming process (thread : 12)
+[2023-02-01 09:44:27.240838] total read : 362
+[2023-02-01 09:44:57.837752] finished trimming process
+
+
+######### CReSIL : Start identifying process (thread : 12)
+[2023-02-01 09:45:03.254355] total trimmed region : 660
+[2023-02-01 09:45:18.141679] calculating breakpoints and merging regions
+[2023-02-01 09:45:18.236407] analyzing graphs
+[2023-02-01 09:45:18.815727] initial subgraphs : 3
+[2023-02-01 09:45:18.819244] preparing data for correcting sequences from subgraphs : 3
+[2023-02-01 09:45:19.413888] finished preparing data
+[2023-02-01 09:45:19.415676] running sequence correction
+[2023-02-01 09:46:58.625141] running variant calling
+[2023-02-01 09:47:02.029838] creating GFA files
+exp_reads
+exp_reads
+run cresil for eccDNA
+Building DAG of jobs...
+exp_reads
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+
+[Wed Feb  1 10:05:17 2023]
+rule cresil:
+    input: ../help/data/WGS_test.merge.fastq.gz
+    output: ../help/result/02.cresil/exp_reads
+    log: ../help/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ../help/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+[Wed Feb  1 10:05:17 2023]
+localrule all:
+    input: ../help/result/02.cresil/exp_reads
+    jobid: 0
+    reason: Input files updated by another job: ../help/result/02.cresil/exp_reads
+    resources: tmpdir=/tmp
+
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all
+    missing output files:
+        cresil
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+exp_reads
+exp_reads
+run cresil for eccDNA
+Building DAG of jobs...
+exp_reads
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+
+[Wed Feb  1 10:18:43 2023]
+rule cresil:
+    input: ../help/data/WGS_test.merge.fastq.gz
+    output: ../help/result/02.cresil/exp_reads
+    log: ../help/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ../help/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+[Wed Feb  1 10:18:43 2023]
+localrule all:
+    input: ../help/result/02.cresil/exp_reads
+    jobid: 0
+    reason: Input files updated by another job: ../help/result/02.cresil/exp_reads
+    resources: tmpdir=/tmp
+
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all
+    missing output files:
+        cresil
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+exp_reads
+exp_reads
+run cresil for eccDNA
+Building DAG of jobs...
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+exp_reads
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+
+[Wed Feb  1 10:23:38 2023]
+rule cresil:
+    input: ./example/cresil/exp_reads.fastq
+    output: ./example/result/02.cresil/exp_reads
+    log: ./example/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+[Wed Feb  1 10:23:38 2023]
+localrule all:
+    input: ./example/result/02.cresil/exp_reads
+    jobid: 0
+    reason: Input files updated by another job: ./example/result/02.cresil/exp_reads
+    resources: tmpdir=/tmp
+
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all
+    missing output files:
+        cresil
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+
+######### CReSIL : start trimming process (thread : 12)
+[2023-02-01 10:24:10.790968] total read : 362
+[2023-02-01 10:24:41.295785] finished trimming process
+
+
+######### CReSIL : Start identifying process : WGLS - depth (thread : 12)
+[2023-02-01 10:24:53.753414] total trimmed region : 660
+[2023-02-01 10:25:05.434751] identifying potential eccDNA regions by depth
+[2023-02-01 10:25:05.434751] creating a BAM file
+[2023-02-01 10:25:33.782947] finished creating a BAM file
+[2023-02-01 10:25:33.782947] estimating read depth
+[2023-02-01 10:30:49.478969] finished estimating read depth
+[2023-02-01 10:30:49.478969] identifying potential regions
+[2023-02-01 10:39:11.511182] finished identifying potential regions : 18
+[2023-02-01 10:39:11.791822] calculating breakpoints and merging regions
+[2023-02-01 10:39:11.930403] analyzing graphs
+[2023-02-01 10:39:12.650110] initial subgraphs : 3
+[2023-02-01 10:39:12.654408] preparing data from subGraphs : 3
+[2023-02-01 10:39:17.034368] finished identifying process : WGLS - depth
+
+
+######### CReSIL : Start annotating process (thread : 12)
+[2023-02-01 10:39:50.494353] preparing data for eccDNA regions
+[2023-02-01 10:40:26.011416] finished preparing data : 12
+[2023-02-01 10:40:26.011536] calculating repeats
+[2023-02-01 10:40:32.129935] calculating CpG islands
+[2023-02-01 10:40:32.519814] calculating gene/exons/introns
+[2023-02-01 10:40:33.265734] combining variants
+[WARNING] file not found : example/result/02.cresil/exp_reads/cresil_run/assemGraph/ec1/ec1_variant.vcf
+[WARNING] file not found : example/result/02.cresil/exp_reads/cresil_run/assemGraph/ec2/ec2_variant.vcf
+[WARNING] file not found : example/result/02.cresil/exp_reads/cresil_run/assemGraph/ec3/ec3_variant.vcf
+[2023-02-01 10:40:33.280004] finished annotating process
+
+exp_reads
+exp_reads
+run cresil for eccDNA
+Building DAG of jobs...
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+exp_reads
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+
+[Fri Feb 24 10:40:54 2023]
+rule cresil:
+    input: ./example/cresil/exp_reads.fastq
+    output: ./example/result/02.cresil/exp_reads
+    log: ./example/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+[Fri Feb 24 10:40:54 2023]
+localrule all:
+    input: ./example/result/02.cresil/exp_reads
+    jobid: 0
+    reason: Input files updated by another job: ./example/result/02.cresil/exp_reads
+    resources: tmpdir=/tmp
+
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all
+    missing output files:
+        cresil
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+
+######### CReSIL : start trimming process (thread : 12)
+[2023-02-24 10:41:32.930867] total read : 362
+[2023-02-24 10:41:58.515233] finished trimming process
+
+
+######### CReSIL : Start identifying process (thread : 12)
+[2023-02-24 10:42:03.702774] total trimmed region : 660
+[2023-02-24 10:42:15.615125] calculating breakpoints and merging regions
+[2023-02-24 10:42:15.717825] analyzing graphs
+[2023-02-24 10:42:16.318509] initial subgraphs : 3
+[2023-02-24 10:42:16.322138] preparing data for correcting sequences from subgraphs : 3
+[2023-02-24 10:42:16.726240] finished preparing data
+[2023-02-24 10:42:16.728278] running sequence correction
+[2023-02-24 10:43:44.097235] running variant calling
+[2023-02-24 10:43:47.559288] creating GFA files
+exp_reads
+exp_reads
+run cresil for eccDNA

@@ -7,6 +7,10 @@ A pipeline for detecting Extrachromosomal Circular DNA from NGS/TGS in Circle-Ma
 cd ecc_pipe
 conda env create -f ./install/env.yml
 ```
+## resource and AA sample data share
+- [resource](xxxx)
+- [AA sample data](xxxx)
+
 ### Activate environment and set environment for AA
 ```
 conda activate ecc_pipe
@@ -151,10 +155,6 @@ python3 ecc_pipe_master.py --Analysis --mode Visualize \
 -   **geno** - hg38 or mm10
 -   **ecc_id** - ecc id in the peak_list
 
-
-## resource and AA sample data share
-- [resource](xxxx)
-- [AA sample data](xxxx)
 
 ## Citation
 Please cite the following article if you use ecc_pipe in your research

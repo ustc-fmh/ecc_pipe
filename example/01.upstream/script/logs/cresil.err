@@ -522,3 +522,256 @@ Skipped removing non-empty directory ./example/result/02.cresil/exp_reads
 Shutting down, this might take some time.
 Exiting because a job execution failed. Look above for error message
 Complete log: .snakemake/log/2023-02-24T104056.737284.snakemake.log
+WorkflowError in line 1 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Workflow defines configfile cresil_config.yaml but it is not present or accessible.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py", line 1, in <module>
+Building DAG of jobs...
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+MissingInputException in rule cresil  in line 37 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Missing input files for rule cresil:
+    output: ./example/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    affected files:
+i        ./example/cresil/exp_reads.fastq
+WorkflowError in line 1 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Workflow defines configfile cresil_config.yaml but it is not present or accessible.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py", line 1, in <module>
+Building DAG of jobs...
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Select jobs to execute...
+
+[Fri May 12 21:03:29 2023]
+rule cresil:
+    input: ./example/01.upstream/raw_data/cresil/exp_reads.fastq
+    output: ./example/result/02.cresil/exp_reads
+    log: ./example/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+Building DAG of jobs...
+Relative file path './example/01.upstream/raw_data/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+ImproperOutputException in rule cresil  in line 37 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule cresil:
+    output: ./example/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    affected files:
+        ./example/result/02.cresil/exp_reads
+Removing output files of failed job cresil since they might be corrupted:
+./example/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Removing output files of failed job cresil since they might be corrupted:
+./example/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-05-12T210329.620025.snakemake.log
+WorkflowError in line 1 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Workflow defines configfile cresil_config.yaml but it is not present or accessible.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py", line 1, in <module>
+Building DAG of jobs...
+Relative file path './example/01.upstream/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Nothing to be done (all requested files are present and up to date).
+Complete log: .snakemake/log/2023-05-12T211545.493309.snakemake.log
+WorkflowError in line 1 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Workflow defines configfile cresil_config.yaml but it is not present or accessible.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py", line 1, in <module>
+Building DAG of jobs...
+Relative file path './example/01.upstream/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Select jobs to execute...
+
+[Fri May 12 21:22:29 2023]
+rule cresil:
+    input: ./example/01.upstream/raw_data/cresil/exp_reads.fastq
+    output: ./example/01.upstream/result/02.cresil/exp_reads
+    log: ./example/01.upstream/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/01.upstream/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+Building DAG of jobs...
+Relative file path './example/01.upstream/raw_data/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+ImproperOutputException in rule cresil  in line 37 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule cresil:
+    output: ./example/01.upstream/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    affected files:
+        ./example/01.upstream/result/02.cresil/exp_reads
+Removing output files of failed job cresil since they might be corrupted:
+./example/01.upstream/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/01.upstream/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Removing output files of failed job cresil since they might be corrupted:
+./example/01.upstream/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/01.upstream/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-05-12T212228.678835.snakemake.log
+Unlocking working directory.
+Building DAG of jobs...
+Relative file path './example/01.upstream/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Select jobs to execute...
+
+[Fri May 12 22:01:26 2023]
+rule cresil:
+    input: ./example/01.upstream/raw_data/cresil/exp_reads.fastq
+    output: ./example/01.upstream/result/02.cresil/exp_reads
+    log: ./example/01.upstream/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/01.upstream/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+Building DAG of jobs...
+Relative file path './example/01.upstream/raw_data/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+ImproperOutputException in rule cresil  in line 37 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule cresil:
+    output: ./example/01.upstream/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    affected files:
+        ./example/01.upstream/result/02.cresil/exp_reads
+Removing output files of failed job cresil since they might be corrupted:
+./example/01.upstream/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/01.upstream/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Removing output files of failed job cresil since they might be corrupted:
+./example/01.upstream/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/01.upstream/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-05-12T220125.978139.snakemake.log
+Unlocking working directory.
+Building DAG of jobs...
+Relative file path './example/01.upstream/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count    min threads    max threads
+------  -------  -------------  -------------
+all           1              1              1
+cresil        1             12             12
+total         2              1             12
+
+Select jobs to execute...
+
+[Mon May 15 10:33:33 2023]
+rule cresil:
+    input: ./example/01.upstream/raw_data/cresil/exp_reads.fastq
+    output: ./example/01.upstream/result/02.cresil/exp_reads
+    log: ./example/01.upstream/result/02.cresil/logs/exp_reads.01.log
+    jobid: 1
+    reason: Missing output files: ./example/01.upstream/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    threads: 12
+    resources: tmpdir=/tmp
+
+Building DAG of jobs...
+Relative file path './example/01.upstream/raw_data/cresil/exp_reads.fastq' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/exp_reads' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.cresil/logs/exp_reads.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Select jobs to execute...
+ImproperOutputException in rule cresil  in line 37 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/cresil.py:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule cresil:
+    output: ./example/01.upstream/result/02.cresil/exp_reads
+    wildcards: sample=exp_reads
+    affected files:
+        ./example/01.upstream/result/02.cresil/exp_reads
+Removing output files of failed job cresil since they might be corrupted:
+./example/01.upstream/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/01.upstream/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Removing output files of failed job cresil since they might be corrupted:
+./example/01.upstream/result/02.cresil/exp_reads
+Skipped removing non-empty directory ./example/01.upstream/result/02.cresil/exp_reads
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-05-15T103333.396150.snakemake.log

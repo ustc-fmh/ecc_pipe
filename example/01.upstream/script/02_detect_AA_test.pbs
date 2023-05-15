@@ -3,16 +3,14 @@
 #PBS -N AA
 #PBS -o logs/AA.log
 #PBS -e logs/AA.err
-#PBS -q batch
-#PBS -l nodes=1:ppn=24
+#PBS -q fat
+#PBS -l nodes=1:ppn=12
 #PBS -l walltime=48:00:00
 
 source /home/qukun/minghaofang/miniconda3/etc/profile.d/conda.sh
 conda activate ecc_pipe
-module load bwa
-module load samtools
 
 cd /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
-python3 ecc_pipe_master.py --Detect --tool AA -n 24
+python3 ecc_pipe_master.py --Detect --tool AA -n 12 --config /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/config/AA_config_test.yaml
 
 

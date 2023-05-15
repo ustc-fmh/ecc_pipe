@@ -133,3 +133,226 @@ test_data_copy
 GBM20
 GBM20_copy
 run QC
+run QC
+../example/result/01.QC
+Building DAG of jobs...
+test_data
+MissingInputException in rule fastqc_trim  in line 26 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/QC.py:
+Missing input files for rule fastqc_trim:
+    output: ../example/result/01.QC/test_data
+    wildcards: sample=test_data
+    affected files:
+        ../example/01.upstream/raw_data/circlemap/test_data_2.fastq.gz
+        ../example/01.upstream/raw_data/circlemap/test_data_1.fastq.gz
+../example/result/01.QC
+test_data
+run QC
+./example/result/01.QC
+Building DAG of jobs...
+Relative file path './example/result/01.QC/test_data' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/test_data_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+test_data
+Relative file path './example/01.upstream/raw_data/circlemap/test_data_1.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/circlemap/test_data_2.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/test_data' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/test_data.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+test_data_copy
+Relative file path './example/01.upstream/raw_data/circlemap/test_data_copy_1.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/circlemap/test_data_copy_2.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/test_data_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/test_data_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+GBM20
+Relative file path './example/01.upstream/raw_data/AA/GBM20_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/test_data.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/test_data_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+fastqc_trim        3              4              4
+total              4              1              4
+
+
+[Fri May 12 20:41:56 2023]
+rule fastqc_trim:
+    input: ./example/01.upstream/raw_data/circlemap/test_data_1.fastq.gz, ./example/01.upstream/raw_data/circlemap/test_data_2.fastq.gz
+    output: ./example/result/01.QC/test_data
+    log: ./example/result/01.QC/logs/test_data.01.log
+    jobid: 1
+    reason: Missing output files: ./example/result/01.QC/test_data
+    wildcards: sample=test_data
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Fri May 12 20:41:56 2023]
+rule fastqc_trim:
+    input: ./example/01.upstream/raw_data/circlemap/test_data_copy_1.fastq.gz, ./example/01.upstream/raw_data/circlemap/test_data_copy_2.fastq.gz
+    output: ./example/result/01.QC/test_data_copy
+    log: ./example/result/01.QC/logs/test_data_copy.01.log
+    jobid: 2
+    reason: Missing output files: ./example/result/01.QC/test_data_copy
+    wildcards: sample=test_data_copy
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Fri May 12 20:41:56 2023]
+rule fastqc_trim:
+    input: ./example/01.upstream/raw_data/AA/GBM20_1.fq.gz, ./example/01.upstream/raw_data/AA/GBM20_2.fq.gz
+    output: ./example/result/01.QC/GBM20
+    log: ./example/result/01.QC/logs/GBM20.01.log
+    jobid: 3
+    reason: Missing output files: ./example/result/01.QC/GBM20
+    wildcards: sample=GBM20
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Fri May 12 20:41:56 2023]
+localrule all:
+    input: ./example/result/01.QC/test_data, ./example/result/01.QC/test_data_copy, ./example/result/01.QC/GBM20
+    jobid: 0
+    reason: Input files updated by another job: ./example/result/01.QC/test_data_copy, ./example/result/01.QC/test_data, ./example/result/01.QC/GBM20
+    resources: tmpdir=/tmp
+
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+fastqc_trim        3              4              4
+total              4              1              4
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all
+    missing output files:
+        fastqc_trim
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+Analysis complete for test_data_copy_1.fastq.gz
+Analysis complete for test_data_1.fastq.gz
+Analysis complete for test_data_2.fastq.gz
+Analysis complete for test_data_copy_2.fastq.gz
+Analysis complete for test_data_1_val_1.fq.gz
+Analysis complete for test_data_copy_1_val_1.fq.gz
+Analysis complete for test_data_copy_2_val_2.fq.gz
+Analysis complete for test_data_2_val_2.fq.gz
+./example/result/01.QC
+test_data_copy
+./example/result/01.QC
+test_data
+Analysis complete for GBM20_1.fq.gz
+Analysis complete for GBM20_2.fq.gz
+./example/01.upstream/result/01.QC
+Building DAG of jobs...
+Relative file path './example/01.upstream/result/01.QC/test_data' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/01.QC/test_data_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/01.QC/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+test_data
+Relative file path './example/01.upstream/raw_data/circlemap/test_data_1.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/circlemap/test_data_2.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/01.QC/test_data' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/01.QC/logs/test_data.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+test_data_copy
+Relative file path './example/01.upstream/raw_data/circlemap/test_data_copy_1.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/circlemap/test_data_copy_2.fastq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/01.QC/test_data_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/01.QC/logs/test_data_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+GBM20
+Relative file path './example/01.upstream/raw_data/AA/GBM20_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/01.QC/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/01.QC/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/01.QC/logs/test_data.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/01.QC/logs/test_data_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/01.QC/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+fastqc_trim        3              4              4
+total              4              1              4
+
+
+[Fri May 12 21:12:26 2023]
+rule fastqc_trim:
+    input: ./example/01.upstream/raw_data/circlemap/test_data_1.fastq.gz, ./example/01.upstream/raw_data/circlemap/test_data_2.fastq.gz
+    output: ./example/01.upstream/result/01.QC/test_data
+    log: ./example/01.upstream/result/01.QC/logs/test_data.01.log
+    jobid: 1
+    reason: Missing output files: ./example/01.upstream/result/01.QC/test_data
+    wildcards: sample=test_data
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Fri May 12 21:12:26 2023]
+rule fastqc_trim:
+    input: ./example/01.upstream/raw_data/circlemap/test_data_copy_1.fastq.gz, ./example/01.upstream/raw_data/circlemap/test_data_copy_2.fastq.gz
+    output: ./example/01.upstream/result/01.QC/test_data_copy
+    log: ./example/01.upstream/result/01.QC/logs/test_data_copy.01.log
+    jobid: 2
+    reason: Missing output files: ./example/01.upstream/result/01.QC/test_data_copy
+    wildcards: sample=test_data_copy
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Fri May 12 21:12:26 2023]
+rule fastqc_trim:
+    input: ./example/01.upstream/raw_data/AA/GBM20_1.fq.gz, ./example/01.upstream/raw_data/AA/GBM20_2.fq.gz
+    output: ./example/01.upstream/result/01.QC/GBM20
+    log: ./example/01.upstream/result/01.QC/logs/GBM20.01.log
+    jobid: 3
+    reason: Missing output files: ./example/01.upstream/result/01.QC/GBM20
+    wildcards: sample=GBM20
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Fri May 12 21:12:26 2023]
+localrule all:
+    input: ./example/01.upstream/result/01.QC/test_data, ./example/01.upstream/result/01.QC/test_data_copy, ./example/01.upstream/result/01.QC/GBM20
+    jobid: 0
+    reason: Input files updated by another job: ./example/01.upstream/result/01.QC/test_data_copy, ./example/01.upstream/result/01.QC/test_data, ./example/01.upstream/result/01.QC/GBM20
+    resources: tmpdir=/tmp
+
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+fastqc_trim        3              4              4
+total              4              1              4
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all
+    missing output files:
+        fastqc_trim
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+Analysis complete for test_data_1.fastq.gz
+Analysis complete for test_data_2.fastq.gz
+Analysis complete for test_data_copy_1.fastq.gz
+Analysis complete for test_data_copy_2.fastq.gz
+Analysis complete for test_data_1_val_1.fq.gz
+Analysis complete for test_data_copy_1_val_1.fq.gz
+Analysis complete for test_data_2_val_2.fq.gz
+Analysis complete for test_data_copy_2_val_2.fq.gz
+./example/01.upstream/result/01.QC
+test_data_copy
+./example/01.upstream/result/01.QC
+test_data
+Analysis complete for GBM20_1.fq.gz
+Analysis complete for GBM20_2.fq.gz
+Analysis complete for GBM20_1_val_1.fq.gz
+Analysis complete for GBM20_2_val_2.fq.gz
+./example/01.upstream/result/01.QC
+GBM20
+./example/01.upstream/result/01.QC
+test_data
+test_data_copy
+GBM20
+run QC

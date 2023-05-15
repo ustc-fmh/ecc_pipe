@@ -581,3 +581,297 @@ Skipped removing non-empty directory ./example/result/02.AA/GBM20
 Shutting down, this might take some time.
 Exiting because a job execution failed. Look above for error message
 Complete log: .snakemake/log/2022-12-23T160823.537403.snakemake.log
+WorkflowError in line 1 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py:
+Workflow defines configfile AA_config.yaml but it is not present or accessible.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py", line 1, in <module>
+Building DAG of jobs...
+Relative file path './example/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/trim/GBM20_1_val_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/01.QC/trim/GBM20_2_val_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+MissingInputException in rule AA  in line 37 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py:
+Missing input files for rule AA:
+    output: ./example/result/02.AA/GBM20
+    wildcards: sample=GBM20
+    affected files:
+        ./example/result/01.QC/trim/GBM20_1_val_1.fq.gz
+        ./example/result/01.QC/trim/GBM20_2_val_2.fq.gz
+WorkflowError in line 1 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py:
+Workflow defines configfile AA_config.yaml but it is not present or accessible.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py", line 1, in <module>
+Building DAG of jobs...
+Relative file path './example/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_1_val_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_2_val_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+MissingInputException in rule AA  in line 37 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py:
+Missing input files for rule AA:
+    output: ./example/result/02.AA/GBM20
+    wildcards: sample=GBM20
+    affected files:
+        ./example/01.upstream/raw_data/AA/GBM20_2_val_2.fq.gz
+        ./example/01.upstream/raw_data/AA/GBM20_1_val_1.fq.gz
+WorkflowError in line 1 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py:
+Workflow defines configfile AA_config.yaml but it is not present or accessible.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py", line 1, in <module>
+Building DAG of jobs...
+Relative file path './example/01.upstream/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_copy_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_copy_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Nothing to be done (all requested files are present and up to date).
+Complete log: .snakemake/log/2023-05-12T211326.299920.snakemake.log
+WorkflowError in line 1 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py:
+Workflow defines configfile AA_config.yaml but it is not present or accessible.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py", line 1, in <module>
+Building DAG of jobs...
+Relative file path './example/01.upstream/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_copy_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_copy_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+IncompleteFilesException:
+The files below seem to be incomplete. If you are sure that certain files are not incomplete, mark them as complete with
+
+    snakemake --cleanup-metadata <filenames>
+
+To re-generate the files rerun your command with the --rerun-incomplete flag.
+Incomplete files:
+./example/01.upstream/result/02.AA/GBM20
+./example/01.upstream/result/02.AA/GBM20_copy
+WorkflowError in line 1 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py:
+Workflow defines configfile AA_config.yaml but it is not present or accessible.
+  File "/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py", line 1, in <module>
+Building DAG of jobs...
+Relative file path './example/01.upstream/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_copy_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_copy_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+LockException:
+Error: Directory cannot be locked. Please make sure that no other Snakemake process is trying to create the same files in the following directory:
+/home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+If you are sure that no other instances of snakemake are running on this directory, the remaining lock was likely caused by a kill signal or a power loss. It can be removed with the --unlock argument.
+Unlocking working directory.
+Building DAG of jobs...
+Relative file path './example/01.upstream/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_copy_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_copy_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+AA           2             12             12
+all          1              1              1
+total        3              1             12
+
+Select jobs to execute...
+
+[Fri May 12 21:59:07 2023]
+rule AA:
+    input: ./example/01.upstream/raw_data/AA/GBM20_1.fq.gz, ./example/01.upstream/raw_data/AA/GBM20_2.fq.gz
+    output: ./example/01.upstream/result/02.AA/GBM20
+    log: ./example/01.upstream/result/02.AA/logs/GBM20.01.log
+    jobid: 1
+    reason: Missing output files: ./example/01.upstream/result/02.AA/GBM20
+    wildcards: sample=GBM20
+    threads: 12
+    resources: tmpdir=/tmp
+
+
+[Fri May 12 21:59:07 2023]
+rule AA:
+    input: ./example/01.upstream/raw_data/AA/GBM20_copy_1.fq.gz, ./example/01.upstream/raw_data/AA/GBM20_copy_2.fq.gz
+    output: ./example/01.upstream/result/02.AA/GBM20_copy
+    log: ./example/01.upstream/result/02.AA/logs/GBM20_copy.01.log
+    jobid: 2
+    reason: Missing output files: ./example/01.upstream/result/02.AA/GBM20_copy
+    wildcards: sample=GBM20_copy
+    threads: 12
+    resources: tmpdir=/tmp
+
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/skgenome/intersect.py:11: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
+  from pandas import Int64Index
+CNVkit 0.9.9
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/skgenome/intersect.py:11: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
+  from pandas import Int64Index
+CNVkit 0.9.9
+Wrote ./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GRCh38_cnvkit_filtered_ref.target-tmp.bed with 568558 regions
+Wrote ./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GRCh38_cnvkit_filtered_ref.antitarget-tmp.bed with 0 regions
+Running 1 samples in 12 processes (that's 12 processes per bam)
+Running the CNVkit pipeline on ./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy.cs.rmdup.bam ...
+Wrote ./example/01.upstream/result/02.AA/GBM20/GBM20_cnvkit_output/GRCh38_cnvkit_filtered_ref.target-tmp.bed with 568558 regions
+Wrote ./example/01.upstream/result/02.AA/GBM20/GBM20_cnvkit_output/GRCh38_cnvkit_filtered_ref.antitarget-tmp.bed with 0 regions
+Running 1 samples in 12 processes (that's 12 processes per bam)
+Running the CNVkit pipeline on ./example/01.upstream/result/02.AA/GBM20/GBM20.cs.rmdup.bam ...
+Processing reads in GBM20_copy.cs.rmdup.bam
+Processing reads in GBM20.cs.rmdup.bam
+Time: 71.949 seconds (2927183 reads/sec, 7902 bins/sec)
+Summary: #bins=568558, #reads=210607971, mean=370.4248, min=0.0, max=10520.246666666666 
+Percent reads in regions: 91.843 (of 229312446 mapped)
+Time: 72.457 seconds (2906648 reads/sec, 7847 bins/sec)
+Summary: #bins=568558, #reads=210607971, mean=370.4248, min=0.0, max=10520.246666666666 
+Percent reads in regions: 91.843 (of 229312446 mapped)
+Wrote ./example/01.upstream/result/02.AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.targetcoverage.cnn with 568558 regions
+Skip processing GBM20.cs.rmdup.bam with empty regions file ./example/01.upstream/result/02.AA/GBM20/GBM20_cnvkit_output/GRCh38_cnvkit_filtered_ref.antitarget-tmp.bed
+Wrote ./example/01.upstream/result/02.AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.antitargetcoverage.cnn with 0 regions
+Wrote ./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.targetcoverage.cnn with 568558 regions
+Skip processing GBM20_copy.cs.rmdup.bam with empty regions file ./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GRCh38_cnvkit_filtered_ref.antitarget-tmp.bed
+Wrote ./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.antitargetcoverage.cnn with 0 regions
+Processing target: GBM20.cs.rmdup
+Processing target: GBM20_copy.cs.rmdup
+Keeping 566505 of 568558 bins
+Keeping 566505 of 568558 bins
+Correcting for GC bias...
+Correcting for GC bias...
+Processing antitarget: GBM20.cs.rmdup
+Processing antitarget: GBM20_copy.cs.rmdup
+Wrote ./example/01.upstream/result/02.AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cnr with 566505 regions
+Segmenting ./example/01.upstream/result/02.AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cnr ...
+Segmenting with method 'cbs', significance threshold 1e-06, in 12 processes
+Wrote ./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cnr with 566505 regions
+Segmenting ./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cnr ...
+Segmenting with method 'cbs', significance threshold 1e-06, in 12 processes
+Smoothing overshot at 7 / 5172 indices: (-16.712232430261896, 1.2652936017104142) vs. original (-23.49121289113035, 0.47291141438069684)
+Smoothing overshot at 7 / 5172 indices: (-16.712232430261896, 1.2652936017104142) vs. original (-23.49121289113035, 0.47291141438069684)
+Smoothing overshot at 48 / 1974 indices: (-23.571224916002052, 1.0214792056360822) vs. original (-22.528212633911334, 0.9074283535528896)
+Smoothing overshot at 179 / 3151 indices: (-23.918696962021087, 2.8984127467992855) vs. original (-22.528250463996226, 4.964185972500467)
+Smoothing overshot at 48 / 1974 indices: (-23.571224916002052, 1.0214792056360822) vs. original (-22.528212633911334, 0.9074283535528896)
+Smoothing overshot at 179 / 3151 indices: (-23.918696962021087, 2.8984127467992855) vs. original (-22.528250463996226, 4.964185972500467)
+Post-processing ./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cns ...
+Post-processing ./example/01.upstream/result/02.AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cns ...
+Wrote ./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cns with 358 regions
+Applying filter 'ci'
+Wrote ./example/01.upstream/result/02.AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cns with 358 regions
+Applying filter 'ci'
+Filtered by 'ci' from 358 to 190 rows
+Filtered by 'ci' from 358 to 190 rows
+Calling copy number with thresholds: -1.1 => 0, -0.25 => 1, 0.2 => 2, 0.7 => 3
+Wrote ./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.call.cns with 190 regions
+Calling copy number with thresholds: -1.1 => 0, -0.25 => 1, 0.2 => 2, 0.7 => 3
+Wrote ./example/01.upstream/result/02.AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.call.cns with 190 regions
+Significant hits in 9928/566505 bins (1.75%)
+Wrote ./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.bintest.cns with 9928 regions
+Significant hits in 9928/566505 bins (1.75%)
+Wrote ./example/01.upstream/result/02.AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.bintest.cns with 9928 regions
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/skgenome/intersect.py:11: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
+  from pandas import Int64Index
+Segmenting with method 'cbs', significance threshold 0.0001, in 12 processes
+/home/qukun/minghaofang/miniconda3/envs/ecc_pipe/lib/python3.8/site-packages/skgenome/intersect.py:11: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
+  from pandas import Int64Index
+Segmenting with method 'cbs', significance threshold 0.0001, in 12 processes
+Smoothing overshot at 7 / 5172 indices: (-16.71223549724952, 1.2652936773345864) vs. original (-23.4912, 0.472911)
+Smoothing overshot at 7 / 5172 indices: (-16.71223549724952, 1.2652936773345864) vs. original (-23.4912, 0.472911)
+Smoothing overshot at 48 / 1974 indices: (-23.57124081520147, 1.0214789192704992) vs. original (-22.5282, 0.907428)
+Smoothing overshot at 48 / 1974 indices: (-23.57124081520147, 1.0214789192704992) vs. original (-22.5282, 0.907428)
+Smoothing overshot at 179 / 3151 indices: (-23.91870503411011, 2.898414134521958) vs. original (-22.5283, 4.96419)
+Smoothing overshot at 179 / 3151 indices: (-23.91870503411011, 2.898414134521958) vs. original (-22.5283, 4.96419)
+Wrote ./example/01.upstream/result/02.AA/GBM20/GBM20_cnvkit_output/GBM20.cs.rmdup.cns with 413 regions
+rm: 无法删除"./example/01.upstream/result/02.AA/GBM20/GBM20_cnvkit_output//*target.bed": 没有那个文件或目录
+Wrote ./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output/GBM20_copy.cs.rmdup.cns with 413 regions
+rm: 无法删除"./example/01.upstream/result/02.AA/GBM20_copy/GBM20_copy_cnvkit_output//*target.bed": 没有那个文件或目录
+ImproperOutputException in rule AA  in line 37 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule AA:
+    output: ./example/01.upstream/result/02.AA/GBM20
+    wildcards: sample=GBM20
+    affected files:
+        ./example/01.upstream/result/02.AA/GBM20
+Removing output files of failed job AA since they might be corrupted:
+./example/01.upstream/result/02.AA/GBM20
+Skipped removing non-empty directory ./example/01.upstream/result/02.AA/GBM20
+ImproperOutputException in rule AA  in line 37 of /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/AA.py:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule AA:
+    output: ./example/01.upstream/result/02.AA/GBM20_copy
+    wildcards: sample=GBM20_copy
+    affected files:
+        ./example/01.upstream/result/02.AA/GBM20_copy
+Removing output files of failed job AA since they might be corrupted:
+./example/01.upstream/result/02.AA/GBM20_copy
+Skipped removing non-empty directory ./example/01.upstream/result/02.AA/GBM20_copy
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-05-12T215906.802923.snakemake.log
+Unlocking working directory.
+Building DAG of jobs...
+Relative file path './example/01.upstream/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_copy_1.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/raw_data/AA/GBM20_copy_2.fq.gz' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/GBM20_copy' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Relative file path './example/01.upstream/result/02.AA/logs/GBM20_copy.01.log' starts with './'. This is redundant and strongly discouraged. It can also lead to inconsistent results of the file-matching approach used by Snakemake. You can simply omit the './' for relative file paths.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+AA           2              6              6
+all          1              1              1
+total        3              1              6
+
+Select jobs to execute...
+
+[Mon May 15 10:18:51 2023]
+rule AA:
+    input: ./example/01.upstream/raw_data/AA/GBM20_1.fq.gz, ./example/01.upstream/raw_data/AA/GBM20_2.fq.gz
+    output: ./example/01.upstream/result/02.AA/GBM20
+    log: ./example/01.upstream/result/02.AA/logs/GBM20.01.log
+    jobid: 1
+    reason: Missing output files: ./example/01.upstream/result/02.AA/GBM20
+    wildcards: sample=GBM20
+    threads: 6
+    resources: tmpdir=/tmp
+
+
+[Mon May 15 10:18:51 2023]
+rule AA:
+    input: ./example/01.upstream/raw_data/AA/GBM20_copy_1.fq.gz, ./example/01.upstream/raw_data/AA/GBM20_copy_2.fq.gz
+    output: ./example/01.upstream/result/02.AA/GBM20_copy
+    log: ./example/01.upstream/result/02.AA/logs/GBM20_copy.01.log
+    jobid: 2
+    reason: Missing output files: ./example/01.upstream/result/02.AA/GBM20_copy
+    wildcards: sample=GBM20_copy
+    threads: 6
+    resources: tmpdir=/tmp
+

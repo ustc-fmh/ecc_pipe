@@ -9,10 +9,8 @@
 
 source /home/qukun/minghaofang/miniconda3/etc/profile.d/conda.sh
 conda activate ecc_pipe
-module load bwa
-module load samtools
 
 cd /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
-python3 ecc_pipe_master.py --Detect --tool circlemap -n 24
+python3 ecc_pipe_master.py --Detect --tool circlemap -n 24 --config /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/config/circlemap_config_test.yaml
 
 

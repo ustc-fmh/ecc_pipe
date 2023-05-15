@@ -11,5 +11,5 @@ source /home/qukun/minghaofang/miniconda3/etc/profile.d/conda.sh
 conda activate ecc_pipe
 
 cd /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
-python3 ecc_pipe_master.py --Detect --tool cresil -n 12
+python3 ecc_pipe_master.py --Detect --tool cresil -n 12 --config /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe/config/cresil_config_test.yaml
 

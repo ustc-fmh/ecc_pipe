@@ -1,0 +1,24 @@
+ecc_master_path: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+output_path: /home/qukun/minghaofang/workspace/project/ecc/paper_data/02.circlemap
+input_file:
+    MB_normal_1:
+            ["/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim/SRR19454698_1_val_1.fq.gz","/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim//SRR19454698_2_val_2.fq.gz"]
+    MB_normal_2:
+            ["/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim/SRR19454699_1_val_1.fq.gz","/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim//SRR19454699_2_val_2.fq.gz"]
+    MB_1:
+            ["/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim/SRR19454700_1_val_1.fq.gz","/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim//SRR19454700_2_val_2.fq.gz"]
+    MB_2:
+            ["/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim/SRR19454701_1_val_1.fq.gz","/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim//SRR19454701_2_val_2.fq.gz"]
+    MB_3:
+            ["/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim/SRR19454702_1_val_1.fq.gz","/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim//SRR19454702_2_val_2.fq.gz"]
+    MB_4:
+            ["/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim/SRR19454703_1_val_1.fq.gz","/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim//SRR19454703_2_val_2.fq.gz"]
+    MB_5:
+            ["/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim/SRR19454704_1_val_1.fq.gz","/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim//SRR19454704_2_val_2.fq.gz"]
+    MB_6:
+            ["/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim/SRR19454705_1_val_1.fq.gz","/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim//SRR19454705_2_val_2.fq.gz"]
+    MB_7:
+            ["/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim/SRR19454706_1_val_1.fq.gz","/home/qukun/minghaofang/workspace/project/ecc/paper_data/01.QC/trim//SRR19454706_2_val_2.fq.gz"]
+
+threads: 2
+reference: hg38

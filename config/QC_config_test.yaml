@@ -1,0 +1,11 @@
+ecc_master_path: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+output_path: ./example/01.upstream/result/01.QC
+input_file:
+    test_data:
+            ["./example/01.upstream/raw_data/circlemap/test_data_1.fastq.gz","./example/01.upstream/raw_data/circlemap/test_data_2.fastq.gz"]
+    test_data_copy:
+            ["./example/01.upstream/raw_data/circlemap/test_data_copy_1.fastq.gz","./example/01.upstream/raw_data/circlemap/test_data_copy_2.fastq.gz"]
+    GBM20:
+            ["./example/01.upstream/raw_data/AA/GBM20_1.fq.gz","./example/01.upstream/raw_data/AA/GBM20_2.fq.gz"]
+threads: 4
+paired: True

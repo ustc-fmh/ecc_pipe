@@ -60,8 +60,8 @@ rule bwa_map:
             
     threads: config["threads"]
     shell:
-        "bwa mem -q \
-                -t {threads} \
+        "bwa mem -t {threads} \
+                    -q \
             {input} > {output}"
 
 ##02.samtools_sort

@@ -1,0 +1,15 @@
+ecc_master_path: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+output_path: ./example/01.upstream/result/02.AA
+input_file:
+    GBM20:
+            ["./example/01.upstream/raw_data/AA/GBM20_1.fq.gz","./example/01.upstream/raw_data/AA/GBM20_2.fq.gz"]
+    GBM20_copy:
+            ["./example/01.upstream/raw_data/AA/GBM20_copy_1.fq.gz","./example/01.upstream/raw_data/AA/GBM20_copy_2.fq.gz"]
+threads: 6
+reference: hg38
+
+cnvkit_dir: /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/cnvkit.py
+rscript: /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript
+python_path: /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python
+cngain: 4
+cnsize: 10000

@@ -7,14 +7,14 @@ sys.path.append('./analysis_code')
 from Distribution import *
 from DEG import *
 from Circlize import *
-
-
+mpl.rcParams['pdf.fonttype'] = 42
 #######  Options  #######
 usage="usage: %prog [options][inputs]"
 parser=OptionParser(usage=usage, version="%prog 1.0")
 
 ## general params
 parser.add_option("-n",type='int',help="Set the max thread") ## for QC/Detect
+parser.add_option("--config",type='string',help="Set the configfile path") ## for QC/Detect
 
 ## QC params
 parser.add_option("--QC",action='store_true',default=False,
@@ -58,20 +58,18 @@ def Detect():
     """
     tool_set = options.tool
     threads_number = options.n
-
+    config = options.config
     if tool_set == 'circlemap':
         print('run circle-map for eccDNA')
-        #os.system('snakemake --cores {0} -n -s circlemap.py')
-        #os.system('snakemake --cores {0} -s circlemap.py')
-        os.system('snakemake --cores {0} -n -s circlemap.py'.format(threads_number)) ## print log  test run
-        os.system('snakemake --unlock -s circlemap.py') ## unlock
-        os.system('snakemake --cores {0} -s circlemap.py'.format(threads_number)) ## --report --all-temp
+        os.system('snakemake --cores {0} -n -s circlemap.py --configfile={1}'.format(threads_number, config)) ## print log  test run
+        os.system('snakemake --unlock -s circlemap.py --configfile={0}'.format(config)) ## unlock
+        os.system('snakemake --cores {0} -s circlemap.py --configfile={1}'.format(threads_number, config)) 
     
     elif tool_set == 'AA':
         print('run AA for eccDNA')
-        os.system('snakemake --cores {0} -n -s AA.py'.format(threads_number)) ## print log 试运行
-        os.system('snakemake --unlock -s AA.py') ## unlock
-        os.system('snakemake --cores {0} -s AA.py'.format(threads_number)) ## --report --all-temp
+        os.system('snakemake --cores {0} -n -s AA.py --configfile={1}'.format(threads_number, config)) 
+        os.system('snakemake --unlock -s AA.py --configfile={0}'.format(config)) ## unlock
+        os.system('snakemake --cores {0} -s AA.py --configfile={1}'.format(threads_number, config))
 
         ##detect index.html in pwd and rm
         if os.path.exists("./index.html"):
@@ -80,9 +78,9 @@ def Detect():
     
     elif tool_set == 'cresil':
         print('run cresil for eccDNA')
-        os.system('snakemake --cores {0} -n -s cresil.py'.format(threads_number)) ## print log test run
-        os.system('snakemake --unlock -s cresil.py') ## unlock
-        os.system('snakemake --cores {0} -s cresil.py'.format(threads_number)) ## --report --all-temp
+        os.system('snakemake --cores {0} -n -s cresil.py --configfile={1}'.format(threads_number, config)) ## print log test run
+        os.system('snakemake --unlock -s cresil.py --configfile={0}'.format(config)) ## unlock
+        os.system('snakemake --cores {0} -s cresil.py --configfile={1}'.format(threads_number, config)) ## --report --all-temp
     
     else:
         print("Please set tool in ['circlemap', 'AA', 'cresil']")
@@ -93,10 +91,11 @@ def QC():
     fastqc/trim_glores/picards
     """
     threads_number = options.n
+    config = options.config
     print('run QC')
-    os.system('snakemake --cores {0} -n -s QC.py'.format(threads_number)) ## print log  test run
-    os.system('snakemake --unlock -s QC.py') ## unlock
-    os.system('snakemake --cores {0} -s QC.py'.format(threads_number)) ## --report --all-temp
+    os.system('snakemake --cores {0} -n -s QC.py --configfile={1}'.format(threads_number, config)) ## print log  test run
+    os.system('snakemake --unlock -s QC.py --configfile={0}'.format(config)) ## unlock
+    os.system('snakemake --cores {0} -s QC.py --configfile={1}'.format(threads_number, config)) ## --report --all-temp
 
 
 def Analysis():

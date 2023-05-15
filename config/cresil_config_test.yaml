@@ -1,0 +1,8 @@
+ecc_master_path: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+output_path: ./example/01.upstream/result/02.cresil
+input_file:
+    exp_reads:
+            ["./example/01.upstream/raw_data/cresil/exp_reads.fastq"]
+threads: 12
+reference: hg38
+wgs: 0

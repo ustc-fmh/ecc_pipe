@@ -27,13 +27,14 @@ def plot_pie(df, font_size=9, output_path=None):
     else:
         print('only 1 chr be detect')
     ## plot
+    _color = plt.colormaps["tab20c"]([i for i in range(20)])
     fig = plt.figure(figsize = (8,8))
     ax = plt.subplot(1,1,1)
-    df['number'].plot.pie(fontsize=font_size)
+    df['number'].plot.pie(fontsize=font_size, colors=_color)
     ax.set_title('The proportion of chromosome types %',fontsize = font_size)
     
     if output_path != None:
-        fig.savefig(output_path)
+        fig.savefig(output_path,bbox_inches='tight')
 
 def premake_distribution(df):
     """
@@ -132,9 +133,28 @@ def plot_distribution(len_df, lenbin_df, len_count_df, lenbin_count_df, name='de
     
     ax1.set_yticks([0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],labels=['0.10','0.20','0.30','0.40','0.50','0.60','0.70','0.80','0.90','1.00'])
     ax4.set_yticks([0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],labels=['0.10','0.20','0.30','0.40','0.50','0.60','0.70','0.80','0.90','1.00'])
+
+    ##refine
+    for ax_subset in [ax1, ax4]:
+        ax_subset.spines.bottom.set_visible(False)
+        ax_subset.xaxis.tick_top()
+        ax_subset.tick_params(labeltop=False)
+        
+    for ax_subset in [ax2, ax5]:
+        ax_subset.spines.top.set_visible(False)
+        ax_subset.xaxis.tick_bottom()
+    
+
+    d = .5  # proportion of vertical to horizontal extent of the slanted line
+    kwargs = dict(marker=[(-1, -d), (1, d)], markersize=12,
+              linestyle="none", color='k', mec='k', mew=1, clip_on=False)
+    ax1.plot([1, 0], [0, 0], transform=ax1.transAxes, **kwargs)
+    ax2.plot([0, 1], [1, 1], transform=ax2.transAxes, **kwargs)
+    ax4.plot([1, 0], [0, 0], transform=ax4.transAxes, **kwargs)
+    ax5.plot([0, 1], [1, 1], transform=ax5.transAxes, **kwargs)
     
     if output_path != None:
-        plt.savefig(output_path)
+        plt.savefig(output_path,bbox_inches='tight')
     
 ##后续homer一开始需要添加环境变量先
 def annotate_homer(bed_path, geno):
@@ -435,7 +455,7 @@ class distribution(object):
         anno_df = get_anno_df(bed_path, self.geno)
         fig, ax = plt.subplots(figsize=(12,5))
         anno_df.plot(ax=ax, kind='bar', stacked=True, color=sns.color_palette("deep"))
-        fig.savefig(self.save_path+'/03.homer_anno_distrbution/'+self._type+'_homer_anno_distribution.pdf')
+        fig.savefig(self.save_path+'/03.homer_anno_distrbution/'+self._type+'_homer_anno_distribution.pdf',bbox_inches='tight')
         anno_df.to_csv(self.save_path+'/03.homer_anno_distrbution/'+self._type+'_homer_anno_distribution.csv',
                             header=True, index=True)
         
@@ -500,7 +520,7 @@ class distribution(object):
                     index=['SNP', 'SuperEnhancer', 'Enhancer', 'eQTL'],
                     columns=['Annotation'])
         anno_df.plot(ax=ax, kind='bar', stacked=True, color=sns.color_palette("deep"))
-        fig.savefig(self.save_path+'/04.db.annotation/Database_anno_number.pdf')
+        fig.savefig(self.save_path+'/04.db.annotation/Database_anno_number.pdf',bbox_inches='tight')
         anno_df.to_csv(self.save_path+'/04.db.annotation/Database_anno_number.csv',
                             header=True, index=True)
         

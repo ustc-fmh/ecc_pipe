@@ -12,7 +12,7 @@ import os
 warnings.filterwarnings('ignore')
 
 import math
-def volcano_plot(df_DEG, pvalue=0.05, log2FC=1, xlim=10, ylim=5, save=None, anno=False):
+def volcano_plot(df_DEG, pvalue=0.05, log2FC=1, xlim=10, ylim=5, save=None, anno=True):
     
     result = pd.DataFrame()
     result['x'] = df_DEG['log2FoldChange']
@@ -51,7 +51,7 @@ def volcano_plot(df_DEG, pvalue=0.05, log2FC=1, xlim=10, ylim=5, save=None, anno
     ax.spines['top'].set_visible(False) #去掉上边框
     
     if anno != False:
-        for xyz in zip(result['x'], result['y'], result.index.values):
+        for xyz in zip(result_color['x'], result_color['y'], result_color.index.values):
             xy = (xyz[0], xyz[1])
             plt.annotate(xyz[2], xy=xy, xytext=(0, 0), textcoords='offset points', size=10)
     
@@ -113,7 +113,8 @@ def plot_go_kegg_clusterprofile(result_path, top_number=10):
             df['-log10_p.adjust'] =  -df['p.adjust'].apply(np.log10)
             #print(df)
             #print(plot_path)
-            
+            ## init
+            fig = plt.figure()
             sns.barplot(x= '-log10_p.adjust',y= "Description", data = df, palette="Reds_d")
             plt.savefig(plot_path)
             plt.show()
@@ -189,7 +190,7 @@ class ecc_gene_number_deg(object):
         self.myPrint('Make ecc gene number matrix end!')
         
     @deep_count
-    def deseq2_run(self, pvalue=0.05, log2fc=1, xlim=10, ylim=5, anno=False):
+    def deseq2_run(self, pvalue=0.05, log2fc=1, xlim=10, ylim=5, anno=True):
         """
         xxx
         """

@@ -52,9 +52,10 @@ perl configureHomer.pl -install hg38
 ## 01.QC
 First set all params in ***QC_config.yaml*** and run python in shell for QC by fastqc and trim_galore
 ```
-python3 ecc_pipe_master.py --QC -n 4
+python3 ecc_pipe_master.py --QC -n 4 --config configfile_path
 ## --QC: set the function; no input
-## n: set max threads for all data
+## -n: set max threads for all data
+## --config: set QC_config.yaml file path 
 ```
 all params in the ***QC_config.yaml*** file show:
 -   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
@@ -66,12 +67,13 @@ all params in the ***QC_config.yaml*** file show:
 ## 02.Detect
 First set all params in ***circlemap_config.yaml, AA_config.yaml, cresil_config.yaml***
 ```
-python3 ecc_pipe_master.py --Detect --tool circlemap -n 24
-python3 ecc_pipe_master.py --Detect --tool AA -n 24
-python3 ecc_pipe_master.py --Detect --tool cresil -n 24
+python3 ecc_pipe_master.py --Detect --tool circlemap -n 24 --config configfile_path
+python3 ecc_pipe_master.py --Detect --tool AA -n 24 --config configfile_path
+python3 ecc_pipe_master.py --Detect --tool cresil -n 24 --config configfile_path
 ## --Detect: set the function; no input
-## tool: set detect tools for NGS/TGS
-## n: set max threads for all data
+## --tool: set detect tools for NGS/TGS
+## -n: set max threads for all data
+## --config: set tool_config.yaml file path
 ```
 all params in the ***circlemap_config.yaml*** file show:
 -   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
@@ -79,7 +81,7 @@ all params in the ***circlemap_config.yaml*** file show:
 -   **input_file** - fastq file path, eg: file_name: ['r1.fq.gz', 'r2.fq.gz']
 -   **threads** - set max threads for one data, eg:12
 -   **reference** - hg38 or mm10
-\
+
 
 all params in the ***AA_config.yaml*** file show:
 -   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
@@ -92,7 +94,7 @@ all params in the ***AA_config.yaml*** file show:
 -   **python_path** - Python path eg: $conda_path/bin/python
 -   **cngain** - Set a custom threshold for the CN gain considered by AA, default:4
 -   **cnsize** - Set a custom threshold for CN interval size considered by AA, default:10000
-\
+
 
 all params in the ***cresil_config.yaml*** file show:
 -   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
@@ -158,8 +160,8 @@ python3 ecc_pipe_master.py --Analysis --mode Visualize \
 
 
 ## Citation
-Please cite the following article if you use ecc_pipe in your research
+Please cite the following article if you use eccDNA_pipe in your research
 > xxxx
 
 ## License and Copyright
-ecc_pipe is distributed under the terms of the USTC
+eccDNA_pipe is distributed under the terms of the USTC

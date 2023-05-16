@@ -27,7 +27,7 @@ rule all:
         expand("{output_path}/01.mapped_reads/{name}.sam",
                output_path=output_path,
                name=name),
-        expand("{output_path}/01.mapped_reads/{name}_rm.bam",
+        expand("{output_path}/01.mapped_reads/{name}_sort.bam",
                output_path=output_path,
                name=name),
         expand("{output_path}/01.mapped_reads/{name}_rm_sort.bam",
@@ -69,21 +69,21 @@ rule samtools_sort:
     input:
         output_path+'/01.mapped_reads/{sample}.sam',
     output:
-        rm_bam=output_path+'/01.mapped_reads/{sample}_rm.bam',
+        sort_bam=output_path+'/01.mapped_reads/{sample}_sort.bam',
         rm_sort_bam=output_path+'/01.mapped_reads/{sample}_rm_sort.bam',
     log:
         output_path+'/logs/{sample}.02.log',
 
     threads: config["threads"]
     shell:
-        "samtools rmdup {input} {output.rm_bam} ; "
-        "samtools sort -o {output.rm_sort_bam} {output.rm_bam} ; "
+        "samtools sort -o {output.sort_bam} {input} ; "
+        "samtools rmdup {output.sort_bam} {output.rm_sort_bam} ; "
         "samtools index {output.rm_sort_bam}; "
 
 ##03.circlemap sort candidates
 rule circlemap_extra:
     input:
-        output_path+'/01.mapped_reads/{sample}_rm.bam',
+        output_path+'/01.mapped_reads/{sample}_rm_sort.bam',
     output:
         qname=output_path+'/02.circle_pre/{sample}_rm_qname.bam',
         circle=output_path+'/02.circle_pre/{sample}_circle_candidates.bam',

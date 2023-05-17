@@ -1,7 +1,6 @@
 configfile: "circlemap_config.yaml"
 ##定义变量
-#print(config["input_file"])
-#print(type(config["input_file"]))
+
 name=config["input_file"].keys()
 #print(name)
 output_path=config["output_path"]
@@ -30,10 +29,7 @@ rule all:
         expand("{output_path}/01.mapped_reads/{name}_sort.bam",
                output_path=output_path,
                name=name),
-        expand("{output_path}/01.mapped_reads/{name}_rm_sort.bam",
-               output_path=output_path,
-               name=name),
-        expand("{output_path}/02.circle_pre/{name}_rm_qname.bam",
+        expand("{output_path}/02.circle_pre/{name}_qname.bam",
                output_path=output_path,
                name=name),
         expand("{output_path}/02.circle_pre/{name}_circle_candidates.bam",
@@ -61,7 +57,7 @@ rule bwa_map:
     threads: config["threads"]
     shell:
         "bwa mem -t {threads} \
-                    -q \
+		-q \
             {input} > {output}"
 
 ##02.samtools_sort
@@ -69,23 +65,21 @@ rule samtools_sort:
     input:
         output_path+'/01.mapped_reads/{sample}.sam',
     output:
-        sort_bam=output_path+'/01.mapped_reads/{sample}_sort.bam',
-        rm_sort_bam=output_path+'/01.mapped_reads/{sample}_rm_sort.bam',
+        output_path+'/01.mapped_reads/{sample}_sort.bam',
     log:
         output_path+'/logs/{sample}.02.log',
 
     threads: config["threads"]
     shell:
-        "samtools sort -o {output.sort_bam} {input} ; "
-        "samtools rmdup {output.sort_bam} {output.rm_sort_bam} ; "
-        "samtools index {output.rm_sort_bam}; "
+        "samtools sort -o {output} {input} ; "
+        "samtools index {output} ; "
 
 ##03.circlemap sort candidates
 rule circlemap_extra:
     input:
-        output_path+'/01.mapped_reads/{sample}_rm_sort.bam',
+        output_path+'/01.mapped_reads/{sample}.sam',
     output:
-        qname=output_path+'/02.circle_pre/{sample}_rm_qname.bam',
+        qname=output_path+'/02.circle_pre/{sample}_qname.bam',
         circle=output_path+'/02.circle_pre/{sample}_circle_candidates.bam',
         candidates=output_path+'/02.circle_pre/{sample}_sort_circle_candidates.bam',
     log:
@@ -102,10 +96,9 @@ rule circlemap_extra:
 rule circlemap_detect:
     input:
         candidates=output_path+'/02.circle_pre/{sample}_sort_circle_candidates.bam',
-        qname=output_path+'/02.circle_pre/{sample}_rm_qname.bam',
-        sbam=output_path+'/01.mapped_reads/{sample}_rm_sort.bam',
+        qname=output_path+'/02.circle_pre/{sample}_qname.bam',
+        sbam=output_path+'/01.mapped_reads/{sample}_sort.bam',
         fasta=expand("{reference}", reference=reference),
-        
     output:
         output_path+'/03.circlemap.results/{sample}_circlemap_result.bed'
     log:

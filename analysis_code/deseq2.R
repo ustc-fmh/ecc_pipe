@@ -18,7 +18,7 @@ dds <- DESeqDataSetFromMatrix(readcount, coldata, design= ~ sample)
 
 dds <- dds[rowSums(counts(dds)) > 4,]
 
-dds2 <- DESeq(dds)
+dds2 <- DESeq(dds, sfType='poscounts')
 #res <- results(dds2)
 res <- results(dds2, contrast=c("sample", unique(coldata[,'sample'])))
 resOrdered <- res[order(res$pvalue),]

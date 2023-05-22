@@ -116,7 +116,7 @@ def plot_go_kegg_clusterprofile(result_path, top_number=10):
             ## init
             fig = plt.figure()
             sns.barplot(x= '-log10_p.adjust',y= "Description", data = df, palette="Reds_d")
-            plt.savefig(plot_path)
+            plt.savefig(plot_path, bbox_inches='tight')
             plt.show()
         
 class ecc_gene_number_deg(object):

@@ -1,0 +1,23 @@
+,Annotation_simple
+intron ,2552
+Intergenic,2330
+LINE,938
+LTR,894
+SINE,769
+exon ,184
+TTS ,143
+3' UTR ,131
+promoter-TSS ,119
+DNA,118
+Simple_repeat,108
+Low_complexity,37
+Other,29
+non-coding ,24
+CpG,17
+5' UTR ,9
+Satellite,5
+Unknown,3
+scRNA,2
+tRNA,1
+RNA,1
+rRNA,1

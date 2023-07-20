@@ -162,6 +162,11 @@ python3 ecc_pipe_master.py --Analysis --mode Visualize \
 -   **geno** - hg38 or mm10
 -   **ecc_id** - ecc id in the peak_list
 
+## single sample test run
+Please read pbs:
+    [upstream](https://github.com/ustc-fmh/ecc_pipe/tree/main/example/01.upstream/script)
+    [downstream](https://github.com/ustc-fmh/ecc_pipe/tree/main/example/02.downstream/script)
+
 ## Multi sample analysis 
 Please read ipynb:
     [Multi sample](https://github.com/ustc-fmh/ecc_pipe/blob/main/example/github_online/Multi_sample_analysis.ipynb)

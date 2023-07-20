@@ -162,6 +162,9 @@ python3 ecc_pipe_master.py --Analysis --mode Visualize \
 -   **geno** - hg38 or mm10
 -   **ecc_id** - ecc id in the peak_list
 
+## Multi sample analysis 
+Please read ipynb:
+    [Multi sample](https://github.com/ustc-fmh/ecc_pipe/blob/main/example/github_online/Multi_sample_analysis.ipynb)
 
 ## Citation
 Please cite the following article if you use eccDNA_pipe in your research

@@ -51,7 +51,13 @@ def volcano_plot(df_DEG, pvalue=0.05, log2FC=1, xlim=10, ylim=5, save=None, anno
     ax.spines['top'].set_visible(False) #去掉上边框
     
     if anno != False:
-        for xyz in zip(result_color['x'], result_color['y'], result_color.index.values):
+        result_up = result[result['group'] == 'tab:red']
+        result_down = result[result['group'] == 'tab:blue']
+        result_up_index = result_up['y'].sort_values(ascending=False, inplace=False)[:5].index
+        result_down_index = result_down['y'].sort_values(ascending=False, inplace=False)[:5].index
+        result_anno_index = list(set(result_up_index) | set(result_down_index))
+        result_anno = result_color.loc[result_anno_index, :]
+        for xyz in zip(result_anno['x'], result_anno['y'], result_anno.index.values):
             xy = (xyz[0], xyz[1])
             plt.annotate(xyz[2], xy=xy, xytext=(0, 0), textcoords='offset points', size=10)
     
@@ -202,12 +208,15 @@ class ecc_gene_number_deg(object):
         print('Rscript ./analysis_code/deseq2.R {0} {1} {2}'.format(self.count_file_path,
                                                           self.group_file_path,
                                                           outputdir_path))
-        ## 可补充一个python 火山图绘制
+        ## python 火山图绘制
         deg_df_path = outputdir_path+'/deseq2_result.csv'
         deg_df = pd.read_csv(deg_df_path, index_col=0)
+        deg_df = deg_df.loc[[i for i in deg_df.index if '.' not in i], :]
+        deg_df.to_csv(deg_df_path, header=True, index=True)
+
         volcano_path = outputdir_path+'/deseq2.volcano.pdf'
         
-        volcano_plot(deg_df, pvalue=pvalue, log2FC=log2fc, xlim=xlim, ylim=ylim,
+        volcano_plot(deg_df, pvalue=float(pvalue), log2FC=float(log2fc), xlim=xlim, ylim=ylim,
              save=volcano_path,
             anno=anno)
         
@@ -240,12 +249,12 @@ class ecc_gene_number_deg(object):
         
         
     @deep_count
-    def run_fast(self):
+    def run_fast(self, pvalue=0.05, log2fc=1, xlim=10, ylim=5):
         self.myPrint('Run fast Start!')
         
         self.make_ecc_number_matrix()
-        self.deseq2_run()
-        self.clusterprofile_run()
+        self.deseq2_run(pvalue=pvalue, log2fc=log2fc, xlim=xlim, ylim=ylim)
+        self.clusterprofile_run(pvalue=pvalue, log2fc=log2fc)
 
         self.myPrint('Run fast End!')
         

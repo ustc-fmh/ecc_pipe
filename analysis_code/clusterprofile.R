@@ -16,16 +16,16 @@ geno = Args[10]
 
 
 GO_up = paste0(output_path,'/GO_up.csv')
-# GO_up_pdf = paste0(output_path,'/GO_up.pdf')
+#GO_up_pdf = paste0(output_path,'/GO_up.pdf')
 
 GO_down = paste0(output_path,'/GO_down.csv')
-# GO_down_pdf = paste0(output_path,'/GO_down.pdf')
+#GO_down_pdf = paste0(output_path,'/GO_down.pdf')
 
 KEGG_up = paste0(output_path,'/KEGG_up.csv')
-# KEGG_up_pdf = paste0(output_path,'/KEGG_up.pdf')
+#KEGG_up_pdf = paste0(output_path,'/KEGG_up.pdf')
 
 KEGG_down = paste0(output_path,'/KEGG_down.csv')
-# KEGG_down_pdf = paste0(output_path,'/KEGG_down.pdf')
+#KEGG_down_pdf = paste0(output_path,'/KEGG_down.pdf')
 
 DEG_result <- read.table(deg_path,
                          header = TRUE, sep = ",",row.names=1)
@@ -46,7 +46,7 @@ go <- function(DEG_result, ref){
     ego <- enrichGO(gene          = gene.df$ENSEMBL,
                 keyType = "ENSEMBL",
                 OrgDb         = ref_org,
-                ont           = "ALL", ##全部查看
+                ont           = "BP", ##全部查看
                 pAdjustMethod = "BH",
                 pvalueCutoff  = 1,
                 qvalueCutoff  = 1,
@@ -89,31 +89,31 @@ kk_down <- kegg(down, geno)
 if (length(ego_up) != 0){
     write.table(head(ego_up, 20), file = GO_up,  sep = ",", row.names = TRUE,
             col.names = TRUE)
-    # pdf(file =GO_up_pdf)
-    # dotplot(ego_up, x = "GeneRatio", color = 'p.adjust',  title="GO_UP") #点图，按富集的数从大到小的
-    # dev.off()
+    #pdf(file =GO_up_pdf)
+    #dotplot(ego_up, x = "GeneRatio", color = 'p.adjust', showCategory = 5, title="GO_UP") #点图，按富集的数从大到小的
+    #dev.off()
 }
 
 if (length(ego_down) != 0){
     write.table(head(ego_down, 20), file = GO_down,  sep = ",", row.names = TRUE,
             col.names = TRUE)
-    # pdf(file =GO_down_pdf)
-    # dotplot(ego_down, x = "GeneRatio", color = 'p.adjust',  title="GO_DOWN") #点图，按富集的数从大到小的
-    # dev.off()
+    #pdf(file =GO_down_pdf)
+    #dotplot(ego_down, x = "GeneRatio", color = 'p.adjust', showCategory = 5, title="GO_DOWN") #点图，按富集的数从大到小的
+    #dev.off()
 }
 
 if (length(kk_up) != 0){
     write.table(head(kk_up, 20), file = KEGG_up,  sep = ",", row.names = TRUE,
             col.names = TRUE)
-    # pdf(file =KEGG_up_pdf)
-    # dotplot(kk_up, x = "GeneRatio", color = 'p.adjust',  title="KEGG_UP") #点图，按富集的数从大到小的
-    # dev.off()
+    #pdf(file =KEGG_up_pdf)
+    #dotplot(kk_up, x = "GeneRatio", color = 'p.adjust',  title="KEGG_UP") #点图，按富集的数从大到小的
+    #dev.off()
 }
 
 if (length(kk_down) != 0){
     write.table(head(kk_down, 20), file = KEGG_down,  sep = ",", row.names = TRUE,
             col.names = TRUE)
-    # pdf(file =KEGG_down_pdf)
-    # dotplot(kk_down, x = "GeneRatio", color = 'p.adjust',  title="KEGG_DOWN") #点图，按富集的数从大到小的
-    # dev.off()
+    #pdf(file =KEGG_down_pdf)
+    #dotplot(kk_down, x = "GeneRatio", color = 'p.adjust',  title="KEGG_DOWN") #点图，按富集的数从大到小的
+    #dev.off()
 }

@@ -1,20 +1,25 @@
 configfile: "circlemap_config.yaml"
 ##定义变量
-
+#print(config["input_file"])
+#print(type(config["input_file"]))
 name=config["input_file"].keys()
 #print(name)
-output_path=config["output_path"]
 ecc_master_path=config["ecc_master_path"]
-threads=config["threads"]
-
+output_path=config["output_path"]
 ##调用AA的fa,避免复用
 if config["reference"] == 'mm10':
     reference = ecc_master_path+'/resource/AA/AmpliconArchitect/data_repo/mm10/mm10.fa'
 elif config["reference"] == 'hg38':
     reference = ecc_master_path+'/resource/AA/AmpliconArchitect/data_repo/GRCh38/hg38full.fa'
+threads=config["threads"]
 
 import warnings
 warnings.filterwarnings('ignore')
+
+import os
+relative_path = os.path.relpath(output_path, ecc_master_path)
+output_path = relative_path
+
 
 def get_bwa_map_input_fastqs(wildcards):
     print(wildcards)
@@ -72,7 +77,7 @@ rule samtools_sort:
     threads: config["threads"]
     shell:
         "samtools sort -o {output} {input} ; "
-        "samtools index {output} ; "
+        "samtools index {output}"
 
 ##03.circlemap sort candidates
 rule circlemap_extra:

@@ -37,10 +37,13 @@ parser.add_option("--trim",type='string',help="bedtools intersect ratio (0-1)")
 parser.add_option("--path_share",type='string',help="DEG input file share path")
 parser.add_option("--group_file",type='string',help="txt file whcih contain group info")
 parser.add_option("--count_type",type='string',help="gene or region")
+parser.add_option("--log2fc",type='string',help="default 1")
+parser.add_option("--pvalue",type='string',help="default 0.05")
 ## DEG
 
 parser.add_option("--peak_path",type='string',help="eccDNA result peak file path") ## tool = other
 parser.add_option("--file_path",type='string',help="eccDNA result file path")
+parser.add_option("--circlemap_qc",type='int',help="1/0")
 ## Distribution
 
 parser.add_option("--mode",type='string',help="str in ['Distrbution', 'DEG', 'Visualize'] ")
@@ -107,13 +110,16 @@ def Analysis():
         geno = options.geno
         file_path = options.file_path
         _type = options.tool
+        _qc = options.circlemap_qc
         print(geno)
         print(file_path)
         print(_type)
         if _type == 'other':
             peak_path = options.peak_path
             _distribution = distribution(file_path=file_path, _type=_type, geno=geno, bed_path=peak_path)
-        elif _type in ['circlemap', 'AA', 'cresil']:
+        elif _type == 'circlemap':
+            _distribution = distribution(file_path=file_path, _type=_type, geno=geno, _qc=_qc)
+        elif _type in ['AA', 'cresil']:
             _distribution = distribution(file_path=file_path, _type=_type, geno=geno)
         else:
             print("Please set tool in ['circlemap', 'AA', 'cresil', 'other']")
@@ -129,13 +135,15 @@ def Analysis():
         geno = options.geno
         trim = options.trim
         _type = options.count_type
+        log2fc = options.log2fc
+        pvalue = options.pvalue
         if _type in ['gene', 'region']:
             deg_class = ecc_gene_number_deg(path_share=path_share,
                                     group_file_path=group_file,
                                     geno=geno,
                                     trim=trim,
                                    _type=_type)
-            deg_class.run_fast()
+            deg_class.run_fast(log2fc=log2fc,pvalue=pvalue)
         else:
             print("Please set count_type in ['gene', 'region']")
         

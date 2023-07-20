@@ -14,6 +14,158 @@ import os
 #plt.rcParams['font.size'] = 24
 warnings.filterwarnings('ignore')
 
+import json
+from jinja2 import Environment, PackageLoader
+import plotly
+import plotly.figure_factory as ff
+from plotly.tools import mpl_to_plotly
+from plotly.offline import iplot
+import plotly.tools as tls
+import plotly.express as px
+## jinja2
+def plot_bar(df, colname='Annotation_simple', save_path=None):
+    """
+    df:
+    colname
+    
+    """
+    df = df[df[colname]>0]
+    df['index'] = df.index
+    sns.set(font_scale=1.5)
+    sns.set_style("whitegrid", {'axes.grid' : False})
+    axes = sns.barplot(x= colname, y= "index", data = df, palette="Reds_d")
+    axes.set_xlabel('number', fontsize=20)
+    axes.set_ylabel('type', fontsize=20)
+    
+    if save_path != None:
+        plt.savefig(save_path, dpi=300,  bbox_inches='tight')
+        
+    plt.show()
+
+def plot_length(df):
+    x1 = df['Length']
+    x1 = x1[x1<100000]
+    plotly_fig = px.histogram(x1, range_x=(0, 20000), histnorm='probability density')
+
+    plotly_fig.update_layout(template="simple_white",
+                      xaxis_title="length",
+                      yaxis_title="probability density",
+                      title="length distribution",
+                      height=400,
+                            width=500)
+
+    plotly_fig.update_yaxes(showgrid=True)
+    graphLength = plotly.io.to_html(plotly_fig,full_html=False,
+                  include_plotlyjs=True,
+                  auto_play=False)
+    return graphLength
+
+def plot_chr(df):
+    
+    _color=['#ffe4b5', '#ffa500', '#daa520', '#ffdead', '#ff1493', '#ff7f50',
+           '#ff69b4', '#ffc0cb', '#ff7f50', '#b22222', '#f08080', '#dc143c',
+           '#ff0000', '#800080', '#4b0082', '#eeb3ea', '#c46da0', '#539ecd',
+           '#dbe9f6', '#4682b4', '#89bedc', '#00ced1', '#40e0d0', '#538be9']
+    plot_df = pd.DataFrame(df['Chr'].value_counts())
+    _list = ['chr'+str(i+1) for i in range(22)]+['chrX', 'chrY']
+    plot_df.columns=['number']
+    plot_df['label'] = plot_df.index
+    
+    _list = [i for i in _list if i in plot_df['label'].unique()]
+    _color = _color[:len(_list)]
+    
+    plotly_fig = px.pie(plot_df, values='number', names='label', color=_color,
+                       category_orders={'label':_list})
+    ##update
+    plotly_fig.update_layout(template="simple_white",
+                      xaxis_title="length",
+                      yaxis_title="density",
+                      #title="chromosome distribution",
+                      height=450,
+                            width=450)
+    plotly_fig.update_yaxes(showgrid=True)
+    graphChrom = plotly.io.to_html(plotly_fig,full_html=False,
+                  include_plotlyjs=True,
+                  auto_play=False)
+    return graphChrom
+
+def plot_repeat(df):
+    
+    """
+    df:/03.homer_anno_distrbution/circlemap_homer_anno_distribution.csv
+    """
+    df.columns=['number']
+    df['type'] = df.index
+    plotly_fig = px.bar(df, y='number', x='type', text_auto='.2s')
+    #iplot(fig)
+    ##update
+    plotly_fig.update_layout(template="simple_white",
+                      #xaxis_title="length",
+                      yaxis_title="number",
+                      #title="chromosome distribution",
+                      height=300,
+                            width=500)
+    plotly_fig.update_yaxes(showgrid=True)
+    graphChrom = plotly.io.to_html(plotly_fig,full_html=False,
+                  include_plotlyjs=True,
+                  auto_play=False)
+    return graphChrom
+
+def plot_db(df):
+    
+    """
+    df:/04.db.annotation/Database_anno_number.csv
+    """
+    df.columns=['number']
+    df['type'] = df.index
+    plotly_fig = px.bar(df, y='number', x='type', text_auto='.2s')
+    #iplot(fig)
+    ##update
+    plotly_fig.update_layout(template="simple_white",
+                      #xaxis_title="length",
+                      yaxis_title="number",
+                      #title="chromosome distribution",
+                      height=250,
+                            width=500)
+    plotly_fig.update_yaxes(showgrid=True)
+    graphChrom = plotly.io.to_html(plotly_fig,full_html=False,
+                  include_plotlyjs=True,
+                  auto_play=False)
+    return graphChrom
+
+def get_basic_info(df):
+    
+    eccNumber = df.shape[0]
+    meanLength = round(df['Length'].mean(),2)
+    top_chr = ' '.join(df['Chr'].value_counts()[:3].index)
+    
+    return eccNumber, meanLength, top_chr
+
+def report_html(graphLength,
+                graphChrom,
+                graphRepeat,
+                graphEnhancer,
+                output_path='./report/test.html',
+               SampleName='test',
+               rawEccNumber=62910,
+               length=2400,
+               Chrom='Chr1 Chr2 Chr3'):
+    ##default
+    env = Environment(loader=PackageLoader('report', 'templates'))
+    template = env.get_template('index.html')
+    
+    with open(output_path,"w") as f:
+        f.write(template.render(SampleName=SampleName,
+                               rawEccNumber=rawEccNumber,
+                               length=length,
+                               Chrom=Chrom,
+                                graphLength=graphLength,
+                                graphChrom=graphChrom,
+                                graphRepeat=graphRepeat,
+                                graphEnhancer=graphEnhancer,
+                               ))
+
+
 def plot_pie(df, font_size=9, output_path=None):
     """
     df: index: chr;  ['number']: number
@@ -41,7 +193,7 @@ def premake_distribution(df):
     df: result.columns in ['Length'], ['Count']
     """
     ## df_len_type_df
-    bins = [1e0, 1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7, 1e8, 1e9, 1e10]
+    bins = [1e0, 1e1, 1e2, 1e3, 1e4, 1e5, 1e6]
     labels = ['$10^{' + str(len(str(bins[i]))-3) + '} - 10^{' + str(len(str(bins[i]))-2) + '}$' for i in range(len(bins)-1)]
     
     df.loc[:,'len_bin'] = pd.cut(df.Length, bins, labels = labels)
@@ -103,8 +255,8 @@ def plot_distribution(len_df, lenbin_df, len_count_df, lenbin_count_df, name='de
     
     sns.histplot(len_df, x='Ratio',
                  ax=ax0,
-             log_scale=True,
-             bins=[1,1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7],
+             log_scale=10,
+            #bins=[1,1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7],
              element="poly",
              thresh=10**7,alpha=0.6)
     sns.barplot(data=lenbin_df, x="Length", y='Ratio', errwidth=0.8,capsize=.2, ax=ax1, palette='Blues')
@@ -112,8 +264,8 @@ def plot_distribution(len_df, lenbin_df, len_count_df, lenbin_count_df, name='de
     
     sns.histplot(len_count_df, x='Ratio',
                  ax=ax3,
-             log_scale=True,
-             bins=[1,1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7],
+             log_scale=10,
+             #bins=[1,1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7],
              element="poly",
              thresh=10**7,alpha=0.6)
     sns.barplot(data=lenbin_count_df, x="Length", y='Ratio', errwidth=0.8,capsize=.2, ax=ax4, palette='Blues')
@@ -212,6 +364,7 @@ class distribution(object):
                  _type:str,
                  geno:str,
                  bed_path=None,
+		_qc=0
                 ):
         """
         file_path: AA,cresil,circlemap file path
@@ -222,13 +375,14 @@ class distribution(object):
         self.file_path = file_path
         self._type = _type
         self.geno = geno
+        self._qc = _qc
         
         self.bed_path = bed_path
         
         self.print_deep = -1
         ## remake
         for i in ['/01.chr_distrbution/','/02.length_distrbution/',
-                 '/03.homer_anno_distrbution/', '/04.db.annotation/']:
+                 '/03.homer_anno_distrbution/', '/04.db.annotation/', '/05.jinja2.report/']:
             _dir = self.save_path+i
             if not exists(_dir):
                 makedirs(_dir)
@@ -262,8 +416,8 @@ class distribution(object):
             self.bed_file = pd.DataFrame()
             for path in self.file['Feature BED file']:
                 middle = pd.read_csv(path, sep='\t', index_col=None, header=None)
-                middle['Count'] = self.file[self.file['Feature BED file'].isin([path])]['Feature median copy number'].values
-                middle['eccID'] = self.file[self.file['Feature BED file'].isin([path])]['AA amplicon number'].values
+                middle['Count'] = self.file[self.file['Feature BED file'].isin([path])]['Feature median copy number'].values.mean()
+                middle['eccID'] = self.file[self.file['Feature BED file'].isin([path])]['AA amplicon number'].values[0]
                 ## AA eccid = amplicon
                 self.bed_file = pd.concat([self.bed_file, middle], axis=0)
             self.bed_file.columns = ['Chr', 'Start', 'End', 'Count', 'eccID']
@@ -274,22 +428,17 @@ class distribution(object):
                                      'Score','Coverage','Std','Cov_Start','Cov_End','Coverage_Continuity'])
             self.file['Length'] = self.file['End'] - self.file['Start'] + 1
             self.file['Count'] = self.file['Discordants'] + self.file['Splits']
-
+            if self._qc == 0:
+                self.file = self.file[(self.file['Length'] < 10000000)]
+            elif self._qc == 1:
+                self.file = self.file[(self.file['Score']>50) & (self.file["Cov_Start"]>0.33) &
+                    (self.file["Cov_End"]>0.33) &
+                    (self.file["Coverage_Continuity"]<0.9) &
+                    (self.file["Coverage"]>0.5) & 
+                (self.file["Splits"]>2) & (self.file["Discordants"]>5) & (self.file['Length'] < 10000000)]
+            else:
+                print('please set _qc == 0 or 1')
             ## QC https://github.com/iprada/Circle-Map/wiki/Circle-Map-Realign-output-files
-            self.file = self.file[(self.file['Score']>50) & (self.file["Cov_Start"]>0.33) &
-                 (self.file["Cov_End"]>0.33) &
-                 (self.file["Coverage_Continuity"]<0.9) &
-#                  (self.file["Coverage"]>0.5) & 
-                 (self.file["Splits"]>2) & (self.file["Discordants"]>5) & (self.file['Length'] < 10000000)
-                ]
-
-#             self.file = self.file[(self.file['Score']>50) & 
-#                                   (self.file["Cov_Start"]>0.33) &
-#                  (self.file["Cov_End"]>0.33) &
-#                  (self.file["Coverage_Continuity"]<0.5) &
-#                  (self.file["Coverage"]>0.5) & 
-#                  (self.file["Splits"]>2) & (self.file["Discordants"]>5)
-#                 ]
 
             ##暂时无y,未考虑 mapping 其他一些，maybe bug
             self.file['Chr'] = self.file['Chr'].astype('category')
@@ -453,11 +602,11 @@ class distribution(object):
         
         bed_path = self.save_path+'/'+self._type+'_result.analysis.bed'
         anno_df = get_anno_df(bed_path, self.geno)
-        fig, ax = plt.subplots(figsize=(12,5))
-        anno_df.plot(ax=ax, kind='bar', stacked=True, color=sns.color_palette("deep"))
-        fig.savefig(self.save_path+'/03.homer_anno_distrbution/'+self._type+'_homer_anno_distribution.pdf',bbox_inches='tight')
         anno_df.to_csv(self.save_path+'/03.homer_anno_distrbution/'+self._type+'_homer_anno_distribution.csv',
                             header=True, index=True)
+        fig, ax = plt.subplots(figsize=(9,5))
+        plot_bar(anno_df, colname='Annotation_simple',
+                 save_path=self.save_path+'/03.homer_anno_distrbution/'+self._type+'_homer_anno_distribution.pdf')
         
         self.myPrint('Plot homer anno distribution over!')
         
@@ -519,13 +668,49 @@ class distribution(object):
         anno_df = pd.DataFrame([snp_number, se_number, e_number, eQTL_number],
                     index=['SNP', 'SuperEnhancer', 'Enhancer', 'eQTL'],
                     columns=['Annotation'])
-        anno_df.plot(ax=ax, kind='bar', stacked=True, color=sns.color_palette("deep"))
-        fig.savefig(self.save_path+'/04.db.annotation/Database_anno_number.pdf',bbox_inches='tight')
         anno_df.to_csv(self.save_path+'/04.db.annotation/Database_anno_number.csv',
                             header=True, index=True)
+        plot_bar(anno_df, colname='Annotation',
+                 save_path=self.save_path+'/04.db.annotation/Database_anno_number.pdf')
         
         
         self.myPrint('Anno snp,se,e,eQTL End!')
+
+
+    @deep_count
+    def jinja2_report(self):
+        self.myPrint('jinja2 report Start!')
+
+        output_path=self.save_path+'/05.jinja2.report/report.html'
+        ## 这里后续需要增加 ecc_pipe_result
+        df = pd.read_csv(os.path.join(self.save_path, self._type+'_qc.txt'),
+                sep='\t', index_col=0)
+        df_homer=pd.read_csv(os.path.join(self.save_path,
+                                  '03.homer_anno_distrbution',
+                                  self._type+'_homer_anno_distribution.csv'),
+                            sep=',', index_col=0)
+        df_db=pd.read_csv(os.path.join(self.save_path, 
+                                  '04.db.annotation/Database_anno_number.csv'), 
+                             sep=',', index_col=0)
+        ##get params
+        graphLength = plot_length(df)
+        graphChrom = plot_chr(df)
+        graphRepeat = plot_repeat(df_homer)
+        graphEnhancer = plot_db(df_db)
+        eccNumber, meanLength, top_chr = get_basic_info(df)
+
+        ##report
+        report_html(SampleName=self.save_path.split('/')[-2],
+               rawEccNumber=eccNumber,
+               length=meanLength,
+                Chrom=top_chr,
+                output_path=output_path,
+                graphLength=graphLength,
+                graphChrom=graphChrom, 
+                graphRepeat=graphRepeat,
+                graphEnhancer=graphEnhancer)
+        
+        self.myPrint('jinja2 report End!')
     
     @deep_count
     def run_fast(self, xlim=2000, trim=0.5):
@@ -536,6 +721,7 @@ class distribution(object):
         self.plot_homer_anno_distribution()
         if self.geno == 'hg38':
             self.annotate_db(trim=trim)
+        self.jinja2_report()
         
         self.myPrint('Run fast End!')
         

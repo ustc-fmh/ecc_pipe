@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>eccDNA summary</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="#">eccDNA pipe Report</a>
+        </div>
+    </nav>
+    <div class="container">
+        <ul class="nav nav-tabs my-3" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" role="tab" id="summary-tab" data-bs-toggle="tab" href="#Summary"
+                    aria-controls="Summary" aria-selected="true">Summary</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" role="tab" id="express-tab" data-bs-toggle="tab" href="#GeneExpression"
+                    aria-controls="GeneExpression" aria-selected="false">ReadMe</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="Summary" role="tabpanel" aria-labelledby="summary-tab">
+                <div class="row my-3 text-center ">
+                    <div class="col-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h2 class="text-success">{{SampleName}}</h2>
+                                <p>Sample Name</p>
+                            </div>
+                        </div>
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h2 class="text-success">{{rawEccNumber}}</h2>
+                                <p>Estimated Number of eccDNAs</p>
+                            </div>
+                        </div>
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h2 class="text-success">{{length}}</h2>
+                                        <p>Median length of eccDNAs</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <h2 class="text-success">{{Chrom}}</h2>
+                                        <p>Top3 chromosomes of eccDNAs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h3 class="card-title text-start px-3">
+                                    eccDNA Length
+                                </h3>
+                                <div class="w-100 h-25">
+                                    {{graphLength|safe}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h3 class="card-title text-start px-3">
+                                    eccDNA Chromosome ratio
+                                </h3>
+                                <div class="w-100 h-25">
+                                    {{graphChrom|safe}}
+                                </div>
+                                <h3 class="card-title text-start px-3">
+                                    eccDNA Repeat(by HOMER)
+                                </h3>
+                                <div class="w-100 h-25">
+                                    {{graphRepeat|safe}}
+                                </div>
+                                <h3 class="card-title text-start px-3">
+                                    eccDNA Annotation(by eccDNA Atlas)
+                                </h3>
+                                <div class="w-100 h-25">
+                                    {{graphEnhancer|safe}}
+                                </div>
+                                <!-- <ul class="list-group  list-group-flush py-0">
+                                    {% for ecc in eccDNAs %}
+                                    <li class="list-group-item">
+                                        <div class="d-flex justify-content-between">
+                                            <p>{{ecc.item}}</p>
+                                            <p>{{ecc.value}}</p>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="GeneExpression" role="tabpanel" aria-labelledby="express-tab">
+              <div class="text-start p-3">
+                <h2>Introduction:</h2>
+                <p>Extrachromosomal circular DNA (eccDNA) is a specific type of DNA molecule that has been observed in
+                    different species
+                    for decades. It is characterized as small and highly dispersed circular DNA molecules, including
+                    spcDNA, t-circles,
+                    microDNA, and ecDNA, based on their size and sequence. Recent evidence suggests that eccDNA plays an
+                    important role in
+                    rapid adaptation and contributes to genomic instability, which leads to genetic diversity and
+                    evolution. Moreover,
+                    eccDNA has diverse and significant biological functions, which are implicated in the development of
+                    various diseases
+                    including cancer. Therefore, characterizing the full landscape of eccDNA has become critical for
+                    understanding its roles
+                    in genome regulation, evolution, and disease pathogenesis.</p>
+                <p>eccDNA-pipe is a pipeline for detecting Extrachromosomal Circular DNA from NGS/TGS in Circle-Map, AmpliconArchitect, CReSIL</p>
+            </div>
+           </div>
+        </div>
+        <footer style="font-size:7px; margin-bottom:5px">
+            © 2023 Copyright: <a href="https://qulab.ustc.edu.cn/">QuLab</a>. Developed by <a href="https://github.com/ustc-fmh/">MH.Fang</a>
+        </footer>
+
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/plotly.js/2.20.0/plotly.min.js"></script>
+
+</body>
+
+</html>

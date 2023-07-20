@@ -8,6 +8,7 @@ cd ecc_pipe
 conda env create -f ./install/env.yml
 ```
 ## resource and AA sample data share
+Please install resource.zip and unzip before set environment
 - [resource](https://rec.ustc.edu.cn/share/2806e230-ceeb-11ed-8def-7f1959ef1f05)
 - [AA sample data](https://rec.ustc.edu.cn/share/01b661c0-ceeb-11ed-a387-976f74b3f711)
 - passwd:ustc
@@ -127,6 +128,7 @@ python3 ecc_pipe_master.py --Analysis --mode Distribution --tool circlemap \
 -   **peak_path** - default: no input; if tool=='other', please set the peak bed file contain 5 columns: ['chr', 'start', 'end', 'count', 'id'] eg: ./example/02.downstream/other/result_peak.bed
 -   **geno** - hg38 or mm10
 -   **trim** - overlap ratio for annotate enhancer/super_enhancer/snp/eQTL ; float in [0,1]; eg:0.5
+-   **circlemap_qc** - if set tool == 'circlemap', on/off qc the eccDNA[note: if tool != circlemap not need this params] result eg:1
     
 ### DEG
 Prior to running this mode, the Distribution mode must be executed first. 
@@ -136,7 +138,7 @@ Prior to running this mode, the Distribution mode must be executed first.
 python3 ecc_pipe_master.py --Analysis --mode DEG \
         --path_share example/02.downstream/deg_test/ \
         --group_file example/02.downstream/deg_test/group.txt \
-        --count_type gene --geno hg38 --trim 1
+        --count_type gene --geno hg38 --trim 1 --log2fc 2 --pvalue 0.01
 ```
 -   **Analysis** - set the function; no input
 -   **mode** - set the mode, eg: DEG
@@ -144,6 +146,8 @@ python3 ecc_pipe_master.py --Analysis --mode DEG \
 -   **group_file** - txt file contain group info, eg: example/02.downstream/deg_test/group.txt
 -   **count_type** - gene or region, gene: compute all gene in ecc region; region: compute ecc region in gene
 -   **trim** - overlap ratio for compute gene matrix ; float in [0,1]; eg: 1    
+-   **log2fc** - log2foldchange by deseq2 result; eg: 1 
+-   **pvalue** - pvalue cut by deseq2 result; eg: 0.05 
         
 ### Visualize
 this mode Visualize the eccDNA by Circlize

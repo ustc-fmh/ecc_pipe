@@ -9,7 +9,7 @@ conda env create -f ./install/env.yml
 ```
 ## resource and AA sample data share
 Please install resource.zip and unzip in the ./ecc_pipe before set environment
-- [resource](https://rec.ustc.edu.cn/share/2806e230-ceeb-11ed-8def-7f1959ef1f05)
+- [resource](https://rec.ustc.edu.cn/share/1db60bb0-2705-11ee-b797-2951fa8ccb8e)
 - [AA sample data](https://rec.ustc.edu.cn/share/01b661c0-ceeb-11ed-a387-976f74b3f711)
 - passwd:ustc
 
@@ -170,6 +170,11 @@ Please read pbs:
 ## Multi sample analysis 
 Please read ipynb:
     [Multi sample](https://github.com/ustc-fmh/ecc_pipe/blob/main/example/github_online/Multi_sample_analysis.ipynb)
+
+## NOTE
+-   **1** - The YAML file delimiter should not be a tab; it should consist of four spaces.
+-   **2** - The reference supports "hg38" and "mm10".
+-   **3** - The input file for Cresil is fq but not fq.gz.
 
 ## Citation
 Please cite the following article if you use eccDNA_pipe in your research

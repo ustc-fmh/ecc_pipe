@@ -9,7 +9,7 @@ cd ecc_pipe
 conda env create -f ./install/env.yml
 ```
 ## resource and AA sample data share
-Please install resource.zip and unzip in the ./ecc_pipe before set environment
+Please install resource.zip and unzip in the ./ecc_pipe before setting environment
 - [resource](https://rec.ustc.edu.cn/share/1db60bb0-2705-11ee-b797-2951fa8ccb8e)
 - [AA sample data](https://rec.ustc.edu.cn/share/01b661c0-ceeb-11ed-a387-976f74b3f711)
 - passwd:ustc

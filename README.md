@@ -9,10 +9,8 @@ A pipeline for detecting Extrachromosomal Circular DNA from NGS/TGS in Circle-Ma
 - xxx
 
 ### Version 1.0 2023-07
-- Upstream Analysis
--    01.QC & 02.Detect
-- Downstream Analysis
--    03.Analysis [Distribution, DEG, Visualize]
+- Upstream (01.QC & 02.Detect)
+- Downstream (03.Analysis [Distribution, DEG, Visualize])
 
 
 ## Installation instructions

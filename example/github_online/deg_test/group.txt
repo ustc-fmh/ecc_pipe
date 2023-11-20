@@ -1,0 +1,8 @@
+group1	group1_rep1	cresil
+group1	group1_rep2	cresil
+group1	group1_rep3	cresil
+group1	group1_rep4	cresil
+group2	group2_rep1	cresil
+group2	group2_rep2	cresil
+group2	group2_rep3	cresil
+group2	group2_rep4	cresil

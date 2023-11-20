@@ -2,6 +2,21 @@
 ![](example/github_online/fig/Fig1.png "Overview")
 A pipeline for detecting Extrachromosomal Circular DNA from NGS/TGS in Circle-Map, AmpliconArchitect, CReSIL
 
+## Getting started
+* [Installation](#Installation)
+* [Resource download&reset](#Resource)
+* Tutorials
+    * [upstream tutorial: Shell Code for 01.QC, 02.Detect](example/01.upstream/script/)
+    * [downstream tutorial: Shell Code for 03.Analysis](example/02.upstream/script/)
+    * [downstream tutorial: Python Code for Distribution in single sample](111)
+    * [downstream tutorial: Python Code for Distribution in multi sample](111)
+    * [downstream tutorial: Python Code for DEG](111)
+    * [downstream tutorial: Python Code for Visualize](111)
+* Paper Code
+    * [Fig1](1)
+    * [Fig2](1)
+    * [Fig3](1)
+
 ## Latest updates
 ### Version 1.1 2023-12
 #### Add functions
@@ -12,13 +27,13 @@ A pipeline for detecting Extrachromosomal Circular DNA from NGS/TGS in Circle-Ma
 - Downstream (03.Analysis [Distribution, DEG, Visualize])
 
 
-## Installation instructions
+## Installation
 ### Install Conda environment
 ```
 cd ecc_pipe
 conda env create -f ./install/env.yml
 ```
-## resource and AA sample data share
+## Resource
 Please install resource.zip and unzip in the ./ecc_pipe before setting environment
 - [resource](https://rec.ustc.edu.cn/share/1db60bb0-2705-11ee-b797-2951fa8ccb8e)
 - [AA sample data](https://rec.ustc.edu.cn/share/01b661c0-ceeb-11ed-a387-976f74b3f711)

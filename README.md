@@ -5,7 +5,7 @@ A pipeline for detecting Extrachromosomal Circular DNA from NGS/TGS in Circle-Ma
 ## Latest updates
 ### Version 1.1 2023-12
 #### Add functions
-- xxx
+- Add limma, edgeR, GSEA analysis in DEG
 
 ### Version 1.0 2023-07
 - Upstream (01.QC & 02.Detect)

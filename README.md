@@ -9,7 +9,7 @@ A pipeline for detecting Extrachromosomal Circular DNA from NGS/TGS in Circle-Ma
     * [upstream tutorial: Shell Code for 01.QC, 02.Detect](example/01.upstream/script/)
     * [downstream tutorial: Shell Code for 03.Analysis](example/02.upstream/script/)
     * [downstream tutorial: Python Code for Distribution in single sample](111)
-    * [downstream tutorial: Python Code for Distribution in multi sample](example/github_online/Multi_sample_analysis.ipynb)
+    * [downstream tutorial: Python Code for Distribution in multi sample](example/multi_example/Multi_sample_analysis.ipynb)
     * [downstream tutorial: Python Code for DEG](111)
     * [downstream tutorial: Python Code for Visualize](111)
 * Paper Code

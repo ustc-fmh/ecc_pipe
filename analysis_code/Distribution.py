@@ -233,7 +233,7 @@ def plot_distribution(len_df, lenbin_df, len_count_df, lenbin_count_df, name='de
     len_df, lenbin_df
     name: str default 'cresil',
     output_path: None
-    xlim: 2000
+    xlim: 2000 for displot x max
     _type: only plot distrubution for circlemap
     """
     
@@ -364,7 +364,7 @@ class distribution(object):
                  _type:str,
                  geno:str,
                  bed_path=None,
-		_qc=0
+        _qc=0
                 ):
         """
         file_path: AA,cresil,circlemap file path
@@ -411,6 +411,7 @@ class distribution(object):
             self.file = self.file[self.file['Classification'].isin(['ecDNA'])]
             self.file = self.file[['Location', 'Captured interval length',
                                    'Feature median copy number', 'All genes', 'Feature BED file', 'AA amplicon number']]
+            self.file['Length'] = self.file['Captured interval length']
             ## galaxy test update    
             ##self.file['Feature BED file'] = ['./data/hela_amplicon2_ecDNA_1_intervals.bed', './data/hela_amplicon4_ecDNA_1_intervals.bed']
             self.bed_file = pd.DataFrame()
@@ -418,9 +419,10 @@ class distribution(object):
                 middle = pd.read_csv(path, sep='\t', index_col=None, header=None)
                 middle['Count'] = self.file[self.file['Feature BED file'].isin([path])]['Feature median copy number'].values.mean()
                 middle['eccID'] = self.file[self.file['Feature BED file'].isin([path])]['AA amplicon number'].values[0]
+                middle['Length'] = self.file[self.file['Feature BED file'].isin([path])]['Captured interval length'].values[0]
                 ## AA eccid = amplicon
                 self.bed_file = pd.concat([self.bed_file, middle], axis=0)
-            self.bed_file.columns = ['Chr', 'Start', 'End', 'Count', 'eccID']
+            self.bed_file.columns = ['Chr', 'Start', 'End', 'Count', 'eccID', 'Length']
             
         elif self._type == 'circlemap':
             self.file = pd.read_csv(self.file_path,  sep='\t', header=None,
@@ -452,7 +454,9 @@ class distribution(object):
         elif self._type == 'cresil':
             self.file = pd.read_csv(self.file_path, sep='\t')
             self.file = self.file[self.file['eccdna_status'].isin(['cyclic'])]
+            self.file['Length'] = self.file['merge_len']
             self.file['eccID'] = self.file.index+1
+            self.file['Chr'] = [i.split(':')[0] for i in self.file['merge_region']]
             
             cresil_chr_list = []
             cresil_length_list = []
@@ -616,27 +620,27 @@ class distribution(object):
             return anno_df
                 
     @deep_count
-    def annotate_db(self, trim=1):
+    def annotate_db(self, ratio=1, db_path='./resource/Analysis/reference/annotation/'):
         self.myPrint('Anno snp,se,e,eQTL Start!')
         
         if self.geno != 'hg38':
             print('This function just for hg38')
             
         ## annotate path
-        snp_path = './resource/Analysis/reference/annotation/SNP.bed'
-        se_path = './resource/Analysis/reference/annotation/superenhancer_dbsuper_sea_sedb.bed'
-        e_path = './resource/Analysis/reference/annotation/enhancer_enhancerdb_sendb.bed'
-        eQTL_path = './resource/Analysis/reference/annotation/eQTL.bed'
+        snp_path = db_path+'SNP.bed'
+        se_path = db_path+'superenhancer_dbsuper_sea_sedb.bed'
+        e_path = db_path+'enhancer_enhancerdb_sendb.bed'
+        eQTL_path = db_path+'eQTL.bed'
         
         snp_output_path = self.save_path+'/04.db.annotation/snp.result.bed'
         se_output_path = self.save_path+'/04.db.annotation/SuperEnhancer.result.bed'
         e_output_path = self.save_path+'/04.db.annotation/Enhancer.result.bed'
         eQTL_output_path = self.save_path+'/04.db.annotation/eQTL.result.bed'
         
-        os.system('bedtools intersect -a ' + self.bed_file_path + ' -b ' + snp_path + ' -wa -wb -F '+ str(trim)+ ' > ' + snp_output_path)
-        os.system('bedtools intersect -a ' + self.bed_file_path + ' -b ' + se_path + ' -wa -wb -F '+ str(trim)+ ' > ' + se_output_path)
-        os.system('bedtools intersect -a ' + self.bed_file_path + ' -b ' + e_path + ' -wa -wb -F '+ str(trim)+ ' > ' + e_output_path)
-        os.system('bedtools intersect -a ' + self.bed_file_path + ' -b ' + eQTL_path + ' -wa -wb -F '+ str(trim)+ ' > ' + eQTL_output_path)
+        os.system('bedtools intersect -a ' + self.bed_file_path + ' -b ' + snp_path + ' -wa -wb -F '+ str(ratio)+ ' > ' + snp_output_path)
+        os.system('bedtools intersect -a ' + self.bed_file_path + ' -b ' + se_path + ' -wa -wb -F '+ str(ratio)+ ' > ' + se_output_path)
+        os.system('bedtools intersect -a ' + self.bed_file_path + ' -b ' + e_path + ' -wa -wb -F '+ str(ratio)+ ' > ' + e_output_path)
+        os.system('bedtools intersect -a ' + self.bed_file_path + ' -b ' + eQTL_path + ' -wa -wb -F '+ str(ratio)+ ' > ' + eQTL_output_path)
         
         ## detect 0 
         if os.path.getsize(snp_output_path) == 0:
@@ -674,7 +678,7 @@ class distribution(object):
                  save_path=self.save_path+'/04.db.annotation/Database_anno_number.pdf')
         
         
-        self.myPrint('Anno snp,se,e,eQTL End!')
+        self.myPrint('Anno snp,SuperEnhancer,Enhancer,eQTL End!')
 
 
     @deep_count
@@ -692,12 +696,16 @@ class distribution(object):
         df_db=pd.read_csv(os.path.join(self.save_path, 
                                   '04.db.annotation/Database_anno_number.csv'), 
                              sep=',', index_col=0)
+        #print(self.bed_file)
         ##get params
         graphLength = plot_length(df)
-        graphChrom = plot_chr(df)
+        graphChrom = plot_chr(self.bed_file)
         graphRepeat = plot_repeat(df_homer)
         graphEnhancer = plot_db(df_db)
-        eccNumber, meanLength, top_chr = get_basic_info(df)
+        if self._type == 'AA':
+            eccNumber, meanLength, top_chr = get_basic_info(self.bed_file)
+        else:
+            eccNumber, meanLength, top_chr = get_basic_info(df)
 
         ##report
         report_html(SampleName=self.save_path.split('/')[-2],
@@ -713,14 +721,19 @@ class distribution(object):
         self.myPrint('jinja2 report End!')
     
     @deep_count
-    def run_fast(self, xlim=2000, trim=0.5):
+    def run_fast(self, xlim=2000, ratio=0.5, ecc_pipe_path='None'):
+        if ecc_pipe_path=='None':
+            db_path='./resource/Analysis/reference/annotation/'
+        else:
+            db_path = ecc_pipe_path+'/resource/Analysis/reference/annotation/'
+            
         self.myPrint('Run fast Start!')
         self.make_bed_QC()
         self.plot_chr_distribution()
         self.plot_length_distribution(xlim)
         self.plot_homer_anno_distribution()
         if self.geno == 'hg38':
-            self.annotate_db(trim=trim)
+            self.annotate_db(ratio=ratio, db_path=db_path)
         self.jinja2_report()
         
         self.myPrint('Run fast End!')

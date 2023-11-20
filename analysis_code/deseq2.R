@@ -28,6 +28,6 @@ summary(res05)
 normcount<-counts(dds2,normalize=TRUE)
 write.table(normcount,output_norm,sep=",",row.names = T,quote = F)
 
-log_norcount<-log2(normcount+1)
-resdata <-  merge(as.data.frame(resOrdered),as.data.frame(log_norcount),by="row.names",sort=FALSE)
+#log_norcount<-log2(normcount+1)
+resdata <-  merge(as.data.frame(resOrdered),as.data.frame(normcount),by="row.names",sort=FALSE)
 write.table(resdata,output_result,sep=",",row.names = F,quote = F)

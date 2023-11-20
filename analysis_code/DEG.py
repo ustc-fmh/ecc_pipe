@@ -12,6 +12,23 @@ import os
 warnings.filterwarnings('ignore')
 
 import math
+
+def anno_gsea_result(gsea_raw_path, anno_file_path):
+    """
+    gsea_raw: gsea_raw result dataframe
+    anno_file: annotation gene df
+    """
+    df = pd.read_csv(gsea_raw_path, index_col=0)
+    anno = pd.read_csv(anno_file_path, index_col=0)
+    _dict = dict(zip([str(i) for i in anno['ENTREZID']], anno['SYMBOL']))
+    _dict.update({
+        'None': 'None'
+    })
+    df['core_enrichment'] = df['core_enrichment'].fillna('None')
+    df['core_enrichment'] = df['core_enrichment'].map(lambda x: [_dict[i] for i in str(x).split('/')])
+    
+    return df
+
 def volcano_plot(df_DEG, pvalue=0.05, log2FC=1, xlim=10, ylim=5, save=None, anno=True):
     
     result = pd.DataFrame()
@@ -72,23 +89,26 @@ def volcano_plot(df_DEG, pvalue=0.05, log2FC=1, xlim=10, ylim=5, save=None, anno
     if save != None:
         fig.savefig(save, dpi=300, bbox_inches='tight')
 
-def make_ecc_gene_martix(geno, bed_file_path, trim=1, _type='gene'):
+def make_ecc_gene_martix(geno, bed_file_path, ratio=1, _type='gene', ecc_pipe_path='None'):
     """
     geno: str in ['hg38', 'mm10']
     bed_file_path: peak list bed file path and Count
-    trim: bedtools intersect ratio, 0-1
+    ratio: bedtools intersect ratio, 0-1
     _type: all gene in ecc region or ecc region in gene / str in ['gene', 'region']
     """
     ## 已修改
-    ref_gene_path = './resource/Analysis/reference/genes.10X.'+geno+'.all.bed'
+    if ecc_pipe_path=='None':
+        ref_gene_path = './resource/Analysis/reference/genes.10X.'+geno+'.all.bed'
+    else:
+        ref_gene_path = ecc_pipe_path+'/resource/Analysis/reference/genes.10X.'+geno+'.all.bed'
 
     outfile_up_path = '/'.join(bed_file_path.split('/')[:-1])
     outfile_path = outfile_up_path+'/ecc_gene_number.bed'
     
     if _type == 'gene':
-        os.system('bedtools intersect -a ' + bed_file_path + ' -b ' + ref_gene_path + ' -wa -wb -F '+ str(trim)+ ' > ' + outfile_path)
+        os.system('bedtools intersect -a ' + bed_file_path + ' -b ' + ref_gene_path + ' -wa -wb -F '+ str(ratio)+ ' > ' + outfile_path)
     elif _type == 'region':
-        os.system('bedtools intersect -a ' + bed_file_path + ' -b ' + ref_gene_path + ' -wa -wb -f '+ str(trim)+ ' > ' + outfile_path)
+        os.system('bedtools intersect -a ' + bed_file_path + ' -b ' + ref_gene_path + ' -wa -wb -f '+ str(ratio)+ ' > ' + outfile_path)
     else:
         print("Please set _type in ['gene', 'region']")
         
@@ -107,6 +127,9 @@ def plot_go_kegg_clusterprofile(result_path, top_number=10):
     result_path: 'data/result/deg_test/02.ecc_deg_go_kegg'
     """
     for name in os.listdir(result_path):
+        if 'GO' not in name or 'KEGG' not in name:
+            continue
+            
         if name.split('.')[-1] == 'csv':
             #print(name)
             plot_path=result_path+'/'+name.split('.')[0]+'.pdf'
@@ -130,7 +153,7 @@ class ecc_gene_number_deg(object):
                 path_share: str,
                  group_file_path: str,
                  geno:str,
-                 trim=1,
+                 ratio=1,
                  _type='gene',
                 ):
         """
@@ -146,7 +169,7 @@ class ecc_gene_number_deg(object):
                                       sep='\t', header=None)
         self.group_file.columns=['name', 'group', 'tool']
         
-        self.trim = trim
+        self.ratio = ratio
         self._type = _type
         self.geno = geno
         
@@ -170,15 +193,17 @@ class ecc_gene_number_deg(object):
         print('\t' * self.print_deep+str)
         
     @deep_count
-    def make_ecc_number_matrix(self):
+    def make_ecc_number_matrix(self, ecc_pipe_path='None'):
         self.myPrint('Make ecc gene number matrix start!')
+            
         
         for _name in self.group_file['group'].values:
             tool = self.group_file[self.group_file['group'].isin([_name])]['tool'].values[0]
             bed_file_path = self.path_share + '/'+_name + '/ecc_pipe_result/'+tool+'_result.analysis.bed'
             make_ecc_gene_martix(self.geno, bed_file_path,
-                             trim=self.trim,
-                            _type=self._type) ## make matrix
+                             ratio=self.ratio,
+                            _type=self._type,
+                                ecc_pipe_path=ecc_pipe_path) ## make matrix
         
         ##merge
         df_merge = pd.DataFrame()
@@ -196,65 +221,117 @@ class ecc_gene_number_deg(object):
         self.myPrint('Make ecc gene number matrix end!')
         
     @deep_count
-    def deseq2_run(self, pvalue=0.05, log2fc=1, xlim=10, ylim=5, anno=True):
+    def deg_run(self, mode='deseq2', pvalue=0.05, log2fc=1, xlim=10, ylim=5, anno=True, ecc_pipe_path='None', R_env='None'):
         """
         xxx
         """
-        self.myPrint('deseq2 run start!')
+        self.myPrint('deg run start!')
         outputdir_path = self.path_share+'/01.ecc_deg_output/'
-        os.system('Rscript ./analysis_code/deseq2.R {0} {1} {2}'.format(self.count_file_path,
+        
+        run_mode = mode
+        if run_mode not in ['deseq2', 'edger', 'limma']:
+            print("Please set mode param in ['deseq2', 'edger', 'limma'] ")
+        
+        if ecc_pipe_path=='None':
+            if R_env == 'None':
+                shell_code = 'Rscript ./analysis_code/'+run_mode+'.R {0} {1} {2}'.format(self.count_file_path,
                                                           self.group_file_path,
-                                                          outputdir_path))
-        print('Rscript ./analysis_code/deseq2.R {0} {1} {2}'.format(self.count_file_path,
+                                                          outputdir_path)
+            else:
+                shell_code = R_env+' ./analysis_code/'+run_mode+'.R {0} {1} {2}'.format(self.count_file_path,
                                                           self.group_file_path,
-                                                          outputdir_path))
+                                                          outputdir_path)
+        else:
+            if R_env == 'None':
+                shell_code = 'Rscript '+ecc_pipe_path+'/analysis_code/'+run_mode+'.R {0} {1} {2}'.format(self.count_file_path,
+                                                          self.group_file_path,
+                                                          outputdir_path)
+            else:
+                shell_code = R_env+' '+ecc_pipe_path+'/analysis_code/'+run_mode+'.R {0} {1} {2}'.format(self.count_file_path,
+                                                          self.group_file_path,
+                                                          outputdir_path)
+        os.system(shell_code)
+        #print(shell_code)
+        
         ## python 火山图绘制
-        deg_df_path = outputdir_path+'/deseq2_result.csv'
+        deg_df_path = outputdir_path+'/'+run_mode+'_result.csv'
         deg_df = pd.read_csv(deg_df_path, index_col=0)
         deg_df = deg_df.loc[[i for i in deg_df.index if '.' not in i], :]
         deg_df.to_csv(deg_df_path, header=True, index=True)
 
-        volcano_path = outputdir_path+'/deseq2.volcano.pdf'
+        volcano_path = outputdir_path+'/'+run_mode+'.volcano.pdf'
         
         volcano_plot(deg_df, pvalue=float(pvalue), log2FC=float(log2fc), xlim=xlim, ylim=ylim,
              save=volcano_path,
             anno=anno)
         
-        self.myPrint('deseq2 run end!')
+        self.myPrint('deg run end!')
         
-    def clusterprofile_run(self, pvalue=0.05, log2fc=1):
+    def clusterprofile_run(self, mode='deseq2' , pvalue=0.05, log2fc=1, ecc_pipe_path='None', R_env='None'):
         """
         xxx
         """
         self.myPrint('clusterprofile run start!')
+        run_mode = mode
+        if run_mode not in ['deseq2', 'edger', 'limma']:
+            print("Please set mode param in ['deseq2', 'edger', 'limma'] ")
+            
         ###cluster profile
-        deg_result = self.path_share+'/01.ecc_deg_output/deseq2_result.csv'
+        deg_result = self.path_share+'/01.ecc_deg_output/'+run_mode+'_result.csv'
         outputdir_path = self.path_share+'/02.ecc_deg_go_kegg/'
         
-        os.system('Rscript ./analysis_code/clusterprofile.R {0} {1} {2} {3} {4}'.format(deg_result,
+        if ecc_pipe_path=='None':
+            if R_env == 'None':
+                shell_code = 'Rscript ./analysis_code/clusterprofile.R {0} {1} {2} {3} {4} {5}'.format(deg_result,
                                                                              outputdir_path,
                                                                              pvalue,
                                                                              log2fc,
-                                                                             self.geno))
+                                                                             self.geno, run_mode)
+            else:
+                shell_code = R_env+' ./analysis_code/clusterprofile.R {0} {1} {2} {3} {4} {5}'.format(deg_result,
+                                                                             outputdir_path,
+                                                                             pvalue,
+                                                                             log2fc,
+                                                                             self.geno, run_mode)
+        else:
+            if R_env == 'None':
+                shell_code = 'Rscript '+ecc_pipe_path+'/analysis_code/clusterprofile.R {0} {1} {2} {3} {4} {5}'.format(deg_result,
+                                                                             outputdir_path,
+                                                                             pvalue,
+                                                                             log2fc,
+                                                                             self.geno, run_mode)
+            else:
+                shell_code = R_env+' '+ecc_pipe_path+'/analysis_code/clusterprofile.R {0} {1} {2} {3} {4} {5}'.format(deg_result,
+                                                                             outputdir_path,
+                                                                             pvalue,
+                                                                             log2fc,
+                                                                             self.geno, run_mode)
+                
+        
+        os.system(shell_code)
         
         ## 增加 python 绘图 barplot
-        print('Rscript ./analysis_code/clusterprofile.R {0} {1} {2} {3} {4}'.format(deg_result,
-                                                                             outputdir_path,
-                                                                             pvalue,
-                                                                             log2fc,
-                                                                             self.geno))
+        #print(shell_code)
+        
+        gsea_raw_path = outputdir_path+'/'+run_mode+'_gsea_result_1.csv'
+        anno_file_path = outputdir_path+'/'+run_mode+'_gsea_result_2.csv'
+        df_anno = anno_gsea_result(gsea_raw_path, anno_file_path)
+        df_anno.to_csv(outputdir_path+'/'+run_mode+'_gsea_result_final.csv', header=True, index=True)
+        
         
         plot_go_kegg_clusterprofile(outputdir_path)
+        
+        
+        
         self.myPrint('clusterprofile run end!')
         
         
     @deep_count
-    def run_fast(self, pvalue=0.05, log2fc=1, xlim=10, ylim=5):
+    def run_fast(self, mode='deseq2', pvalue=0.05, log2fc=1, xlim=10, ylim=5, ecc_pipe_path='None', R_env='None'):
         self.myPrint('Run fast Start!')
-        
-        self.make_ecc_number_matrix()
-        self.deseq2_run(pvalue=pvalue, log2fc=log2fc, xlim=xlim, ylim=ylim)
-        self.clusterprofile_run(pvalue=pvalue, log2fc=log2fc)
+        self.make_ecc_number_matrix(ecc_pipe_path=ecc_pipe_path)
+        self.deg_run(mode=mode, pvalue=pvalue, log2fc=log2fc, xlim=xlim, ylim=ylim, ecc_pipe_path=ecc_pipe_path, R_env=R_env)
+        self.clusterprofile_run(mode=mode, pvalue=pvalue, log2fc=log2fc, ecc_pipe_path=ecc_pipe_path, R_env=R_env)
 
         self.myPrint('Run fast End!')
         

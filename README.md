@@ -9,7 +9,7 @@ A pipeline for detecting Extrachromosomal Circular DNA from NGS/TGS in Circle-Ma
     * [upstream tutorial: Shell Code for 01.QC, 02.Detect](example/01.upstream/script/)
     * [downstream tutorial: Shell Code for 03.Analysis](example/02.upstream/script/)
     * [downstream tutorial: Python Code for Distribution in single sample](111)
-    * [downstream tutorial: Python Code for Distribution in multi sample](111)
+    * [downstream tutorial: Python Code for Distribution in multi sample](example/github_online/Multi_sample_analysis.ipynb)
     * [downstream tutorial: Python Code for DEG](111)
     * [downstream tutorial: Python Code for Visualize](111)
 * Paper Code
@@ -188,14 +188,7 @@ python3 ecc_pipe_master.py --Analysis --mode Visualize \
 -   **geno** - hg38 or mm10
 -   **ecc_id** - ecc id in the peak_list
 
-## single sample test run
-Please read pbs:
-    [upstream](https://github.com/ustc-fmh/ecc_pipe/tree/main/example/01.upstream/script)
-    [downstream](https://github.com/ustc-fmh/ecc_pipe/tree/main/example/02.downstream/script)
 
-## Multi sample analysis 
-Please read ipynb:
-    [Multi sample](https://github.com/ustc-fmh/ecc_pipe/blob/main/example/github_online/Multi_sample_analysis.ipynb)
 
 ## NOTE
 -   **1** - The YAML file delimiter should not be a tab; it should consist of four spaces.

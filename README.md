@@ -1,6 +1,6 @@
-# eccDNA_pipe: A pipeline for detecting eccDNA from NGS/TGS  
+# eccDNA-pipe: An integrated pipeline for identification, analysis, and visualization of extrachromosomal circular DNA from NGS/TGS  
 ![](example/github_online/fig/Fig1.png "Overview")
-A pipeline for detecting Extrachromosomal Circular DNA from NGS/TGS in Circle-Map, AmpliconArchitect, CReSIL
+An integrated pipeline for identification, analysis, and visualization of extrachromosomal circular DNA(eccDNA) from high-throughput sequencing data in Circle-Map, AmpliconArchitect, CReSIL, FLED
 
 ## Getting started
 * [Installation](#Installation)

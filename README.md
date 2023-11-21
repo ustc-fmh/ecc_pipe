@@ -22,7 +22,8 @@ An integrated pipeline for identification, analysis, and visualization of extrac
 ### Version 1.1 2023-12
 #### Add functions
 - Add limma, edgeR, GSEA analysis in DEG
-- Add Python Code for Downstream analysis
+- Add FLED in upstream [02.Detect]
+- Add Tutorials in Python Code for Downstream analysis
 
 ### Version 1.0 2023-07
 - Upstream (01.QC & 02.Detect)
@@ -137,6 +138,7 @@ Detect tools raw website:
 - [circlemap](https://github.com/iprada/Circle-Map)
 - [AA](https://github.com/jluebeck/AmpliconSuite-pipeline)
 - [cresil](https://github.com/visanuwan/cresil)
+- [FLED](https://github.com/FuyuLi/FLED)
 
 ## 03.Analysis
 we apply three mode to analysis the eccDNA result file by python: Distribution, DEG, Visualize

@@ -199,7 +199,7 @@ python3 ecc_pipe_master.py --Analysis --mode Visualize \
 -   **3** - The input file for CReSIL is fq but not fq.gz.
 
 ## Citation
-Please cite the following article if you use eccDNA_pipe in your research
+Please cite the following article if you use eccDNA-pipe in your research
 > xxxx
 
 ## License and Copyright

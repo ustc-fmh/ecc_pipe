@@ -14,7 +14,6 @@ An integrated pipeline for identification, analysis, and visualization of extrac
     * [downstream tutorial: Python Code for Visualize](example/s003_downstream_Visualize.ipynb)
     * [example data](example/)
 * Paper Code
-    * [Fig1](1)
     * [Fig2](1)
     * [Fig3](1)
 
@@ -197,7 +196,7 @@ python3 ecc_pipe_master.py --Analysis --mode Visualize \
 ## NOTE
 -   **1** - The YAML file delimiter should not be a tab; it should consist of four spaces.
 -   **2** - The reference supports "hg38" and "mm10".
--   **3** - The input file for Cresil is fq but not fq.gz.
+-   **3** - The input file for CReSIL is fq but not fq.gz.
 
 ## Citation
 Please cite the following article if you use eccDNA_pipe in your research

@@ -1,8 +1,0 @@
-group1	OC1.1	cresil
-group1	OC2.1	cresil
-group1	OC3.1	cresil
-group1	OC4.1	cresil
-group2	OC1.2	cresil
-group2	OC2.2	cresil
-group2	OC3.2	cresil
-group2	OC4.2	cresil

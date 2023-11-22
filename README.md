@@ -60,8 +60,8 @@ echo export AA_SRC=$PWD/resource/AA/AmpliconArchitect/src >> ~/.bashrc
 cd ./resource/AA/AmpliconArchitect/
 echo export MOSEKPLATFORM=linux64x86 >> ~/.bashrc
 export MOSEKPLATFORM=linux64x86
-echo export PATH=$PATH:$PWD/mosek/8/tools/platform/$MOSEKPLATFORM/bin >> ~/.bashrc
-echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/mosek/8/tools/platform/$MOSEKPLATFORM/bin >> ~/.bashrc
+echo export PATH=PATH:PATH:PWD/mosek/8/tools/platform/$MOSEKPLATFORM/bin >> ~/.bashrc
+echo export LD_LIBRARY_PATH=LDLIBRARYPATH:LD_LIBRARY_PATH:PWD/mosek/8/tools/platform/$MOSEKPLATFORM/bin >> ~/.bashrc
 echo export MOSEKLM_LICENSE_FILE=$PWD/mosek/8/licenses >> ~/.bashrc
 cd $PWD/mosek/8/tools/platform/linux64x86/python/3/
 python3 setup.py install
@@ -133,6 +133,14 @@ all params in the ***cresil_config.yaml*** file show:
 -   **threads** - set max threads for one data, eg:12
 -   **reference** - hg38 or mm10
 -   **wgs** - if use WGS mode, default: 0
+
+
+all params in the ***fled_config.yaml*** file show:
+-   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
+-   **output_path** - output path, eg: ./example/01.upstream/result/02.fled
+-   **input_file** - fastq file path, eg: file_name: ['r1.fastq', 'r2.fastq']
+-   **threads** - set max threads for one data, eg:12
+-   **reference** - hg38 or mm10
 
 Detect tools raw website:
 - [circlemap](https://github.com/iprada/Circle-Map)

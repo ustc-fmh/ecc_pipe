@@ -202,7 +202,18 @@ python3 ecc_pipe_master.py --Analysis --mode Visualize \
 -   **3** - The input file for CReSIL is fq but not fq.gz.
 
 ## Software Version
-
+trim-galore 0.6.7
+fastqc 0.12.1
+Circle-Map 1.1.4
+PrepareAA 0.1344.1
+CReSIL 1.0.0
+FLED 1.5.0
+homer 4.11
+limma 3.54.0
+edgeR 3.40.0
+DESeq2 1.38.0
+clusterProfiler 4.6.0
+circlize 0.4.15
 
 ## Citation
 Please cite the following article if you use eccDNA-pipe in your research

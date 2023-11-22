@@ -12,18 +12,20 @@ source /home/qukun/minghaofang/miniconda3/etc/profile.d/conda.sh
 conda activate ecc_pipe
 
 ###
-#写shell循环 载入 OC
-#for i in {OC1.1,OC1.2,OC2.1,OC2.2,OC3.1,OC3.2,OC4.1,OC4.2}
+#first run distribution
+#for i in {gr up1_rep1,group1_rep2,group1_rep3,group1_rep4,group2_rep1,group2_rep2,group2_rep3,group2_rep4}
 #do
 #  python3 ecc_pipe_master.py --Analysis --mode Distribution --tool cresil \
-#		--file_path example/02.downstream/deg_test/$i/eccDNA_final.txt \
-#		--geno hg38 --trim 0.5
+#                --file_path example/02.downstream/deg_test/$i/eccDNA_final.txt \
+#                --geno hg38 --ratio 0.5
 #done
+
 
 cd /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
 python3 ecc_pipe_master.py --Analysis --mode DEG \
 		--path_share example/02.downstream/deg_test/ \
 		--group_file example/02.downstream/deg_test/group.txt \
-		--count_type gene --geno hg38 --trim 1
+		--count_type gene --geno hg38 --ratio 0.5 --deg_mode limma \
+		--log2fc 0.5 --pvalue 0.05 
 
 

@@ -148,7 +148,7 @@ This mode calculates the length and chromatin distribution and
 ```
 python3 ecc_pipe_master.py --Analysis --mode Distribution --tool circlemap \
             --file_path example/02.downstream/circlemap/DNARCAT1.circle.bed \
-            --geno hg38 --trim 0.5
+            --geno hg38 --ratio 0.5 --circlemap_qc 0
 ```
 -   **Analysis** - set the function; no input
 -   **mode** - set the mode, eg: Distribution
@@ -156,8 +156,8 @@ python3 ecc_pipe_master.py --Analysis --mode Distribution --tool circlemap \
 -   **file_path** - eccDNA result file from 02.Detect; if set tool=='other',please set the file_path contain 6 columns:['Chr', 'Start', 'End', 'Count', 'eccID', 'Length']; eg: ./example/02.downstream/other/result_ecc.txt
 -   **peak_path** - default: no input; if tool=='other', please set the peak bed file contain 5 columns: ['chr', 'start', 'end', 'count', 'id'] eg: ./example/02.downstream/other/result_peak.bed
 -   **geno** - hg38 or mm10
--   **trim** - overlap ratio for annotate enhancer/super_enhancer/snp/eQTL ; float in [0,1]; eg:0.5
--   **circlemap_qc** - if set tool == 'circlemap', on/off qc the eccDNA[note: if tool != circlemap not need this params] result eg:1
+-   **ratio** - overlap ratio for annotate enhancer/super_enhancer/snp/eQTL ; float in [0,1]; eg:0.5
+-   **circlemap_qc** - if set tool == 'circlemap', on/off qc the eccDNA[note: if tool != circlemap not need this params] result eg:0
     
 ### DEG
 Prior to running this mode, the Distribution mode must be executed first. 
@@ -167,15 +167,17 @@ Prior to running this mode, the Distribution mode must be executed first.
 python3 ecc_pipe_master.py --Analysis --mode DEG \
         --path_share example/02.downstream/deg_test/ \
         --group_file example/02.downstream/deg_test/group.txt \
-        --count_type gene --geno hg38 --trim 1 --log2fc 2 --pvalue 0.01
+        --count_type gene --geno hg38 --ratio 0.5 --deg_mode limma \
+        --log2fc 0.5 --pvalue 0.05 
 ```
 -   **Analysis** - set the function; no input
 -   **mode** - set the mode, eg: DEG
 -   **path_share** - path contain all sample data, eg: example/02.downstream/deg_test/
 -   **group_file** - txt file contain group info, eg: example/02.downstream/deg_test/group.txt
 -   **count_type** - gene or region, gene: compute all gene in ecc region; region: compute ecc region in gene
--   **trim** - overlap ratio for compute gene matrix ; float in [0,1]; eg: 1    
--   **log2fc** - log2foldchange by deseq2 result; eg: 1 
+-   **ratio** - overlap ratio for compute gene matrix ; float in [0,1]; eg: 1
+-   **deg_mode** - DEG software select ; str in ['limma', 'edger', 'deseq2']; eg: 'limma'   
+-   **log2fc** - log2foldchange by deseq2 result; eg: 0.5
 -   **pvalue** - pvalue cut by deseq2 result; eg: 0.05 
         
 ### Visualize
@@ -183,20 +185,24 @@ this mode Visualize the eccDNA by Circlize
 ```
 python3 ecc_pipe_master.py --Analysis --mode Visualize \
         --bed_file example/02.downstream/cresil/ecc_pipe_result/cresil_result.analysis.bed \
-        --geno hg38 --ecc_id 1
+        --geno hg38 --ecc_id 1 --count_type region --ratio 0.5
 ```
 -   **Analysis** - set the function; no input
 -   **mode** - set the mode, eg: Visualize
 -   **bed_file** - peak_list bed file;
 -   **geno** - hg38 or mm10
 -   **ecc_id** - ecc id in the peak_list
-
+-   **count_type** - gene or region, gene: compute all gene in ecc region; region: compute ecc region in gene
+-   **ratio** - overlap ratio for compute gene matrix ; float in [0,1]; eg: 0.5
 
 
 ## NOTE
 -   **1** - The YAML file delimiter should not be a tab; it should consist of four spaces.
 -   **2** - The reference supports "hg38" and "mm10".
 -   **3** - The input file for CReSIL is fq but not fq.gz.
+
+## Software Version
+
 
 ## Citation
 Please cite the following article if you use eccDNA-pipe in your research

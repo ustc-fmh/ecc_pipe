@@ -26,9 +26,10 @@ An integrated pipeline for identification, analysis, and visualization of extrac
 - Add Tutorials in Python Code for Downstream analysis
 
 ### Version 1.0 2023-07
-- Upstream (01.QC & 02.Detect)
 - Downstream (03.Analysis [Distribution, DEG, Visualize])
 
+### Version 0.9 2023-03
+- Upstream (01.QC & 02.Detect)
 
 ## Installation
 ### Install Conda environment

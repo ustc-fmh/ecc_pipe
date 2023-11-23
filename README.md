@@ -13,8 +13,8 @@ An integrated pipeline for identification, analysis, and visualization of extrac
     * [Downstream Tutorial: Python Code for DEG](example/s002_downstream_DEG.ipynb)
     * [Downstream Tutorial: Python Code for Visualize](example/s003_downstream_Visualize.ipynb)
     * [Cross-Species user add](example/)
-    * [Example data](example/)
-    * [Config](config/)
+    * [Example Data](example/)
+    * [Example Config](config/)
 * Paper Code
     * [Fig2](1)
     * [Fig3](1)

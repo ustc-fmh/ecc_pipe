@@ -1,4 +1,4 @@
-![image](https://github.com/ustc-fmh/ecc_pipe/assets/50505661/d90f8154-be65-4067-aa6e-e70e448f032a)# eccDNA-pipe: An integrated pipeline for identification, analysis, and visualization of extrachromosomal circular DNA from NGS/TGS  
+# eccDNA-pipe: An integrated pipeline for identification, analysis, and visualization of extrachromosomal circular DNA from NGS/TGS  
 ![](example/paper/Fig1/Fig1.png "Overview")
 An integrated pipeline for identification, analysis, and visualization of extrachromosomal circular DNA(eccDNA) from high-throughput sequencing data in Circle-Map, AmpliconArchitect, CReSIL, FLED
 

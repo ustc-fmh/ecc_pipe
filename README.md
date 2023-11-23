@@ -28,7 +28,7 @@ An integrated pipeline for identification, analysis, and visualization of extrac
 ### Version 1.0 2023-07
 - Downstream (03.Analysis [Distribution, DEG, Visualize])
 
-### Version 0.9 2023-03
+### Version 0.9 2022-12
 - Upstream (01.QC & 02.Detect)
 
 ## Installation

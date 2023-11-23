@@ -1,4 +1,4 @@
-# eccDNA-pipe: An integrated pipeline for identification, analysis, and visualization of extrachromosomal circular DNA from NGS/TGS  
+![image](https://github.com/ustc-fmh/ecc_pipe/assets/50505661/d90f8154-be65-4067-aa6e-e70e448f032a)# eccDNA-pipe: An integrated pipeline for identification, analysis, and visualization of extrachromosomal circular DNA from NGS/TGS  
 ![](example/paper/Fig1/Fig1.png "Overview")
 An integrated pipeline for identification, analysis, and visualization of extrachromosomal circular DNA(eccDNA) from high-throughput sequencing data in Circle-Map, AmpliconArchitect, CReSIL, FLED
 
@@ -12,7 +12,9 @@ An integrated pipeline for identification, analysis, and visualization of extrac
     * [downstream tutorial: Python Code for Distribution in multi sample](example/multi_example/Multi_sample_analysis.ipynb)
     * [downstream tutorial: Python Code for DEG](example/s002_downstream_DEG.ipynb)
     * [downstream tutorial: Python Code for Visualize](example/s003_downstream_Visualize.ipynb)
+    * [Cross-Species user add](example/)
     * [example data](example/)
+    * [config](config/)
 * Paper Code
     * [Fig2](1)
     * [Fig3](1)
@@ -24,6 +26,7 @@ An integrated pipeline for identification, analysis, and visualization of extrac
 - Add limma, edgeR, GSEA analysis in DEG
 - Add FLED in upstream [02.Detect]
 - Add Tutorials in Python Code for Downstream analysis
+- Add other species genome API[user_ref] for upstream
 
 ### Version 1.0 2023-07
 - Downstream (03.Analysis [Distribution, DEG, Visualize])
@@ -116,7 +119,7 @@ all params in the ***circlemap_config.yaml*** file show:
 -   **input_file** - fastq file path, eg: file_name: ['r1.fq.gz', 'r2.fq.gz']
 -   **threads** - set max threads for one data, eg:12
 -   **reference** - hg38 or mm10
-
+-   **user_ref** - default: None, if user_add new genome, set str, eg: 'TAIR10.1_genomic'
 
 all params in the ***AA_config.yaml*** file show:
 -   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
@@ -129,7 +132,7 @@ all params in the ***AA_config.yaml*** file show:
 -   **python_path** - Python path eg: $conda_path/bin/python
 -   **cngain** - Set a custom threshold for the CN gain considered by AA, default:4
 -   **cnsize** - Set a custom threshold for CN interval size considered by AA, default:10000
-
+-   **user_ref** - default: None, if user_add new genome, set str, eg: 'TAIR10.1_genomic'
 
 all params in the ***cresil_config.yaml*** file show:
 -   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
@@ -138,7 +141,7 @@ all params in the ***cresil_config.yaml*** file show:
 -   **threads** - set max threads for one data, eg:12
 -   **reference** - hg38 or mm10
 -   **wgs** - if use WGS mode, default: 0
-
+-   **user_ref** - default: None, if user_add new genome, set str, eg: 'TAIR10.1_genomic'
 
 all params in the ***fled_config.yaml*** file show:
 -   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
@@ -146,6 +149,7 @@ all params in the ***fled_config.yaml*** file show:
 -   **input_file** - fastq file path, eg: file_name: ['r1.fastq', 'r2.fastq']
 -   **threads** - set max threads for one data, eg:12
 -   **reference** - hg38 or mm10
+-   **user_ref** - default: None, if user_add new genome, set str, eg: 'TAIR10.1_genomic'
 
 Detect tools raw website:
 - [circlemap](https://github.com/iprada/Circle-Map)

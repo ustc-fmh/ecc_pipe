@@ -6,15 +6,15 @@ An integrated pipeline for identification, analysis, and visualization of extrac
 * [Installation](#Installation)
 * [Resource download&reset](#Resource)
 * Tutorials
-    * [upstream tutorial: Shell Code for 01.QC, 02.Detect](example/01.upstream/script/)
-    * [downstream tutorial: Shell Code for 03.Analysis](example/02.downstream/script/)
-    * [downstream tutorial: Python Code for Distribution in single sample](example/s001_downstream_Distribution.ipynb)
-    * [downstream tutorial: Python Code for Distribution in multi sample](example/multi_example/Multi_sample_analysis.ipynb)
-    * [downstream tutorial: Python Code for DEG](example/s002_downstream_DEG.ipynb)
-    * [downstream tutorial: Python Code for Visualize](example/s003_downstream_Visualize.ipynb)
+    * [Upstream Tutorial: Shell Code for 01.QC, 02.Detect](example/01.upstream/script/)
+    * [Downstream Tutorial: Shell Code for 03.Analysis](example/02.downstream/script/)
+    * [Downstream Tutorial: Python Code for Distribution in single sample](example/s001_downstream_Distribution.ipynb)
+    * [Downstream Tutorial: Python Code for Distribution in multi sample](example/multi_example/Multi_sample_analysis.ipynb)
+    * [Downstream Tutorial: Python Code for DEG](example/s002_downstream_DEG.ipynb)
+    * [Downstream Tutorial: Python Code for Visualize](example/s003_downstream_Visualize.ipynb)
     * [Cross-Species user add](example/)
-    * [example data](example/)
-    * [config](config/)
+    * [Example data](example/)
+    * [Config](config/)
 * Paper Code
     * [Fig2](1)
     * [Fig3](1)
@@ -26,7 +26,7 @@ An integrated pipeline for identification, analysis, and visualization of extrac
 - Add limma, edgeR, GSEA analysis in DEG
 - Add FLED in upstream [02.Detect]
 - Add Tutorials in Python Code for Downstream analysis
-- Add other species genome API[user_ref] for upstream
+- Add Cross-Species Genome API[user_ref] for upstream
 
 ### Version 1.0 2023-07
 - Downstream (03.Analysis [Distribution, DEG, Visualize])

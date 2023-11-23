@@ -1,0 +1,7 @@
+ecc_master_path: /home/qukun/luosongwen/workspace/eccDNA/ecc_WS/ecc_pipe
+output_path: ./example/01.upstream/result/02.fled
+input_file:
+    dataset1_05:
+            ["./example/01.upstream/raw_data/fled/dataset1_05.fastq"]
+threads: 12
+reference: hg38

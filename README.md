@@ -104,6 +104,7 @@ First set all params in ***circlemap_config.yaml, AA_config.yaml, cresil_config.
 python3 ecc_pipe_master.py --Detect --tool circlemap -n 24 --config configfile_path
 python3 ecc_pipe_master.py --Detect --tool AA -n 24 --config configfile_path
 python3 ecc_pipe_master.py --Detect --tool cresil -n 24 --config configfile_path
+python3 ecc_pipe_master.py --Detect --tool fled -n 24 --config configfile_path
 ## --Detect: set the function; no input
 ## --tool: set detect tools for NGS/TGS
 ## -n: set max threads for all data

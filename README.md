@@ -67,11 +67,14 @@ echo export MOSEKLM_LICENSE_FILE=$PWD/mosek/8/licenses >> ~/.bashrc
 cd $PWD/mosek/8/tools/platform/linux64x86/python/3/
 python3 setup.py install
 ```
-### Install CReSIL and install reference for homer
+### Install CReSIL, FLED and install reference for homer
 ```
 cd $master
 cd ./resource/cresil-master
 pip install .
+
+cd ./resource/FLED
+python ./setup.py install
 
 ## Install homer reference
 #### $conda_path = ~/miniconda3/envs/ecc_pipe

@@ -10,7 +10,7 @@ from Circlize import *
 mpl.rcParams['pdf.fonttype'] = 42
 #######  Options  #######
 usage="usage: %prog [options][inputs]"
-parser=OptionParser(usage=usage, version="%prog 1.0")
+parser=OptionParser(usage=usage, version="%prog 1.1")
 
 ## general params
 parser.add_option("-n",type='int',help="Set the max thread") ## for QC/Detect
@@ -32,13 +32,12 @@ parser.add_option("--bed_file",type='string',help="*_result.analysis.bed")
 parser.add_option("--ecc_id",type='int',help="ecc id (int) in the bed_file")
 ## Circlize
 
-parser.add_option("--geno",type='string',help="hg38 or mm10")
-parser.add_option("--trim",type='string',help="bedtools intersect ratio (0-1)")
 parser.add_option("--path_share",type='string',help="DEG input file share path")
 parser.add_option("--group_file",type='string',help="txt file whcih contain group info")
 parser.add_option("--count_type",type='string',help="gene or region")
 parser.add_option("--log2fc",type='string',help="default 1")
 parser.add_option("--pvalue",type='string',help="default 0.05")
+parser.add_option("--deg_mode",type='string',help="str in 'limma','edger','deseq2' ")
 ## DEG
 
 parser.add_option("--peak_path",type='string',help="eccDNA result peak file path") ## tool = other
@@ -46,6 +45,8 @@ parser.add_option("--file_path",type='string',help="eccDNA result file path")
 parser.add_option("--circlemap_qc",type='int',help="1/0")
 ## Distribution
 
+parser.add_option("--ratio",type='string',help="bedtools intersect ratio (0-1)")
+parser.add_option("--geno",type='string',help="hg38 or mm10")
 parser.add_option("--mode",type='string',help="str in ['Distrbution', 'DEG', 'Visualize'] ")
 parser.add_option("--Analysis",action='store_true',default=False,
                       help="plot & analysis")
@@ -85,8 +86,14 @@ def Detect():
         os.system('snakemake --unlock -s cresil.py --configfile={0}'.format(config)) ## unlock
         os.system('snakemake --cores {0} -s cresil.py --configfile={1}'.format(threads_number, config)) ## --report --all-temp
     
+    elif tool_set == 'fled':
+        print('run fled for eccDNA')
+        os.system('snakemake --cores {0} -n -s fled.py --configfile={1}'.format(threads_number, config)) ## print log 试运行
+        os.system('snakemake --unlock -s fled.py --configfile={0}'.format(config)) ##解锁
+        os.system('snakemake --cores {0} -s fled.py --configfile={1}'.format(threads_number, config)) ## --report --all-temp
+    
     else:
-        print("Please set tool in ['circlemap', 'AA', 'cresil']")
+        print("Please set tool in ['circlemap', 'AA', 'cresil','fled']")
         
 
 def QC():
@@ -124,8 +131,8 @@ def Analysis():
         else:
             print("Please set tool in ['circlemap', 'AA', 'cresil', 'other']")
     
-        trim = options.trim
-        _distribution.run_fast(trim=trim)
+        ratio = options.ratio
+        _distribution.run_fast(ratio=ratio)
 
         
     elif mode == 'DEG':
@@ -133,17 +140,18 @@ def Analysis():
         path_share = options.path_share
         group_file = options.group_file
         geno = options.geno
-        trim = options.trim
+        ratio = options.ratio
         _type = options.count_type
         log2fc = options.log2fc
         pvalue = options.pvalue
+        deg_mode = options.deg_mode
         if _type in ['gene', 'region']:
             deg_class = ecc_gene_number_deg(path_share=path_share,
                                     group_file_path=group_file,
                                     geno=geno,
-                                    trim=trim,
+                                    ratio=ratio,
                                    _type=_type)
-            deg_class.run_fast(log2fc=log2fc,pvalue=pvalue)
+            deg_class.run_fast(log2fc=log2fc,pvalue=pvalue,mode=deg_mode)
         else:
             print("Please set count_type in ['gene', 'region']")
         
@@ -153,13 +161,13 @@ def Analysis():
         geno = options.geno
         bed_file = options.bed_file
         ecc_id = options.ecc_id
-        make_circlize_file(bed_file, geno, ecc_id)
+        ratio = options.ratio
+        _type = options.count_type
+        make_circlize_file(bed_file, geno, ecc_id, ratio=ratio, _type=_type)
         
     else:
-        print("Please set mode in ['Distribution', 'DEG', 'Visualize']")	
+        print("Please set mode in ['Distribution', 'DEG', 'Visualize']")
     
-
- 
 
 def main():
     if options.QC: QC()

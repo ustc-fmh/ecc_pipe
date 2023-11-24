@@ -13,6 +13,7 @@ https://www.ncbi.nlm.nih.gov/datasets/genome/
 $ecc_pipe/resource/user_add/reference
 ## prepare files
 cd $ecc_pipe/resource/user_add/reference
+bwa index $genome.fa
 minimap2 -d $genome.mmi $genome.fa
 samtools faidx $genome.fa
 ```
@@ -24,3 +25,6 @@ user_ref = $genome
 ## Here is a example for TAIR10 genome
 * [Example TAIR10: Shell Code](example/cross-species/TAIR10.pbs)
 * [Example TAIR10: config](example/cross-species/TAIR10.yaml)
+
+## NOTE
+-   **1** - AA is not support this function, if you have more question, you can see [issue]([https://github.com/AmpliconSuite/AmpliconSuite-pipeline/issues/45)

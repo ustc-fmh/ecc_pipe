@@ -13,3 +13,4 @@ rscript: /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/Rscript
 python_path: /home/qukun/minghaofang/miniconda3/envs/ecc_pipe/bin/python
 cngain: 4
 cnsize: 10000
+user_ref: None

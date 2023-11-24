@@ -2,8 +2,7 @@ ecc_master_path: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
 output_path: ./example/01.upstream/result/02.circlemap
 input_file:
     test_data:
-            ["./example/01.upstream/raw_data/circlemap/test_data1_R1.fastq.gz","./example/01.upstream/raw_data/circlemap/test_data1_R2.fastq.gz"]
-    test_data_copy:
-            ["./example/01.upstream/raw_data/circlemap/test_data2_R1.fastq.gz","./example/01.upstream/raw_data/circlemap/test_data2_R2.fastq.gz"]
-threads: 12
+            ["./example/01.upstream/raw_data/circlemap/unknown_circle_reads_1.fastq","./example/01.upstream/raw_data/circlemap/unknown_circle_reads_2.fastq"]
+threads: 24
 reference: hg38
+user_ref: None

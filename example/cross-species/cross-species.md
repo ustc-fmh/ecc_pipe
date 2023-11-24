@@ -23,8 +23,8 @@ samtools faidx $genome.fa
 user_ref = $genome
 ```
 ## Here is a example for TAIR10 genome
-* [Example TAIR10: Shell Code](example/cross-species/TAIR10.pbs)
-* [Example TAIR10: config](example/cross-species/TAIR10.yaml)
+* [Example TAIR10: Shell Code](TAIR10.pbs)
+* [Example TAIR10: config](TAIR10.yaml)
 
 ## NOTE
 -   AA is not support this function, if you have more question about AA, you can see issues below.

@@ -12,7 +12,7 @@ An integrated pipeline for identification, analysis, and visualization of extrac
     * [Downstream Tutorial: Python Code for Distribution in multi sample](example/multi_example/Multi_sample_analysis.ipynb)
     * [Downstream Tutorial: Python Code for DEG](example/s002_downstream_DEG.ipynb)
     * [Downstream Tutorial: Python Code for Visualize](example/s003_downstream_Visualize.ipynb)
-    * [Cross-Species user add](example/)
+    * [Cross-Species user add](example/cross-species/cross-species.md)
     * [Example Data](example/)
     * [Example Config](config/)
 * Paper Code

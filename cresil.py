@@ -1,21 +1,28 @@
 configfile: "cresil_config.yaml"
-##相对前路径无法识别
-##定义变量
-## hg38 统一
     
+##define params   
 name=config["input_file"].keys()
 output_path=config["output_path"]
 ecc_master_path=config["ecc_master_path"]
 threads=config["threads"]
 wgs=config["wgs"]
 
-ref=ecc_master_path+'/resource/cresil-master/reference/'+config['reference']+'/'+config['reference']+'.mmi'
-fa=ecc_master_path+'/resource/cresil-master/reference/'+config['reference']+'/'+config['reference']+'.fa'
-fai=ecc_master_path+'/resource/cresil-master/reference/'+config['reference']+'/'+config['reference']+'.fa.fai'
+## user add ref
+if config['user_ref'] == 'None':
+    config_ref = config['reference']
+    ref=ecc_master_path+'/resource/cresil-master/reference/'+config_ref+'/'+config_ref+'.mmi'
+    fa=ecc_master_path+'/resource/cresil-master/reference/'+config_ref+'/'+config_ref+'.fa'
+    fai=ecc_master_path+'/resource/cresil-master/reference/'+config_ref+'/'+config_ref+'.fa.fai'
+    
+else:
+    config_ref = config['user_ref']
+    ref=ecc_master_path+'/resource/user_add/reference/'+config_ref+'.mmi'
+    fa=ecc_master_path+'/resource/user_add/reference/'+config_ref+'.fa'
+    fai=ecc_master_path+'/resource/user_add/reference/'+config_ref+'.fa.fai'
+
 #rp=ecc_master_path+'/resource/cresil-master/reference/'+config['reference']+'/reference.rmsk.bed'
 #cg=ecc_master_path+'/resource/cresil-master/reference/'+config['reference']+'/reference.cpg.bed'
 #gb=ecc_master_path+'/resource/cresil-master/reference/'+config['reference']+'/reference.gene.bed'
-
 ## cresil annotate -t {threads} -rp {params.rp} -cg {params.cg} -gb {params.gb} -identify {output}/eccDNA_final.txt
 ## rp=rp,cg=cg,gb=gb,
 

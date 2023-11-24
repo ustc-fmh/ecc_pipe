@@ -1,16 +1,24 @@
 configfile: "circlemap_config.yaml"
-##定义变量
+    
+##define params
 #print(config["input_file"])
 #print(type(config["input_file"]))
 name=config["input_file"].keys()
-#print(name)
 ecc_master_path=config["ecc_master_path"]
 output_path=config["output_path"]
-##调用AA的fa,避免复用
-if config["reference"] == 'mm10':
-    reference = ecc_master_path+'/resource/AA/AmpliconArchitect/data_repo/mm10/mm10.fa'
-elif config["reference"] == 'hg38':
-    reference = ecc_master_path+'/resource/AA/AmpliconArchitect/data_repo/GRCh38/hg38full.fa'
+
+## take AA ref
+if config['user_ref'] == 'None':
+    if config["reference"] == 'mm10':
+        reference = ecc_master_path+'/resource/AA/AmpliconArchitect/data_repo/mm10/mm10.fa'
+    elif config["reference"] == 'hg38':
+        reference = ecc_master_path+'/resource/AA/AmpliconArchitect/data_repo/GRCh38/hg38full.fa'
+    else:
+        print("please set reference in yaml in ['mm10','hg38']")
+else:
+    config_ref = config['user_ref']
+    reference=ecc_master_path+'/resource/user_add/reference/'+config_ref+'.fa'
+
 threads=config["threads"]
 
 import warnings

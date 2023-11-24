@@ -1,11 +1,13 @@
 configfile: "AA_config.yaml"
-##相对前路径无法识别
-##定义变量
-## hg38 统一
-if config['reference']=='hg38':
-    reference = 'GRCh38'
+
+##define params
+if config['user_ref'] == 'None':
+    if config['reference']=='hg38':
+        reference = 'GRCh38'
+    else:
+        reference = config['reference']
 else:
-    reference = config['reference']
+    print("AA don't accept other species; Please set user_ref == 'None'")
     
 name=config["input_file"].keys()
 output_path=config["output_path"]

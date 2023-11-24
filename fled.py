@@ -1,12 +1,19 @@
 configfile: "fled_config.yaml"
-##定义变量
+    
+##define params
 name=config["input_file"].keys()
 output_path=config["output_path"]
 ecc_master_path=config["ecc_master_path"]
 threads=config["threads"]
 
-##调用CReSIL的fa,避免复用
-reference=ecc_master_path+'/resource/cresil-master/reference/'+config['reference']+'/reference.fa'
+##take cresil ref
+if config['user_ref'] == 'None':
+    config_ref = config['reference']
+    reference=ecc_master_path+'/resource/cresil-master/reference/'+config_ref+'/'+config_ref+'.fa'
+    
+else:
+    config_ref = config['user_ref']
+    reference=ecc_master_path+'/resource/user_add/reference/'+config_ref+'.fa'
 
 import warnings
 warnings.filterwarnings('ignore')

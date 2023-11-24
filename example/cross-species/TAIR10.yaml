@@ -1,0 +1,8 @@
+ecc_master_path: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+output_path: ./example/01.upstream/result/cross-species
+input_file:
+    test_data:
+            ["./example/01.upstream/raw_data/cross-species/Col0_HS_rep1.R1.fastq.gz","./example/01.upstream/raw_data/cross-species/Col0_HS_rep1.R2.fastq.gz"]
+threads: 24
+reference: hg38
+user_ref: TAIR10.1_genomic

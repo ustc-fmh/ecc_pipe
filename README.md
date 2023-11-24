@@ -26,7 +26,7 @@ An integrated pipeline for identification, analysis, and visualization of extrac
 - Add limma, edgeR, GSEA analysis in DEG
 - Add FLED in upstream [02.Detect]
 - Add Tutorials in Python Code for Downstream analysis
-- Add Cross-Species Genome API[user_ref] for upstream
+- Add Cross-Species Genome API[user_ref] for CReSIL, Circle-Map, Fled
 
 ### Version 1.0 2023-07
 - Downstream (03.Analysis [Distribution, DEG, Visualize])

@@ -22,4 +22,5 @@ samtools faidx $genome.fa
 user_ref = $genome
 ```
 ## Here is a example for TAIR10 genome
-* [Example TAIR10: Shell Code for 02.Detect](example/01.upstream/script/)
+* [Example TAIR10: Shell Code](example/cross-species/TAIR10.pbs)
+* [Example TAIR10: config](example/cross-species/TAIR10.yaml)

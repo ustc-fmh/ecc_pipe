@@ -27,4 +27,4 @@ user_ref = $genome
 * [Example TAIR10: config](example/cross-species/TAIR10.yaml)
 
 ## NOTE
--   **1** - AA is not support this function, if you have more question, you can see [issue]([https://github.com/AmpliconSuite/AmpliconSuite-pipeline/issues/45)
+-   **1** - AA is not support this function, if you have more question, you can see * [issue]([https://github.com/AmpliconSuite/AmpliconSuite-pipeline/issues/45)

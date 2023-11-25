@@ -43,9 +43,15 @@ conda env create -f ./install/env.yml
 ```
 ## Resource
 Please install resource.zip and unzip in the ./ecc_pipe before setting environment
-- [resource](https://rec.ustc.edu.cn/share/a9c71b20-8b2b-11ee-90a7-cbb8e7db2a0d)
-- [AA sample data](https://rec.ustc.edu.cn/share/01b661c0-ceeb-11ed-a387-976f74b3f711)
-- passwd:ustc
+```
+## website from rec in ustc
+resource: https://rec.ustc.edu.cn/share/a9c71b20-8b2b-11ee-90a7-cbb8e7db2a0d
+passwd: ustc
+## website from Google Drive
+## please unzip resource_1.zip and resource_2.zip, merge it to ./ecc_pipe/resource  
+resource_1:
+resource_2:
+```
 
 ### Activate environment and set environment for AA
 ```

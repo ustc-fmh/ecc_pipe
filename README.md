@@ -42,7 +42,7 @@ conda env create -f ./install/env.yml
 ```
 ## Resource
 Please install resource.zip and unzip in the ./ecc_pipe before setting environment
-- [resource](https://rec.ustc.edu.cn/share/1db60bb0-2705-11ee-b797-2951fa8ccb8e)
+- [resource](https://rec.ustc.edu.cn/share/a9c71b20-8b2b-11ee-90a7-cbb8e7db2a0d)
 - [AA sample data](https://rec.ustc.edu.cn/share/01b661c0-ceeb-11ed-a387-976f74b3f711)
 - passwd:ustc
 

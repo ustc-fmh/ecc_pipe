@@ -111,7 +111,7 @@ python3 ecc_pipe_master.py --Detect --tool fled -n 24 --config configfile_path
 ## --Detect: set the function; no input
 ## --tool: set detect tools for NGS/TGS
 ## -n: set max threads for all data
-## --config: set tool_config.yaml file path
+## --config: set tool_config.yaml file path [must full path]
 ```
 all params in the ***circlemap_config.yaml*** file show:
 -   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
@@ -218,7 +218,8 @@ python3 ecc_pipe_master.py --Analysis --mode Visualize \
 -   **1** - The YAML file delimiter should not be a tab; it should consist of four spaces.
 -   **2** - The reference supports "hg38" and "mm10".
 -   **3** - The input file for CReSIL is fq but not fq.gz.
--   **4** - If TGS data trim and cut adapt in basecalling step, it don't need QC step
+-   **4** - config params in Detect mode must be full path.
+-   **5** - If TGS data trim and cut adapt in basecalling step, it don't need QC step.
 
 ## Software Version
 -   trim-galore 0.6.7  fastqc 0.12.1  Circle-Map 1.1.4  PrepareAA 0.1344.1  CReSIL 1.0.0  FLED 1.5.0

@@ -50,7 +50,7 @@ passwd: ustc
 
 ## download from Google Drive
 ## please unzip resource_1.zip and resource_2.zip, merge it to ./ecc_pipe/resource  
-resource_1:
+resource_1: https://drive.google.com/drive/folders/1rsdEjmgW-5leS1vTiQhtGSy_vtBRQErF
 resource_2: https://drive.google.com/drive/folders/1pIH12HKpzkb7O_G_8-t3l2zBC_1SXGqx
 ```
 

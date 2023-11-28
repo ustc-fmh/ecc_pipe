@@ -7,7 +7,7 @@ https://hgdownload.soe.ucsc.edu/downloads.html
 ## ncbi
 https://www.ncbi.nlm.nih.gov/datasets/genome/
 ```
-## 2.upload fa file to acc_pipe
+## 2.upload fa file to ecc_pipe
 ```
 ## upload fa file in resource
 $ecc_pipe/resource/user_add/reference

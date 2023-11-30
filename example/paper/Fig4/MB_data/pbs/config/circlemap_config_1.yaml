@@ -1,0 +1,13 @@
+ecc_master_path: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+output_path: /home/qukun/minghaofang/workspace/project/ecc/bib_revised/paper_data/MB_data/02.circlemap_1
+input_file:
+    MB_normal_1:
+            ["/home/qukun/minghaofang/workspace/project/ecc/bib_revised/paper_data/MB_data/01.QC/trim/SRR19454698_1_val_1.fq.gz","/home/qukun/minghaofang/workspace/project/ecc/bib_revised/paper_data/MB_data/01.QC/trim/SRR19454698_2_val_2.fq.gz"]
+    MB_normal_2:
+            ["/home/qukun/minghaofang/workspace/project/ecc/bib_revised/paper_data/MB_data/01.QC/trim/SRR19454699_1_val_1.fq.gz","/home/qukun/minghaofang/workspace/project/ecc/bib_revised/paper_data/MB_data/01.QC/trim/SRR19454699_2_val_2.fq.gz"]
+    MB_1:
+            ["/home/qukun/minghaofang/workspace/project/ecc/bib_revised/paper_data/MB_data/01.QC/trim/SRR19454700_1_val_1.fq.gz","/home/qukun/minghaofang/workspace/project/ecc/bib_revised/paper_data/MB_data/01.QC/trim/SRR19454700_2_val_2.fq.gz"]
+
+threads: 12
+reference: hg38
+user_ref: None

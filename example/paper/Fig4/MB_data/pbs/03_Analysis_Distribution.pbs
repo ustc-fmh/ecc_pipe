@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+#PBS -N distribution
+#PBS -o logs/distribution.log
+#PBS -e logs/distribution.err
+#PBS -q batch
+#PBS -l nodes=1:ppn=2
+#PBS -l walltime=48:00:00
+
+source /home/qukun/minghaofang/miniconda3/etc/profile.d/conda.sh
+conda activate ecc_pipe
+
+cd /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+###
+#for 
+for i in {MB_normal_1,MB_normal_2,MB_1,MB_2,MB_3,MB_4,MB_5,MB_6,MB_7}
+do
+  python3 ecc_pipe_master.py --Analysis --mode Distribution --tool circlemap \
+		--file_path /home/qukun/minghaofang/workspace/project/ecc/bib_revised/paper_data/MB_data/03.analysis/$i/${i}_circlemap_result.bed \
+		--geno hg38 --ratio 0.5
+done
+

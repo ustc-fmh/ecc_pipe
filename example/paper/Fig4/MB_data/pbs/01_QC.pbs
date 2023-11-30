@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+#PBS -N QC
+#PBS -o logs/QC.log
+#PBS -e logs/QC.err
+#PBS -q batch
+#PBS -l nodes=1:ppn=18
+#PBS -l walltime=48:00:00
+
+source /home/qukun/minghaofang/miniconda3/etc/profile.d/conda.sh
+conda activate ecc_pipe
+
+cd /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+python3 ecc_pipe_master.py --QC -n 18 --config /home/qukun/minghaofang/workspace/project/ecc/bib_revised/paper_data/MB_data/script/config/QC_config.yaml
+
+

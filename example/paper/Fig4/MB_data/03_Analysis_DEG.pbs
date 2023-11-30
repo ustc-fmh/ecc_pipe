@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+#PBS -N DEG
+#PBS -o logs/DEG.log
+#PBS -e logs/DEG.err
+#PBS -q batch
+#PBS -l nodes=1:ppn=2
+#PBS -l walltime=48:00:00
+
+
+source /home/qukun/minghaofang/miniconda3/etc/profile.d/conda.sh
+conda activate ecc_pipe
+
+###run Distribution first
+cd /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+python3 ecc_pipe_master.py --Analysis --mode DEG \
+		--path_share /home/qukun/minghaofang/workspace/project/ecc/bib_revised/paper_data/MB_data/03.analysis/ \
+		--group_file /home/qukun/minghaofang/workspace/project/ecc/bib_revised/paper_data/MB_data/03.analysis/group.txt \
+		--count_type region --geno hg38 --ratio 0.3 --deg_mode limma \
+		--log2fc 1 --pvalue 0.05 
+
+

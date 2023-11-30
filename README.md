@@ -17,9 +17,9 @@ An integrated pipeline for identification, analysis, and visualization of extrac
     * [Example Data](example/)
     * [Example Config](config/)
 * Paper Code
-    * [Fig2](1)
-    * [Fig3](1)
-    * [Fig4](1)
+    * [Fig2](example/paper/Fig2/)
+    * [Fig3](example/paper/Fig3/)
+    * [Fig4](example/paper/Fig4/)
 
 ## Latest updates
 ### Version 1.1 2023-12

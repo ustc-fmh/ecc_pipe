@@ -21,8 +21,9 @@ colnames(design) <- levels(factor(coldata))
 rownames(design) <- colnames(readcount)
 ## 表达矩阵DGEList构建与过滤低表达基因
 dge <- DGEList(counts=readcount) 
-# keep.exprs <- filterByExpr(dge,design=design) #过滤低表达基因
-# dge <- dge[keep.exprs,,keep.lib.sizes=FALSE] 
+keep.exprs <- filterByExpr(dge,design=design,
+                           min.count = 5, min.total.count = 10, large.n = 10, min.prop = 0.3) #过滤低表达基因
+dge <- dge[keep.exprs,,keep.lib.sizes=FALSE] 
 
 dge <- calcNormFactors(dge)  #归一化基因表达分布,得到的归一化系数被用作文库大小的缩放系数
 cont.matrix <- makeContrasts(contrasts=paste0(exp,'-',ctr), #比对顺序实验/对照

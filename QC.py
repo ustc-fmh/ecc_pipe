@@ -38,10 +38,10 @@ rule fastqc_trim:
     run:
         if paired:
             shell("./resource/QC/FastQC/fastqc {input} -t {threads} ; trim_galore \
-            -q 30 -phred33 --stringency 3 --length 20 -e 0.1 --fastqc --paired {input} --gzip -o {output_path}/trim/")
+            -q 30 -phred33 --stringency 3 --length 20 -e 0.1 --cores {threads} --fastqc --paired {input} --gzip -o {output_path}/trim/")
         else:
             shell("./resource/QC/FastQC/fastqc {input} -t {threads} ; trim_galore \
-            -q 30 -phred33 --stringency 3 --length 20 -e 0.1 --fastqc {input} --gzip -o {output_path}/trim/")
+            -q 30 -phred33 --stringency 3 --length 20 -e 0.1 --cores {threads} --fastqc {input} --gzip -o {output_path}/trim/")
 
 
 ##02.picard_fastqc

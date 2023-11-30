@@ -127,7 +127,7 @@ def plot_go_kegg_clusterprofile(result_path, top_number=10):
     result_path: 'data/result/deg_test/02.ecc_deg_go_kegg'
     """
     for name in os.listdir(result_path):
-        if 'GO' not in name or 'KEGG' not in name:
+        if 'GO' not in name and 'KEGG' not in name:
             continue
             
         if name.split('.')[-1] == 'csv':

@@ -188,7 +188,7 @@ python3 ecc_pipe_master.py --Analysis --mode Distribution --tool circlemap \
 ### DEG
 Prior to running this mode, the Distribution mode must be executed first. 
         Afterwards, this mode calculates the gene matrix by intersecting the eccDNA matrix, 
-        and performs differential expression analysis (DEG) and Gene Ontology (GO) annotation using Deseq2/clusterprofile.
+        and performs differential expression analysis (DEG) and Gene Ontology (GO) annotation using limma/edgeR/Deseq2/clusterprofile.
 ```
 python3 ecc_pipe_master.py --Analysis --mode DEG \
         --path_share example/02.downstream/deg_test/ \

@@ -236,6 +236,12 @@ python3 ecc_pipe_master.py --Analysis --mode Visualize \
 ## Citation
 Please cite the following article if you use eccDNA-pipe in your research
 > xxxx
-
+Please also cite the related raw software paper if you use the related params of eccDNA-pipe
+> QC: trim-galore fastqc
+> Detect: Circle-Map, AA, CReSIL, Fled
+> Analysis-distribution: HOMER, eccDNA Atlas
+> Analysis-DEG: limma, edgeR, DESeq2, clusterprofiler
+> Analysis-Visualization: Circlize
+Please use your own license in mosek if you use eccDNA-pipe in your publish paper.
 ## License and Copyright
 eccDNA_pipe is distributed under the terms of the USTC

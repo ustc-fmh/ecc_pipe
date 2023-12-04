@@ -1,5 +1,3 @@
-normal	MB_normal_1	circlemap
-normal	MB_normal_2	circlemap
 tumor	MB_1	circlemap
 tumor	MB_2	circlemap
 tumor	MB_3	circlemap
@@ -7,3 +5,5 @@ tumor	MB_4	circlemap
 tumor	MB_5	circlemap
 tumor	MB_6	circlemap
 tumor	MB_7	circlemap
+normal	MB_normal_1	circlemap
+normal	MB_normal_2	circlemap

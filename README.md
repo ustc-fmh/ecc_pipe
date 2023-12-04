@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/620692513.svg)](https://zenodo.org/doi/10.5281/zenodo.10205619)
-# eccDNA-pipe: An integrated pipeline for identification, analysis, and visualization of extrachromosomal circular DNA from NGS/TGS  
+# eccDNA-pipe: An integrated pipeline for identification, analysis, and visualization of extrachromosomal circular DNA from high-throughput sequencing data  
 ![](example/paper/Fig1/Fig1.png "Overview")
 An integrated pipeline for identification, analysis, and visualization of extrachromosomal circular DNA(eccDNA) from high-throughput sequencing data in Circle-Map, AmpliconArchitect, CReSIL, FLED
 

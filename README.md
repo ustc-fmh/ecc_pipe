@@ -148,7 +148,7 @@ all params in the ***cresil_config.yaml*** file show:
 -   **input_file** - fastq file path, eg: file_name: ['r1.fq.gz', 'r2.fq.gz']
 -   **threads** - set max threads for one data, eg:12
 -   **reference** - hg38 or mm10
--   **wgs** - if use WGS mode, default: 0
+-   **wgs** - if use WGS mode set 1 else 0, default: 0
 -   **user_ref** - default: None, if user_add new genome, set str, eg: 'TAIR10.1_genomic'
 
 all params in the ***fled_config.yaml*** file show:

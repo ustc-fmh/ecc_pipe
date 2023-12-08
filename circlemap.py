@@ -85,7 +85,7 @@ rule samtools_sort:
     threads: config["threads"]
     shell:
         "samtools sort -@ {threads} -o {output} {input} ; "
-        "samtools index {output}"
+        "samtools index -@ {threads} {output}"
 
 ##03.circlemap sort candidates
 rule circlemap_extra:
@@ -103,7 +103,7 @@ rule circlemap_extra:
         "samtools sort -@ {threads} -n -o {output.qname} {input} ; "
         "Circle-Map ReadExtractor -o {output.circle} -i {output.qname};"
         "samtools sort -@ {threads} -o {output.candidates} {output.circle} ; "
-        "samtools index {output.candidates}"
+        "samtools index -@ {threads} {output.candidates}"
         
 ##04.detecting circle dna
 rule circlemap_detect:

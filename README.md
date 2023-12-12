@@ -118,14 +118,14 @@ python3 ecc_pipe_master.py --Detect --tool cresil -n 24 --config configfile_path
 python3 ecc_pipe_master.py --Detect --tool fled -n 24 --config configfile_path
 ## --Detect: set the function; no input
 ## --tool: set detect tools for NGS/TGS
-## -n: set max threads for all data
+## -n: set max threads for **all data** [if you use for n sample, please set n*threads_set_in_yaml]
 ## --config: set tool_config.yaml file path [must full path]
 ```
 all params in the ***circlemap_config.yaml*** file show:
 -   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
 -   **output_path** - output path, eg: ./example/01.upstream/result/02.circlemap
 -   **input_file** - fastq file path, eg: file_name: ['r1.fq.gz', 'r2.fq.gz']
--   **threads** - set max threads for one data, eg:12
+-   **threads** - set max threads for **one data**, eg:12
 -   **reference** - hg38 or mm10
 -   **user_ref** - default: None, if user_add new genome, set str, eg: 'TAIR10.1_genomic'
 
@@ -133,7 +133,7 @@ all params in the ***AA_config.yaml*** file show:
 -   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
 -   **output_path** - output path, eg: ./example/01.upstream/result/02.AA
 -   **input_file** - fastq file path, eg: file_name: ['r1.fq.gz', 'r2.fq.gz']
--   **threads** - set max threads for one data, eg:12
+-   **threads** - set max threads for **one data**, eg:12
 -   **reference** - hg38 or mm10
 -   **cnvkit_dir** - the path for cnvkit eg: $conda_path/bin/cnvkit.py
 -   **rscript** - Rscript path eg: $conda_path/bin/Rscript
@@ -146,7 +146,7 @@ all params in the ***cresil_config.yaml*** file show:
 -   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
 -   **output_path** - output path, eg: ./example/01.upstream/result/02.cresil
 -   **input_file** - fastq file path, eg: file_name: ['r1.fq.gz', 'r2.fq.gz']
--   **threads** - set max threads for one data, eg:12
+-   **threads** - set max threads for **one data**, eg:12
 -   **reference** - hg38 or mm10
 -   **wgs** - if use WGS mode set 1 else 0, default: 0
 -   **user_ref** - default: None, if user_add new genome, set str, eg: 'TAIR10.1_genomic'
@@ -155,7 +155,7 @@ all params in the ***fled_config.yaml*** file show:
 -   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
 -   **output_path** - output path, eg: ./example/01.upstream/result/02.fled
 -   **input_file** - fastq file path, eg: file_name: ['r1.fastq', 'r2.fastq']
--   **threads** - set max threads for one data, eg:12
+-   **threads** - set max threads for **one data**, eg:12
 -   **reference** - hg38 or mm10
 -   **user_ref** - default: None, if user_add new genome, set str, eg: 'TAIR10.1_genomic'
 

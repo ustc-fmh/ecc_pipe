@@ -99,14 +99,14 @@ First set all params in ***QC_config.yaml*** and run python in shell for QC by f
 ```
 python3 ecc_pipe_master.py --QC -n 4 --config configfile_path
 ## --QC: set the function; no input
-## -n: set max threads for all data
+## -n: set max threads for **all data** [if you use for n sample, please set n*threads_set_in_yaml]
 ## --config: set QC_config.yaml file path 
 ```
 all params in the ***QC_config.yaml*** file show:
 -   **ecc_master_path** - The full path for ecc_pipe; eg: /home/user/project/ecc_pipe
 -   **output_path** - output path, eg: ./example/01.upstream/result/01.QC
 -   **input_file** - fastq file path, eg: file_name: ['r1.fq.gz', 'r2.fq.gz']
--   **threads** - set max threads for one data, eg:1
+-   **threads** - set max threads for **one data**, eg:1
 -   **paired** - single or paired sequence; eg: True or False
 
 ## 02.Detect

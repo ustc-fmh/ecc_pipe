@@ -17,9 +17,9 @@ An integrated pipeline for identification, analysis, and visualization of extrac
     * [Example Data](example/)
     * [Example Config](config/)
 * Paper Code
-    * [Fig2](example/paper/Fig2/)
+    * [Fig2/sFig2](example/paper/Fig2/Fig2_sFig2.ipynb)
     * [Fig3](example/paper/Fig3/)
-    * [Fig4](example/paper/Fig4/)
+    * [Fig4](example/paper/Fig4/MB_data/Fig4_MB_analysis.ipynb)
 
 ## Latest updates
 ### Version 1.1 2023-12

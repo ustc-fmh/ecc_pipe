@@ -173,7 +173,7 @@ def plot_pie(df, font_size=9, output_path=None):
     ## rank
     df.columns = ['number']
     if len(df['number']) > 1:
-#         df.index = df.index.astype('category')
+        df.index = df.index.astype('category')
         df_rank_list = df.index.values.sort_values(ascending=True, inplace=False)
         df = df.reindex(df_rank_list)
     else:

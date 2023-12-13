@@ -1,0 +1,32 @@
+#Amplicons = 2
+-----------------------------------------------------------------------------------------
+[amplicon1] AmpliconID = 1
+[amplicon1] #Intervals = 10
+[amplicon1] Intervals = chr1:125084952-125175256,chr15:40561454-40571990,chr16:36105011-36211906,chr3:89460366-89480901,chr7:26191744-26202279,chr7:26212074-26222610,chr7:60912305-60952841,chr7:61019756-61060291,chr7:62298908-62352051,chr8:126978813-129323793
+[amplicon1] OncogenesAmplified = HNRNPA2B1,MYC,
+[amplicon1] TotalIntervalSize = 2728545
+[amplicon1] AmplifiedIntervalSize = 2529086
+[amplicon1] AverageAmplifiedCopyCount = 7.922346907662364
+[amplicon1] #Chromosomes = 6
+[amplicon1] #SeqenceEdges = 238
+[amplicon1] #BreakpointEdges = 89
+[amplicon1] #CoverageShifts = 2
+[amplicon1] #MeanshiftSegmentsCopyCount>5 = 1
+[amplicon1] #Foldbacks = 0
+[amplicon1] #CoverageShiftsWithBreakpointEdges = 2
+[amplicon1] -----------------------------------------------------------------------------------------
+[amplicon2] AmpliconID = 2
+[amplicon2] #Intervals = 4
+[amplicon2] Intervals = chr7:45845023-45855559,chr7:54659673-56159744,chr7:65096488-65117023,chr7:65771738-65851740
+[amplicon2] OncogenesAmplified = EGFR,
+[amplicon2] TotalIntervalSize = 1611148
+[amplicon2] AmplifiedIntervalSize = 1610715
+[amplicon2] AverageAmplifiedCopyCount = 74.83195807329446
+[amplicon2] #Chromosomes = 1
+[amplicon2] #SeqenceEdges = 433
+[amplicon2] #BreakpointEdges = 211
+[amplicon2] #CoverageShifts = 4
+[amplicon2] #MeanshiftSegmentsCopyCount>5 = 2
+[amplicon2] #Foldbacks = 4
+[amplicon2] #CoverageShiftsWithBreakpointEdges = 2
+[amplicon2] -----------------------------------------------------------------------------------------

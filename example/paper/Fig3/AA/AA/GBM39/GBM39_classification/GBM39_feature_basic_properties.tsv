@@ -1,0 +1,4 @@
+feature_ID	captured_region_size_bp	median_feature_CN	max_feature_CN	borderline_flag
+GBM39_amplicon1_ecDNA_1	2134691	8.397483193554082	9.689743041620826	None
+GBM39_amplicon1_ecDNA_2	57207	5.170951289701739	13.335855749447193	None
+GBM39_amplicon2_ecDNA_1	1257435	96.16213708326637	109.5798244410854	None

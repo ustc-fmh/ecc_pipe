@@ -29,9 +29,14 @@ circos.track(ylim = c(0, 1),
 
 circos.track(ylim = c(0,1), bg.border = NA, track.height = 0.05)
 
-
-gene_anno = read.table(gene_anno_path,
+if (dim(ecc_result)[2]==6){
+    gene_anno = read.table(gene_anno_path,
+                        sep='\t', col.names=c('chr','start','end','count','id', 'length', 'gchr','gstart','gend','gid'))
+} else {
+    gene_anno = read.table(gene_anno_path,
                         sep='\t', col.names=c('chr','start','end','count','id', 'gchr','gstart','gend','gid'))
+}
+
 if(dim(gene_anno)[1]!=0){
     gene_anno$name = paste0(gene_anno$chr,'_',gene_anno$start,'_',gene_anno$end)
     gene_anno = gene_anno[, c('name','gstart','gend','gid')]
@@ -45,7 +50,7 @@ if(dim(gene_anno)[1]!=0){
                         sector.index = name, # default is the last sector plot
                         arrow.head.length = mm_x(1), arrow.head.width = 0.90,
                         col='#000000') # default: arrow.head.length = mm_x(5), arrow.head.width = width*2
-            ircos.text((gene$gstart+gene$gend)/2, -0.7, gene$gid, # x,y,labels
+            circos.text((gene$gstart+gene$gend)/2, -0.7, gene$gid, # x,y,labels
                     facing='reverse.clockwise', niceFacing =T, adj=c(0,0), cex=0.7)
 #         print(gene)
         }

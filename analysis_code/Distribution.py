@@ -609,7 +609,8 @@ class distribution(object):
         anno_df.to_csv(self.save_path+'/03.homer_anno_distrbution/'+self._type+'_homer_anno_distribution.csv',
                             header=True, index=True)
         fig, ax = plt.subplots(figsize=(9,5))
-        plot_bar(anno_df, colname='Annotation_simple',
+        if anno_df.shape[0] != 0:
+            plot_bar(anno_df, colname='Annotation_simple',
                  save_path=self.save_path+'/03.homer_anno_distrbution/'+self._type+'_homer_anno_distribution.pdf')
         
         self.myPrint('Plot homer anno distribution over!')

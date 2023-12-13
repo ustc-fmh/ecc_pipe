@@ -674,7 +674,8 @@ class distribution(object):
                     columns=['Annotation'])
         anno_df.to_csv(self.save_path+'/04.db.annotation/Database_anno_number.csv',
                             header=True, index=True)
-        plot_bar(anno_df, colname='Annotation',
+        if anno_df['Annotation'].max() != 0:
+            plot_bar(anno_df, colname='Annotation',
                  save_path=self.save_path+'/04.db.annotation/Database_anno_number.pdf')
         
         

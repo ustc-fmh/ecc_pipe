@@ -17,6 +17,7 @@ An integrated pipeline for identification, analysis, and visualization of extrac
     * [Example Data](example/)
     * [Example Config](config/)
 * Paper Code
+    * [sFig1 B-C](example/paper/Fig1/sFig1_B-C.ipynb)
     * [Fig2/sFig2](example/paper/Fig2/Fig2_sFig2.ipynb)
     * Fig3/sFig3 [CReSIL](example/paper/Fig3/CReSIL/cresil_analysis.ipynb) [Circle-Map](example/paper/Fig3/) [AA](example/paper/Fig3/AA/AA_analysis.ipynb)
     * [Fig4](example/paper/Fig4/MB_data/Fig4_MB_analysis.ipynb)

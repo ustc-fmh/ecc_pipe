@@ -1,0 +1,14 @@
+ecc_master_path: /home/lifesci/liuk0617/workspace/ecc_pipe/ecc_pipe
+output_path: /home/lifesci/liuk0617/workspace/ecc_pipe/result/Circle/
+input_file:
+        SRR6315427:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/QC/trim/SRR6315427_1_val_1.fq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/QC/trim/SRR6315427_2_val_2.fq.gz"]
+        SRR6315428:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/QC/trim/SRR6315428_1_val_1.fq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/QC/trim/SRR6315428_2_val_2.fq.gz"]
+        SRR6315429:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/QC/trim/SRR6315429_1_val_1.fq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/QC/trim/SRR6315429_2_val_2.fq.gz"]
+        SRR6315430:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/QC/trim/SRR6315430_1_val_1.fq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/QC/trim/SRR6315430_2_val_2.fq.gz"]
+threads: 20
+reference: hg38
+user_ref: None

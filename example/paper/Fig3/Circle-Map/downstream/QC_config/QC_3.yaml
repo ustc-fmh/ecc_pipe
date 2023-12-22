@@ -1,0 +1,21 @@
+ecc_master_path: /home/lifesci/liuk0617/workspace/ecc_pipe/ecc_pipe
+output_path: /home/lifesci/liuk0617/workspace/ecc_pipe/QC
+input_file:
+        SRR6315427:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315427_1.fastq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315427_2.fastq.gz"]
+        SRR6315428:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315428_1.fastq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315428_2.fastq.gz"]
+        SRR6315429:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315429_1.fastq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315429_2.fastq.gz"]
+        SRR6315430:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315430_1.fastq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315430_2.fastq.gz"]
+        SRR6315431:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315431_1.fastq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315431_2.fastq.gz"]
+        SRR6315432:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315432_1.fastq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315432_2.fastq.gz"]
+        SRR6315433:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315433_1.fastq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315433_2.fastq.gz"]
+        SRR6315434:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315434_1.fastq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315434_2.fastq.gz"]
+threads: 10
+paired: True

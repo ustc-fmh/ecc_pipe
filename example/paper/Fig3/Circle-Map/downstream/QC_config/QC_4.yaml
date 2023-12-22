@@ -1,0 +1,13 @@
+ecc_master_path: /home/lifesci/liuk0617/workspace/ecc_pipe/ecc_pipe
+output_path: /home/lifesci/liuk0617/workspace/ecc_pipe/QC
+input_file:
+        SRR6315405:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315405_1.fastq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315405_2.fastq.gz"]
+        SRR6315406:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315406_1.fastq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315406_2.fastq.gz"]
+        SRR6315407:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315407_1.fastq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315407_2.fastq.gz"]
+        SRR6315408:
+            ["/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315408_1.fastq.gz","/home/lifesci/liuk0617/workspace/ecc_pipe/Circle_seq_real_data/SRR6315408_2.fastq.gz"]
+threads: 20
+paired: True

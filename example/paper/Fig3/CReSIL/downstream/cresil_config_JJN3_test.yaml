@@ -1,0 +1,9 @@
+ecc_master_path: /gpfs/home/lifesci/luosongwen/eccDNA/ecc_pipe
+output_path: ./example/01.upstream/result/02.cresil_JJN3
+input_file:
+    SRR18143376_1:
+            ["/home/lifesci/luosongwen/eccDNA/stimulate_data/test_data/Cresil_real_data/cresil_fastq/SRR18143376_1.fastq"]
+threads: 40
+reference: hg38
+wgs: 0
+user_ref: None

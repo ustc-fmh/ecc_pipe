@@ -23,11 +23,14 @@ An integrated pipeline for identification, analysis, and visualization of extrac
     * [Fig4](example/paper/Fig4/MB_data/Fig4_MB_analysis.ipynb)
 
 ## Latest updates
-### Version 1.1 2023-12
+### Version 1.2 2023-12-22
+- Add Tutorials and Paper Codes in Python Code for Downstream analysis
+
+### Version 1.1 2023-11-25
 #### Add functions
 - Add limma, edgeR, GSEA analysis in DEG
 - Add FLED in upstream [02.Detect]
-- Add Tutorials in Python Code for Downstream analysis
+- Add jupyter python programming in downstream analysis
 - Add Cross-Species Genome API[user_ref] for CReSIL, Circle-Map, Fled
 
 ### Version 1.0 2023-07

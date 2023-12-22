@@ -1,0 +1,7 @@
+ecc_master_path: /home/qukun/minghaofang/workspace/project/ecc/pipe/ecc_pipe
+output_path: /home/qukun/minghaofang/workspace/project/ecc/paper_data_final/01.QC/data_02
+input_file:
+    data1:
+            ["/home/qukun/minghaofang/workspace/project/ecc/paper_data_final/01.download.data/data_02/GBM39_WGS_1.fq.gz","/home/qukun/minghaofang/workspace/project/ecc/paper_data_final/01.download.data/data_02/GBM39_WGS_2.fq.gz"]
+threads: 4
+paired: True

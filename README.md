@@ -239,7 +239,8 @@ python3 ecc_pipe_master.py --Analysis --mode Visualize \
 
 ## Citation
 Please cite the following article if you use eccDNA-pipe in your research
-> xxxx
+> Fang M, Fang J, Luo S, et al. eccDNA-pipe: an integrated pipeline for identification, analysis and visualization of extrachromosomal circular DNA from high-throughput sequencing data[J]. Briefings in Bioinformatics, 2024, 25(2): bbae034.
+> https://doi.org/10.1093/bib/bbae034
 
 Please also cite the related raw software paper if you use the related params of eccDNA-pipe
 ```

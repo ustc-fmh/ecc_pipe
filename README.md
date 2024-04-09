@@ -63,7 +63,8 @@ resource_2: https://drive.google.com/drive/folders/1pIH12HKpzkb7O_G_8-t3l2zBC_1S
 ```
 conda activate ecc_pipe
 ## Set bedtools to bash
-echo export PATH=~/miniconda3/envs/ecc_pipe/bin/bedtools:$PATH >> ~/.bashrc ## if you are not miniconda3, please rename
+echo export PATH=~/miniconda3/envs/ecc_pipe/bin/bedtools:$PATH >> ~/.bashrc
+## if you are not miniconda3, please rename
 
 ## Set environment for AA
 master=$PWD

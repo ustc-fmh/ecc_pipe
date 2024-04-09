@@ -59,9 +59,12 @@ resource_1: https://drive.google.com/drive/folders/1rsdEjmgW-5leS1vTiQhtGSy_vtBR
 resource_2: https://drive.google.com/drive/folders/1pIH12HKpzkb7O_G_8-t3l2zBC_1SXGqx
 ```
 
-### Activate environment and set environment for AA
+### Activate environment and set environment for bedtools/AA 
 ```
 conda activate ecc_pipe
+## Set bedtools to bash
+echo export PATH=~/miniconda3/envs/ecc_pipe/bin/bedtools:$PATH >> ~/.bashrc ## if you are not miniconda3, please rename
+
 ## Set environment for AA
 master=$PWD
 #### data_repo

@@ -11,7 +11,7 @@ An integrated pipeline for identification, analysis, and visualization of extrac
     * [Downstream Tutorial: Shell Code for 03.Analysis](example/02.downstream/script/)
     * [Downstream Tutorial: Python Code for Distribution in single sample](example/s001_downstream_Distribution.ipynb)
     * [Downstream Tutorial: Python Code for Distribution in multi sample](example/multi_example/Multi_sample_analysis.ipynb)
-    * [Downstream Tutorial: Python Code for DEG](example/s002_downstream_DEG.ipynb)
+    * [Downstream Tutorial: Python Code for DEG](example/s002_downstream_DEG.ipynb) example is CReSIL result, Circle-Map can see [Fig4](example/paper/Fig4/MB_data/)
     * [Downstream Tutorial: Python Code for Visualize](example/s003_downstream_Visualize.ipynb)
     * [Cross-Species user add](example/cross-species/cross-species.md)
     * [Example Data](example/)

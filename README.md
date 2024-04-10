@@ -60,7 +60,8 @@ resource_2: https://drive.google.com/drive/folders/1pIH12HKpzkb7O_G_8-t3l2zBC_1S
 ```
 
 ### Activate environment and set environment for bedtools/AA 
-Obtain the [Mosek license (free for academic use)](https://www.mosek.com/products/academic-licenses/) and place it in ./ecc_pipe/resource/AA/AmpliconArchitect/mosek/8/licenses/. AA will not work without it.
+Obtain the [Mosek license (free for academic use)](https://www.mosek.com/products/academic-licenses/) and place it in ./ecc_pipe/resource/AA/AmpliconArchitect/mosek/8/licenses/
+AA will not work without it.
 ```
 conda activate ecc_pipe
 ## Set bedtools to bash

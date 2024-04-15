@@ -358,6 +358,16 @@ def get_anno_df(bed_path, geno):
     anno_df = anno_df.apply(func=_func, axis=1) 
     return pd.DataFrame(anno_df['Annotation_simple'].value_counts())
 
+def transfer_pre_homer(bed_path):
+    """
+    bed_path
+    """
+    df = pd.read_csv(bed_path, sep='\t', header=None)
+    df[3] = '+'
+    save_path = bed_path.split('.bed')[0]+'.pre.homer.bed'
+    df.to_csv(save_path, sep='\t', header=None, index=None)
+    return save_path
+
 class distribution(object):
     def __init__(self,
                 file_path: str,
@@ -605,7 +615,8 @@ class distribution(object):
         self.myPrint('Plot homer anno distribution Start!')
         
         bed_path = self.save_path+'/'+self._type+'_result.analysis.bed'
-        anno_df = get_anno_df(bed_path, self.geno)
+        bed_homer_pre_path = transfer_pre_homer(bed_path)
+        anno_df = get_anno_df(bed_homer_pre_path, self.geno)
         anno_df.to_csv(self.save_path+'/03.homer_anno_distrbution/'+self._type+'_homer_anno_distribution.csv',
                             header=True, index=True)
         fig, ax = plt.subplots(figsize=(9,5))

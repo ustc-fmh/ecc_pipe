@@ -261,5 +261,8 @@ Analysis-Visualization: Circlize
 
 Please use your own license in mosek if you use eccDNA-pipe in your publish paper.
 ## License and Copyright
-eccDNA_pipe is distributed under the terms of the USTC
-This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial License (https://creativecommons.org/licenses/by-nc/4.0/), which permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited. For commercial re-use, please contact fang0426@mail.ustc.edu.cn
+eccDNA_pipe is distributed under the terms of the USTC.
+
+This is an Open Access article distributed under the terms of the Creative Commons Attribution Non-Commercial License [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/), which permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited. 
+
+For commercial re-use, please contact [fang0426@mail.ustc.edu.cn](mailto:fang0426@mail.ustc.edu.cn).

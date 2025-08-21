@@ -50,7 +50,7 @@ conda env create -f ./install/env.yml
 Please install resource.zip and unzip in the ./ecc_pipe before setting environment
 ```
 ## download from rec in ustc
-resource: https://rec.ustc.edu.cn/share/a9c71b20-8b2b-11ee-90a7-cbb8e7db2a0d
+resource: https://pan.ustc.edu.cn/share/index/7f998b5959e24fe99e6b?p=1
 passwd: ustc
 
 ## download from Google Drive

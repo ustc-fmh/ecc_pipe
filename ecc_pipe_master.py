@@ -37,7 +37,7 @@ parser.add_option("--group_file",type='string',help="txt file whcih contain grou
 parser.add_option("--count_type",type='string',help="gene or region")
 parser.add_option("--log2fc",type='string',help="default 1")
 parser.add_option("--pvalue",type='string',help="default 0.05")
-parser.add_option("--deg_mode",type='string',help="str in 'limma','edger','deseq2' ")
+parser.add_option("--deg_mode",type='string',help="str in 'limma','edger','deseq2','ecc_perm' ")
 ## DEG
 
 parser.add_option("--peak_path",type='string',help="eccDNA result peak file path") ## tool = other

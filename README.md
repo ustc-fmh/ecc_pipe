@@ -24,6 +24,9 @@ An integrated pipeline for identification, analysis, and visualization of extrac
 * Note:
     * Before running DEG mode, it's crucial to first execute the Distribution mode.
 ## Latest updates
+### Version 1.3 2026-04-30
+- Add ecc_perm in DEG for Downstream analysis
+
 ### Version 1.2 2023-12-22
 - Add Tutorials and Paper Codes in Python Code for Downstream analysis
 

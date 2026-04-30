@@ -12,6 +12,7 @@ import os
 warnings.filterwarnings('ignore')
 
 import math
+from itertools import combinations
 
 def anno_gsea_result(gsea_raw_path, anno_file_path):
     """
@@ -122,6 +123,101 @@ def make_ecc_gene_martix(geno, bed_file_path, ratio=1, _type='gene', ecc_pipe_pa
     
     return gene_number_df
 
+def _bh_adjust(pvalues):
+    """
+    Benjamini-Hochberg FDR correction without adding an extra dependency.
+    """
+    pvalues = np.asarray(pvalues, dtype=float)
+    n = pvalues.shape[0]
+    order = np.argsort(pvalues)
+    ranked = pvalues[order]
+    adjusted = np.empty(n, dtype=float)
+    previous = 1.0
+    for i in range(n - 1, -1, -1):
+        rank = i + 1
+        value = min(previous, ranked[i] * n / rank)
+        adjusted[order[i]] = value
+        previous = value
+    return np.clip(adjusted, 0, 1)
+
+def ecc_permutation_test(count_file_path, group_file_path, outputdir_path,
+                         mode='ecc_perm', max_permutations=10000,
+                         random_state=0):
+    """
+    Non-parametric DEG-like test for eccDNA gene burden matrices.
+
+    The input count matrix is normalized by sample total burden, transformed as
+    log2(CPM + 1), and tested by label permutation on the difference of group
+    means. This avoids RNA-seq-specific negative-binomial/voom assumptions while
+    keeping output columns compatible with downstream volcano/GO/GSEA code.
+    """
+    count_df = pd.read_csv(count_file_path, sep='\t', index_col=0)
+    group_df = pd.read_csv(group_file_path, sep='\t', header=None)
+    group_df.columns = ['sample', 'name', 'tool']
+
+    sample_names = [i for i in group_df['name'].values if i in count_df.columns]
+    if len(sample_names) != group_df.shape[0]:
+        missing = set(group_df['name'].values) - set(sample_names)
+        raise ValueError('Sample names in group file are missing from count matrix: {0}'.format(missing))
+
+    count_df = count_df.loc[:, sample_names]
+    labels = group_df.set_index('name').loc[sample_names, 'sample']
+    group_names = list(pd.unique(labels))
+    if len(group_names) != 2:
+        raise ValueError('ecc_perm mode currently supports exactly two groups.')
+
+    exp, ctr = group_names[0], group_names[1]
+    exp_mask = labels.values == exp
+    ctr_mask = labels.values == ctr
+
+    lib_size = count_df.sum(axis=0).replace(0, 1)
+    norm_df = count_df.div(lib_size, axis=1) * 1e6
+    log_norm_df = np.log2(norm_df + 1)
+
+    values = log_norm_df.values
+    n_samples = values.shape[1]
+    n_exp = int(exp_mask.sum())
+    observed = values[:, exp_mask].mean(axis=1) - values[:, ctr_mask].mean(axis=1)
+
+    combination_count = math.comb(n_samples, n_exp)
+    rng = np.random.default_rng(random_state)
+    if combination_count > max_permutations:
+        sampled = set()
+        while len(sampled) < max_permutations:
+            sampled.add(tuple(sorted(rng.choice(n_samples, size=n_exp, replace=False))))
+        perm_combinations = list(sampled)
+    else:
+        perm_combinations = list(combinations(range(n_samples), n_exp))
+
+    extreme = np.zeros(values.shape[0], dtype=int)
+    abs_observed = np.abs(observed)
+    for exp_idx in perm_combinations:
+        perm_exp_mask = np.zeros(n_samples, dtype=bool)
+        perm_exp_mask[list(exp_idx)] = True
+        perm_stat = values[:, perm_exp_mask].mean(axis=1) - values[:, ~perm_exp_mask].mean(axis=1)
+        extreme += (np.abs(perm_stat) >= abs_observed - 1e-12)
+
+    pvalues = (extreme + 1) / (len(perm_combinations) + 1)
+    adj_pvalues = _bh_adjust(pvalues)
+
+    result_df = pd.DataFrame(index=count_df.index)
+    result_df['log2FoldChange'] = observed
+    result_df['mean_' + str(exp)] = log_norm_df.loc[:, exp_mask].mean(axis=1)
+    result_df['mean_' + str(ctr)] = log_norm_df.loc[:, ctr_mask].mean(axis=1)
+    result_df['prevalence_' + str(exp)] = (count_df.loc[:, exp_mask] > 0).mean(axis=1)
+    result_df['prevalence_' + str(ctr)] = (count_df.loc[:, ctr_mask] > 0).mean(axis=1)
+    result_df['pvalue'] = pvalues
+    result_df['adj.P.Val'] = adj_pvalues
+    result_df['permutations'] = len(perm_combinations)
+
+    norm_output = outputdir_path + '/' + mode + '_norm_matrix.csv'
+    result_output = outputdir_path + '/' + mode + '_result.csv'
+    log_norm_df.to_csv(norm_output, sep=',', index=True)
+    result_df = pd.concat([result_df, log_norm_df], axis=1)
+    result_df.to_csv(result_output, sep=',', index=True)
+
+    return result_df
+
 def plot_go_kegg_clusterprofile(result_path, top_number=10):
     """
     result_path: 'data/result/deg_test/02.ecc_deg_go_kegg'
@@ -229,8 +325,25 @@ class ecc_gene_number_deg(object):
         outputdir_path = self.path_share+'/01.ecc_deg_output/'
         
         run_mode = mode
-        if run_mode not in ['deseq2', 'edger', 'limma']:
-            print("Please set mode param in ['deseq2', 'edger', 'limma'] ")
+        if run_mode not in ['deseq2', 'edger', 'limma', 'ecc_perm']:
+            print("Please set mode param in ['deseq2', 'edger', 'limma', 'ecc_perm'] ")
+            
+        if run_mode == 'ecc_perm':
+            deg_df = ecc_permutation_test(self.count_file_path,
+                                          self.group_file_path,
+                                          outputdir_path,
+                                          mode=run_mode)
+            deg_df = deg_df.loc[[i for i in deg_df.index if '.' not in i], :]
+            deg_df_path = outputdir_path+'/'+run_mode+'_result.csv'
+            deg_df.to_csv(deg_df_path, header=True, index=True)
+
+            volcano_path = outputdir_path+'/'+run_mode+'.volcano.pdf'
+            volcano_plot(deg_df, pvalue=float(pvalue), log2FC=float(log2fc), xlim=xlim, ylim=ylim,
+                 save=volcano_path,
+                anno=anno)
+            
+            self.myPrint('deg run end!')
+            return None
         
         if ecc_pipe_path=='None':
             if R_env == 'None':
@@ -273,8 +386,8 @@ class ecc_gene_number_deg(object):
         """
         self.myPrint('clusterprofile run start!')
         run_mode = mode
-        if run_mode not in ['deseq2', 'edger', 'limma']:
-            print("Please set mode param in ['deseq2', 'edger', 'limma'] ")
+        if run_mode not in ['deseq2', 'edger', 'limma', 'ecc_perm']:
+            print("Please set mode param in ['deseq2', 'edger', 'limma', 'ecc_perm'] ")
             
         ###cluster profile
         deg_result = self.path_share+'/01.ecc_deg_output/'+run_mode+'_result.csv'
@@ -335,4 +448,3 @@ class ecc_gene_number_deg(object):
 
         self.myPrint('Run fast End!')
         
-

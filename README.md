@@ -200,7 +200,7 @@ python3 ecc_pipe_master.py --Analysis --mode Distribution --tool circlemap \
 ### DEG
 Prior to running this mode, the Distribution mode must be executed first. 
         Afterwards, this mode calculates the gene matrix by intersecting the eccDNA matrix, 
-        and performs differential expression analysis (DEG) and Gene Ontology (GO) annotation using limma/edgeR/Deseq2/clusterprofile.
+        and performs differential expression analysis (DEG) and Gene Ontology (GO) annotation using limma/edgeR/Deseq2/ecc_perm/clusterprofile.
 ```
 python3 ecc_pipe_master.py --Analysis --mode DEG \
         --path_share example/02.downstream/deg_test/ \
@@ -214,9 +214,28 @@ python3 ecc_pipe_master.py --Analysis --mode DEG \
 -   **group_file** - txt file contain group info, eg: example/02.downstream/deg_test/group.txt
 -   **count_type** - gene or region, gene: compute all gene in ecc region; region: compute ecc region in gene
 -   **ratio** - overlap ratio for compute gene matrix ; float in [0,1]; eg: 1
--   **deg_mode** - DEG software select ; str in ['limma', 'edger', 'deseq2']; eg: 'limma'   
+-   **deg_mode** - DEG software select ; str in ['limma', 'edger', 'deseq2', 'ecc_perm']; eg: 'ecc_perm'. `ecc_perm` is a non-parametric permutation mode for eccDNA gene burden count matrices.
 -   **log2fc** - log2foldchange by deseq2 result; eg: 0.5
 -   **pvalue** - pvalue cut by deseq2 result; eg: 0.05 
+
+#### ecc_perm mode for eccDNA count matrices
+The `ecc_perm` mode is designed for gene-level eccDNA burden count matrices when the RNA-seq assumptions used by limma/edgeR/DESeq2 may not be appropriate. Unlike transcript abundance counts, the eccDNA gene matrix summarizes whether and how strongly eccDNA regions overlap each gene in each sample. This signal can be sparse, zero-inflated, and affected by sample-level eccDNA burden rather than transcript expression.
+
+In `ecc_perm`, the count matrix is first normalized by the total eccDNA-gene burden of each sample and transformed as `log2(CPM + 1)`. For each gene, the effect size is calculated as the difference in group means on the transformed scale. Statistical significance is then estimated by permuting sample group labels and comparing the observed absolute mean difference with the permutation distribution. P values are adjusted by the Benjamini-Hochberg method.
+
+This mode outputs files in the same directory and with columns compatible with the original DEG workflow:
+-   `ecc_perm_norm_matrix.csv` - normalized `log2(CPM + 1)` matrix.
+-   `ecc_perm_result.csv` - result table containing `log2FoldChange`, group means, group prevalence, `pvalue`, `adj.P.Val`, and permutation count.
+-   `ecc_perm.volcano.pdf` - volcano plot using `log2FoldChange` and `pvalue`.
+
+Example:
+```
+python3 ecc_pipe_master.py --Analysis --mode DEG \
+        --path_share example/02.downstream/deg_test/ \
+        --group_file example/02.downstream/deg_test/group.txt \
+        --count_type gene --geno hg38 --ratio 0.5 --deg_mode ecc_perm \
+        --log2fc 0.5 --pvalue 0.05
+```
         
 ### Visualize
 this mode Visualize the eccDNA by Circlize

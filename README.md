@@ -52,9 +52,9 @@ conda env create -f ./install/env.yml
 ## Resource
 Please install resource.zip and unzip in the ./ecc_pipe before setting environment
 ```
-## download from rec in ustc
-resource: https://pan.ustc.edu.cn/share/index/7f998b5959e24fe99e6b?p=1
-passwd: ustc
+## download from quark
+resource: https://pan.quark.cn/s/1b8b3f5bcdb6
+passwd: Vfux
 
 ## download from Google Drive
 ## please unzip resource_1.zip and resource_2.zip, merge it to ./ecc_pipe/resource  
